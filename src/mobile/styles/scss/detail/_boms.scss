@@ -1,0 +1,65 @@
+@import "../core/variable.scss";
+@import "../core/mixin.scss";
+.clearFloat {
+  @include clearFloat;
+}
+img {
+  width: 100%;
+}
+.m-boms {
+  margin-bottom: 20px;
+  font-size: .14rem;
+  .scroller-header {
+    text-align: left;
+    width: 20%;
+  }
+  .scroll-icon-list {
+    overflow-y: hidden;
+    >.material-item {
+      border: 1px solid $c-bc-1;
+      width: 60px;
+      height: 60px;
+      &.active {
+        border: 2px solid $c-jxc-1;
+      }
+    }
+  }
+  .select-content {
+    width: 90%;
+  }
+  // 卡纸对应的尺寸格式
+  .mat-size {
+    margin-bottom: 20px;
+    .size-item {
+      width: 90px;
+      height: 30px;
+      border-radius: 4px;
+      border: 1px solid $c-bc-1;
+      line-height: 30px;
+      text-align: center;
+      &.active {
+        border: 2px solid $c-jxc-1;
+      }
+    }
+  }
+  .mat-color {
+    margin-bottom: 20px;
+    .color-item {
+      margin-right: 20px;
+      border: 1px solid $c-bc-1;
+      width: 60px;
+      height: 60px;
+      &.active {
+        border: 2px solid $c-jxc-1;
+      }
+    }
+
+  }
+  .text-select {
+    .selected {
+      >span {
+        width: 20%;
+      }
+    }
+  }
+}

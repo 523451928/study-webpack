@@ -1,0 +1,176 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * Custom page
+ */
+.custom-head{
+  position: fixed;
+  top: 64px;
+  width: 100%;
+  z-index: 99;
+}
+.custom-category-nav{
+  text-align: center;
+  border-bottom: 1px solid $hr-border-color;
+  background:$dropdown-link-hover-bg;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  &.ani-hide{
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transform: translate3d(0, -100px, 0);
+    -moz-transform: translate3d(0, -100px, 0);
+    -ms-transform: translate3d(0, -100px, 0);
+    -o-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0);
+  }
+  .custom-cate-list{
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    li{
+      list-style: none;
+      position: relative;
+      .cate-box{
+        position: relative;
+        display: block;
+        cursor: pointer;
+        height:50px;
+        line-height: 50px;
+        text-align: center;
+        color: $text-color-base;
+        .right-line{
+          position: absolute;
+          display: block;
+          height: 40px;
+          border-right: 1px solid $hr-border-color;
+          right: -15px;
+          top: 5px;
+        }
+      }
+      .arrow-down-cont{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -8px;
+        left: 50%;
+        margin-left: -5px;
+        vertical-align: middle;
+        border-top: 9px solid $card-cap-bg;
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+        z-index: 3;
+        display: none;
+      }
+      .arrow-down-border{
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -5px;
+        vertical-align: middle;
+        border-top: 10px solid $hr-border-color;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        z-index: 2;
+        display: none;
+      }
+      .wa{
+        font-size: 55px;
+      }
+      &:hover,&.active,&.activeCat,&.arrow-show{
+        background: $card-cap-bg;
+        .cate-box{
+          color: $brand-primary;
+        }
+        a{
+          text-decoration: none;
+        }
+      }
+      &:hover,&.arrow-show{
+        .arrow-down-border,.arrow-down-cont{
+          display: block;
+        }
+      }
+      &.active{
+        //background:@table-bg-hover;
+        .cate-box{
+          color: $brand-primary;
+        }
+      }
+      &.last{
+        .cate-box{
+          margin-right: 0;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.custom-category-detail{
+  background: rgba(255,255,255,.98);
+  border-bottom: 1px solid $hr-border-color;
+  width: 100%;
+  .custom-cate-detail-list{
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
+    //display: none;
+    list-style: none;
+    li{
+      padding: 15px 0 15px 0;
+      img {
+        height: 105px;
+      }
+      &:hover,&.active{
+
+        .custom-cate-detail{
+          color: $brand-primary;
+          border-color:$card-cap-bg;
+          text-decoration: none;
+        }
+      }
+      &:hover{
+        background: $card-cap-bg;
+      }
+      .custom-cate-detail{
+        display: block;
+        cursor: pointer;
+        line-height:2;
+        text-align: center;
+        color: #aaa;
+        p{
+          line-height: 15px;
+          margin: 0;
+        }
+        &:hover{
+          color: $brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &:hover{
+      display: block !important;
+    }
+  }
+}
+
+
+

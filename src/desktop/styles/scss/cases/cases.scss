@@ -1,0 +1,112 @@
+.layer-md {
+  width: 1000px;
+  margin: 0 auto;
+}
+img {
+  display: block;
+  width: auto;
+}
+.fl{
+  float: left;
+}
+//案例展示
+.case {
+  overflow: hidden;
+  padding-top: 64px;
+  margin-bottom: 40px;
+  min-height: 100%;
+  .mr20 {
+    margin-right: 20px;
+  }
+  .mb20 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    text-align: center;
+    color: #565a5c;
+    font-size: 40px;
+    margin-top: 55px;
+    margin-bottom: 29px;
+  }
+  .case-wrap {
+    .case-items {
+      margin-bottom: 20px;
+      .case-item {
+        cursor: pointer;
+        transition: all 0.2s linear ;
+        -webkit-transition: all 0.2s linear;
+        -moz-transition: all 0.2s linear;
+        -o-transition: all 0.2s linear;
+        &:hover {
+          transform: translate3d(0,-2px,0);
+          -webkit-transform: translate3d(0,-2px,0);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          -o-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+      }
+    }
+  }
+}
+.scale-enter-active,.scale-leave-active {
+  transition: all .3s ease;
+}
+.scale-enter, .scale-leave-active {
+  opacity: 0;
+  .case-modal {
+    opacity: 0 !important;
+    transform: scale(0.3) !important;
+  }
+}
+//图片展示
+.case-modal-wrap {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  z-index: 1031;
+  .case-modal {
+    transition: all .3s;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -400px;
+    margin-top: -300px;
+    //transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    width: 800px;
+    height: 600px;
+    padding: 16px 16px 33px 16px;
+    z-index: 1032;
+    border-radius: 3px;
+    .change-img-btn {
+      display: block;
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 19px;
+      margin: 0 auto;
+      font-size: 14px;
+      color: #FFFFFF;
+      background-color: #26A7C7;
+      margin-top: 30px;
+      &:hover,&:focus {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+    }
+  }
+  .case-modal-special {
+    width: 432px;
+    height: 640px;
+    .change-img-btn {
+      margin-top: 1px;
+    }
+  }
+}

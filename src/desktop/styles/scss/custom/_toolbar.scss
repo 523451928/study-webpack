@@ -1,0 +1,109 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * BOM STYLE
+ */
+.detai-btns-area{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    display: inline-block;
+    .set-image-link{
+      color: $brand-primary;
+      margin: 0 7px;
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+      }
+      .wa-vertical-center, .wa-horizontal-center{
+        font-size: 35px;
+        top:10px;
+      }
+    }
+  }
+}
+.tools-btn-area{
+  margin-top: 20px;
+}
+.custom-toolbar {
+  width: 450px;
+  height: 50px;
+  display: table;
+  margin: 0 auto;
+  position: relative;
+  &.disable {
+    color: $text-color-light;
+    a{
+      color: $text-color-light;
+    }
+  }
+  .ball{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border:1px solid #ccc;
+    background: #f5f5f5;
+  }
+  .ope-area {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    &.zoom-area {
+      width: 80%;
+      & > a.zoom-btn {
+        color: #26a7c7;
+        user-select: none;
+      }
+    }
+  }
+  .scale-count {
+    position: absolute;
+    display: inline-block;
+    font-size: 14px;
+    right: -10px;
+  }
+  .ope-btn {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .zoom-bar {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    margin: 0 17px;
+    vertical-align: middle;
+    height: 20px;
+    padding-top: 7px;
+    cursor: pointer;
+    .zoom-line {
+      display: block;
+      height: 7px;
+      background-color: #f5f5f5;
+      overflow: hidden;
+      -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    }
+    .zoom-active-line {
+      background-color: $brand-primary;
+      float: left;
+      height: 100%;
+    }
+    .zoom-ball {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: -9px;
+    }
+  }
+}
+
+.custom-tools-area {
+  bottom: -60px;
+  padding-left: 30px;
+}

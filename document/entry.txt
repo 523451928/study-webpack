@@ -1,0 +1,38 @@
+单品
+  0. 数据:
+    Entry:{
+      Id:Integer          // 单品Id
+      CategoryId:Integer  // 品类Id
+      ProductId:Integer   // 产品Id, 仅非装饰画
+      Name:String         // 单品名称
+      Icon:String         // 单品图标
+      Properties:[Object] // 属性数据
+      Decorative:Object   // 仅装饰画相关数据
+      Materials:[Integer] // 仅装饰画物料Id
+      Options:[Integer]   // 产品选项Id或卡纸选项Id
+      Outputs:[Object]    // 输出数据
+      Displays:[[Object]] // 展示数据，和输出一一对应
+      Price:Integer       // 基础价格
+      Prices:[Integer]    // 附加价格，和输出一一对应，仅非装饰画
+    }
+  1. 获取单品:
+    方法: GET
+    地址: /entry/get
+    参数: Id:Integer   // 单品Id, 最多20个, 超过20个需分批多次
+    返回: { Data:[Entry] }
+  2. 生成单品:
+    方法: POST
+    地址: /entry/build
+    参数:
+      CategoryId:Integer // 品类Id
+      ProductId:Integer  // 产品Id, 仅非装饰画
+      OptionId:Integer   // 产品选项Id或卡纸选项Id，可多个
+      MaterialId:Integer // 装饰画物料Id，可多个
+      // 由装饰画品类决定
+      Size:String        // 装饰画尺寸(宽x高)
+      Angle:Integer      // 卡纸旋转角度
+      Blank:[Integer]    // 海报白边(上右下左)
+      PhotoWall:Integer  // 照片墙物料Id
+      PhotoIndex:Integer // 照片墙第几幅照片
+    返回: { Data:Enrty }
+    说明: 总是返回基准价格

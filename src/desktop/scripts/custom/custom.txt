@@ -1,0 +1,12 @@
+高优先级
+  价格接口
+  边界限制*
+  toast和dialog清理
+  上传图片串行√
+
+低优先级
+  浮点数补偿
+  loadImages串行
+  displayer未复用(scroller复用导致复杂度)
+  lazybeforeunveil事件始终触发 不使用background-image√
+  device模式触发2次tap事件 touch和mouse事件同时启用导致√

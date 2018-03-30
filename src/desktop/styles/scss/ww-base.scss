@@ -1,0 +1,66 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ */
+@keyframes animate_infinity {
+  from {
+    /* background-position: 0 0; */
+  }
+  to {
+    background-position: 0 -1950px;
+  }
+}
+
+//custom variables
+@import 'ww-variables';
+
+//bootstrap 4.0
+@import 'bootstrap/bootstrap';
+
+@import 'public';
+@import 'prompt';
+//wallwa webfont icon
+
+@import 'ww-font';
+@import 'cssloading';
+@import 'public/variable';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+input[type="text"], textarea {
+  outline: none;
+  border: 1px solid $c-bc-1;
+  &:focus {
+    // outline: 1px solid $c-jxc-1;
+    border-color: #adadad;
+  }
+  &.input-err {
+    border-color: $c-jxc-1;
+  }
+}
+
+input:-moz-placeholder {
+  color: $c-fc-3;
+}
+
+input::-moz-placeholder {
+  color: $c-fc-3;
+}
+
+input::-ms-input-placeholder {
+  color: $c-fc-3;
+}
+
+input::-webkit-input-placeholder {
+  color: $c-fc-3;
+}
+
+

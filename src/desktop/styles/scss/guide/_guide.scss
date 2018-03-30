@@ -1,0 +1,388 @@
+.bnr-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+@media (max-width: 1376px) {
+  .bnr-2 .adapt {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+  .bnr-2 .adapt img {
+    width: 100%;
+  }
+}
+.layer-center {
+  width: 900px;
+  margin: 0 auto;
+}
+.layer-center .layerchild {
+  width: 300px;
+  float: left;
+}
+.bnr-1 {
+  //width: 100%;
+  //height: 100%;
+  background: url(~images/shopGuide/bnr-1.jpg);
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+.bnr-1 .bnr-content {
+  color: #fff;
+}
+.bnr-1 .bnr-content h1 {
+  font-size: 48px;
+  margin: 0 0 20px 0;
+}
+.bnr-1 .bnr-content h5 {
+  text-align: center;
+}
+.bnr-1 .bnr-content h6 {
+  margin-top: 40px;
+}
+.bnr-1 .bnr-content .btn-open {
+  width: 180px;
+  height: 46px;
+  line-height: 46px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #26a7c7;
+  border: 1px solid #26a7c7;
+  color: #fff;
+}
+.bnr-1 .bnr-content .btn-open:hover {
+  background: #5bc0de;
+  border: 1px solid #5bc0de;
+}
+.bnr-1 .bnr-author {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+}
+.bnr-1 .bnr-author h5 {
+  color: #fff;
+}
+.bnr-1 .btn-next {
+  position: absolute;
+  width: 60px;
+  height: 36px;
+  left: 50%;
+  bottom: 20px;
+  cursor: pointer;
+  transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+}
+.bnr-1 .btn-next img {
+  display: block;
+  width: 60px;
+  height: 36px;
+  animation: moving 2.5s ease 0s infinite;
+  -moz-animation: moving 2.5s ease 0s infinite;
+  -webkit-animation: moving 2.5s ease 0s infinite;
+  -o-animation: moving 2.5s ease 0s infinite;
+}
+@keyframes moving {
+  0% {
+    transform: translate(0, 0rem);
+  }
+  50% {
+    transform: translate(0, 20px);
+  }
+  100% {
+    transform: translate(0, 0rem);
+  }
+}
+@-moz-keyframes moving {
+  0% {
+    -moz-transform: translate(0, 0rem);
+  }
+  50% {
+    -moz-transform: translate(0, 20px);
+  }
+  100% {
+    -moz-transform: translate(0, 0rem);
+  }
+}
+@-webkit-keyframes moving {
+  0% {
+    -webkit-transform: translate(0, 0rem);
+  }
+  50% {
+    -webkit-transform: translate(0, 20px);
+  }
+  100% {
+    -webkit-transform: translate(0, 0rem);
+  }
+}
+@-o-keyframes moving {
+  0% {
+    -o-transform: translate(0, 0rem);
+  }
+  50% {
+    -o-transform: translate(0, 20px);
+  }
+  100% {
+    -o-transform: translate(0, 0rem);
+  }
+}
+.bnr-2 {
+  width: 100%;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background: #f5f5f5;
+}
+.bnr-2 h1 {
+  color: #565a5c;
+  padding-bottom: 10px;
+}
+.bnr-2 h5 {
+  color: #82888a;
+}
+.bnr-2 div {
+  padding-top: 90px;
+  padding-bottom: 5px;
+}
+.bnr-2 a {
+  color: #82888a;
+  font-size: 14px;
+  text-decoration: none;
+}
+.bnr-2 a:hover {
+  color: #26a7c7;
+}
+.bnr-3 {
+  background: #fff;
+  border-top: 1px solid #dce0e0;
+  border-bottom: 1px solid #dce0e0;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.bnr-3 h1 {
+  padding-bottom: 10px;
+}
+.bnr-3 div {
+  padding-top: 40px;
+}
+.bnr-4 {
+  background: #fff;
+  padding-top: 40px;
+}
+.bnr-4 h1 {
+  padding-bottom: 10px;
+}
+.bnr-4 h5 {
+  padding-bottom: 4px;
+}
+.bnr-4 h2 {
+  color: #26a7c7;
+  font-size: 80px;
+  line-height: 1em;
+}
+.bnr-4 h3 {
+  margin-top: 14px;
+  padding-bottom: 35px;
+}
+.bnr-5 {
+  width: 100%;
+  height: 760px;
+  background: url('http://wallwa.com/build/img/dac872384bc580f17dbfe9cf8aaa8d66.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.bnr-5 .bnr-content {
+  color: #fff;
+}
+.bnr-5 .bnr-content h1 {
+  margin: 0 0 20px 0;
+}
+.bnr-5 .pricing {
+  width: 400px;
+  height: 270px;
+  margin: 40px auto 0;
+  background: #fff;
+  padding: 20px;
+}
+.bnr-5 .pricing .public {
+  color: #565a5c;
+  font-size: 14px;
+  text-align: left ;
+  width: 80px;
+  float: left;
+}
+.bnr-5 .pricing .public.special {
+  width: 120px ;
+}
+.bnr-5 .pricing .public.special-1 {
+  width: 200px ;
+  padding-right: 20px;
+  padding-top: 4px;
+}
+.bnr-5 .pricing .public.size {
+  font-size: 20px;
+}
+.bnr-5 .pricing .check-box {
+  width: 18px;
+  height: 20px;
+  background: url('http://wallwa.com/build/img/8f858b2000785ef6fd223b6b59deb12b.png') no-repeat;
+  background-position: -53px -156px;
+  float: left;
+  margin-right: 10px;
+}
+.bnr-5 .pricing .row-h {
+  height: 50px;
+}
+.bnr-5 .pricing .proportion {
+  width: 60px;
+  height: 35px;
+  border: 1px solid #dce0e0;
+  text-align: center;
+  line-height: 35px;
+  margin-top: -10px;
+}
+.bnr-5 .bnr-copyright {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 30px;
+}
+.bnr-5 .bnr-copyright h5 {
+  color: #fff;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 180px;
+  background: -webkit-linear-gradient(#26a7c7, #26a7c7) no-repeat;
+  background-size: 0% 100%;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 10px;
+  /*box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; !*轨道内置阴影效果*!*/
+  /*background: #f5f5f5;*/
+  border: 1px solid #f5f5f5;
+}
+input[type=range]::-moz-range-track {
+  height: 10px;
+  border: 1px solid #f5f5f5;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  margin-top: -7px;
+  /*使滑块超出轨道部分的偏移量相等*/
+  background: #ffffff;
+  border-radius: 50%;
+  /*外观设置为圆形*/
+  cursor: pointer;
+  border: solid 0.125em rgba(205, 224, 230, 0.5);
+  /*设置边框*/
+  box-shadow: 0 .125em .125em #3b4547;
+  /*添加底部阴影*/
+}
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  margin-top: -7px;
+  /*使滑块超出轨道部分的偏移量相等*/
+  background: #ffffff;
+  border-radius: 50%;
+  /*外观设置为圆形*/
+  border: solid 0.125em rgba(205, 224, 230, 0.5);
+  /*设置边框*/
+  box-shadow: 0 .125em .125em #3b4547;
+  /*添加底部阴影*/
+}
+input[type=range]::-moz-range-progress {
+  background: linear-gradient(to right, #26a7c7, #26a7c7 100%, #26a7c7);
+  height: 13px;
+}
+.bnr-6 {
+  height: 320px;
+  width: 100%;
+  background: #fff;
+  padding-top: 35px;
+  border-bottom: 1px solid #dce0e0;
+}
+.bnr-6 h1 {
+  padding-bottom: 10px;
+}
+.bnr-6 h5 {
+  padding-bottom: 20px;
+}
+.bnr-6 .bnr-process {
+  background: url('http://wallwa.com/build/img/c6acaa6ff1bfe3032ddcb2907db91a24.png');
+  width: 68px;
+  height: 64px;
+  margin: 0 auto;
+}
+.bnr-6 .bnr-process.design {
+  background-position: -29px -21px;
+}
+.bnr-6 .bnr-process.quality {
+  background-position: -164px -19px;
+}
+.bnr-6 .bnr-process.express {
+  background-position: -319px -19px;
+}
+.bnr-8 {
+  padding-top: 80px;
+  border-bottom: 1px solid #dce0e0;
+  background: #f5f5f5;
+}
+.bnr-8 h1 {
+  padding-bottom: 10px;
+}
+.bnr-8 h5 {
+  margin-bottom: 0;
+}
+.bnr-9 {
+  background: #fff;
+  padding-top: 65px;
+  height: 320px;
+  width: 100%;
+}
+.bnr-9 h1 {
+  color: #565a5c;
+}
+.bnr-9 h5 {
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+.bnr-9 .btn-open {
+  width: 180px;
+  height: 46px;
+  line-height: 46px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #26a7c7;
+  border: 1px solid #26a7c7;
+  color: #fff;
+}
+.bnr-9 .btn-open:hover {
+  background: #5bc0de;
+  border: 1px solid #5bc0de;
+}

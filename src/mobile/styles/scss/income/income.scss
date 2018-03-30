@@ -1,0 +1,134 @@
+@import "coupon";
+.calendar{
+  padding: 25px 0 30px;
+  border-top: 1px solid #dce0e0;
+}
+.tips{
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+}
+.with-link{
+  color: #82888a;
+}
+.income-btn{
+  padding: 6px 28px;
+}
+.corr-form{
+  position: relative;
+  top: -8px;
+}
+.pdn{
+  list-style: none;
+  padding-left: 0;
+  line-height: 24px;
+}
+#withdraw-input{
+  width: 45%;
+}
+.lh30{
+  line-height: 30px;
+}
+.plline{
+  border-left: 1px solid #dce0e0;
+}
+.inwrap{
+  width: 55%;
+  margin: 0 auto;
+  button.on{
+    border-color:#08B7E2;
+  }
+  button.on .wa-circle{
+    color: #08B7E2;
+  }
+  button.on .wa-circle:before{
+    content: '\e620';
+  }
+  button{
+    border-color: #c4c4c4;
+    &:hover{
+      border-color: #08B7E2;
+      color: #565a5c;
+    }
+  }
+}
+.wa-wechat-pay{
+  color: #00CC03;
+}
+.wa-alipay{
+  color: #069ADF;
+  font-size: 19px;
+}
+.wa-credit-card{
+  color: #26a7c7;
+}
+.mt60{
+  margin-top: 60px;
+}
+.ptline{
+  padding-top: 20px;
+  border-top: 1px solid #dce0e0;
+}
+.income-success{
+  color: #da4453;
+}
+.income-fail{
+  text-decoration:line-through;
+}
+.btn-div>form{
+  display: none;
+}
+.btn-div>form.active{
+  display: block;
+}
+.account{
+  .btn{
+    &.active{
+      position: relative;
+      border: 1px solid #08B7E2;
+      background-color: #fff;
+      .wa-check-tri{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -1px;
+        color: #08B7E2;
+      }
+    }
+    .wa-check-tri{
+      display: none;
+    }
+  }
+}
+.max200{
+  max-width: 200px!important;
+}
+strong.color-d1{
+  font-size: 20px;
+}
+.addAccount{
+  .wa-plus-o{
+    margin-right: 5px;
+  }
+}
+.btn-block+.btn-block{
+  margin-top: 10px;
+}
+.width346{
+  width: 346px;
+}
+.btnone{
+  border-top: none;
+}
+.panel-body{
+  .table{
+    .td-bank{
+      padding-left: 50px;
+      max-width:200px;
+      text-align: left;
+    }
+  }
+}
+.form-control{
+  width: 100%;
+}

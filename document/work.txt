@@ -1,0 +1,91 @@
+标签列表
+    方法:  GET
+    地址:  /tag/list
+    返回:  {  Data:[{}]  }  //  数据字段与保存作品Tags相同
+
+管理作品
+    1.  获取作品列表:
+        方法:  GET
+        地址:  /work/manage/list
+        查询参数:
+            Online:Boolean
+            CategoryId:Integer
+            Title:String
+            TagName:String
+        排序参数:
+            Order:String(Id,  Title)
+        分页参数:
+            Page:Integer,  Count:Integer
+        返回:  {  Pager:  {},  Data:[{  //  数据字段与保存作品相同
+                Id:Integer
+                ImageId:Integer
+                ImageFile:String
+                Title:String
+                Tags:[{
+                    Id:Integer
+                    Type:Integer
+                    Name:String
+                    Color:String
+                }],
+                Offline:Boolean
+                Disable:Boolean  //  是否禁用
+                Pieces:[{}]          //  仅查询CategoryId时
+        }]  }
+    2.  根据作品Id获取作品:
+        方法:  GET
+        地址:  /work/manage/get/<Id:Integer>
+        返回:  {  Data:{}  }  //  数据字段与保存作品相同
+    3.  根据图片Id获取作品:
+        方法:  GET
+        地址:  /work/manage/get/image/<ImageId:Integer>
+        返回:  {  Data:{}  }  //  数据字段与保存作品相同
+    4.  下架作品:
+        方法:  POST
+        地址:  /work/manage/offline/<Id:Integer>
+        参数:  Offline:Boolean
+        返回:  {  Data:Integer  }  //  作品Id
+    5.  下架作品品类:
+        方法:  POST
+        地址:  /work/manage/pause/<Id:Integer>
+        参数:
+            CategoryId:Integer
+            Pause:Boolean
+        返回:  {  Data:Integer  }  //  作品Id
+    6.  删除作品:
+        方法:  DELETE
+        地址:  /work/manage/remove/<Id:Integer>
+        返回:  {  Data:Integer  }  //  作品Id
+    7.  保存作品:
+        方法:  POST
+        地址:  /work/manage/save
+        参数(application/json):  {
+            Id:Integer                  //  仅修改作品时
+            ImageId:Integer        //  主图Id
+            ImageFile:String      //  主图文件名
+            Title:String              //  作品标题
+            Tags:[{                        //  多个标签
+                Id:Integer              //  标签Id
+                Type:Integer          //  标签类型
+                Name:String            //  标签名称
+                Color:String          //  标签颜色，仅标签类型为颜色时
+            }]
+            Description:String  //  作品描述
+            Pieces:[{
+                CategoryId:Integer
+                Incomes:[{                        //  多个作品
+                    Packets:[Integer]      //  数组长度必须等于2
+                                                            //  无卡画/布艺画/海报为尺寸
+                                                            //  单孔画/多孔画Packets[0]为卡纸物料Id，Packets[1]等于0
+                                                            //  照片墙/卷轴画Packets[0]为模板物料Id，Packets[1]等于0
+                                                            //  非装饰画Packets[1]为产品Id，Packets[0]等于0
+                    Entries:[Integer]      //  单品Id，仅照片墙时多个
+                    Pictures:[[{}]]          //  一个单品Id对应一个图片数组
+                    Materials:[Integer]  //  物料Id
+                    Options:[Integer]      //  选项Id
+                    Bonus:Integer              //  佣金
+                }]
+                Pause:Boolean          //  单个品类是否下架
+            }]
+            Offline:Boolean          //  作品是否下架
+        }
+        返回:  {  Data:Integer  }  //  作品Id

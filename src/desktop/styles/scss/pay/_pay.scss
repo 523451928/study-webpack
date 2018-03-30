@@ -1,0 +1,295 @@
+@import "../public/mixin.scss";
+// 顶部展示
+// .m-shop-hd-wrap {
+//   .step-wrap {
+//     li {
+//       &.step {
+//         &.step-cart {
+//           background-position:-15px -2px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// 容器层
+.cont-wrap {
+  margin: 0 auto;
+  width: 980px;
+  min-height: 500px;
+  background-color: $c-nc-1;
+}
+// 支付成功的页面
+.cont-wrap {
+  // 面包屑
+  .u-crumbs {
+    margin-bottom: 30px;
+  }
+  // 订单状态
+  .order-status {
+    @include clearFloat;
+    margin-bottom: 12px;
+    color: $c-fc-1;
+    width: 100%;
+    >.order-text {
+      float: left;
+    }
+    >.order-pay-money {
+      float: right;
+      >.money {
+        margin-left: 12px;
+        color: $c-jxc-3;
+        font-weight: 500;
+      }
+    }
+  }
+  // 分割线
+  .line {
+    margin-bottom: 20px;
+  }
+  // 选择支付方式
+  .select-pay-mode {
+    margin-bottom: 30px;
+    background-color: $c-bg-1;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    font-size: 0;
+    img{
+      width: auto;
+    }
+    >h5 {
+      margin: 0 20px 0 0;
+      display: inline-block;
+      vertical-align: top;
+      color: $c-fc-3;
+      font-size: 14px;
+    }
+    >.pay-mode {
+      margin-right: 40px;
+      display: inline-block;
+      cursor: pointer;
+      &.ali-pay {
+        >.icon {
+          color: #00a0e9;
+        }
+      }
+      &.wx-pay {
+        >.icon {
+          color: #00b700;
+        }
+      }
+      // 选择器按钮
+      >.radio {
+        margin-right: 6px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        box-sizing: border-box;
+        border: 1px solid #b6b6b6;
+        border-radius: 50%;
+        padding: 3px;
+        background-color: $c-nc-1;
+        >.circle {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $c-nc-1;
+          border-radius: 50%;
+        }
+        &.active {
+          border-color: $c-jxc-1;
+          >.circle {
+            background-color: $c-jxc-1;
+          }
+        }
+      }
+      >.icon {
+        height: 30px;
+        vertical-align: middle;
+      }
+    }
+  }
+  // 支付按钮
+  .pay-btn {
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $c-jxc-4;
+    width: 160px;
+    height: 50px;
+    border-radius: 2px;
+    color: $c-nc-1;
+    line-height: 50px;
+    font-size: 16px;
+  }
+}
+// 弹窗
+.m-popup-content {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.6);
+  >.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $c-nc-1;
+    >.popup-head {
+      width: 100%;
+      height: 58px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $c-bc-2;
+      @include clearFloat;
+      h5 {
+        float: left;
+        margin-left: 20px;
+        //line-height: 58px;
+        color: $c-fc-3;
+      }
+      .close {
+        margin-right: 20px;
+        float: right;
+        line-height: 58px;
+        color: $c-fc-3;
+        font-size: 14px;
+        &:hover {
+          color: $c-jxc-1;
+        }
+      }
+    }
+    >.popup-content {
+      padding: 30px 0 20px;
+      .button-wrap {
+        margin: 0 auto 40px;
+        width: 342px;
+        @include clearFloat;
+        >div{
+          width: 140px;
+          >p{
+            text-align: center;
+            margin-bottom: 10px;
+            color: $c-fc-1;
+          }
+          >.btn {
+            box-sizing: border-box;
+            padding: 0;
+            width: inherit;
+            height: 45px;
+            line-height: 45px;
+          }
+        }
+        >.success-btn-wrap {
+          position: relative;
+          float: left;
+          >.btn {
+            color: $c-nc-1;
+            background-color: $c-jxc-1;
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: -30px;
+            height: 100%;
+            width: 1px;
+            background-color: $c-line-1;
+          }
+        }
+        >.error-btn-wrap {
+          float: right;
+          >.btn {
+            color: $c-fc-1;
+            background-color: $c-nc-1;
+            border: 1px solid $c-bc-1;
+          }
+        }
+      }
+      .help {
+        text-align: center;
+        font-size: 14px;
+        >a {
+          line-height: 21px;
+          color: $c-fc-3;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  // 微信弹窗
+  >.wx-popup {
+    margin: -260px 0 0 -300px;
+    width: 600px;
+    height: 520px;
+    >.popup-content {
+      .wx-code-wrap {
+        margin: 0 auto 50px;
+        width: 200px;
+        >.code-img {
+          margin-bottom: 14px;
+          width: inherit;
+          height: 200px;
+          > img {
+            width: inherit;
+            height: inherit;
+          }
+        }
+        > p {
+          font-size: 16px;
+          color: $c-fc-1;
+          text-align: center;
+        }
+      }
+    }
+  }
+  // 支付宝弹窗
+  >.ali-popup {
+    margin: -159px 0 0 -300px;
+    width: 600px;
+    height: 318px;
+    >.popup-content {
+      padding-left: 20px;
+      >.info {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+// .fade-enter-active, .fade-leave-active {
+//   transition: opacity .5s;
+// }
+// .fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+//   transition: opacity .5s;
+//   opacity: 0;
+// }
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+.fade-enter-active {
+  animation: fadeIn .4s;
+}
+.fade-leave-active {
+  animation: fadeOut .4s;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

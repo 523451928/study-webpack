@@ -1,0 +1,363 @@
+.assist-wrap {
+  text-align:center;
+  color:#565a5c;
+  .big {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .assist-item {
+    padding: 65px 0 0;
+    &.pb65 {
+      padding-bottom:65px;
+    }
+    h2 {
+      font-size: 36px;
+      margin: 0 0 18px;
+    }
+    &.white {
+      background-color: #ffffff;
+      padding-bottom: 65px;
+      &.bd {
+        margin-top: 65px;
+        border-top: 1px solid #dce0e0;
+        border-bottom: 1px solid #dce0e0;
+      }
+    }
+    .job-item {
+      background-color: #ffffff;
+      border: 1px solid #dce0e0;
+      padding: 20px 20px 0;
+      text-align: left;
+      margin-bottom: 20px;
+      .job-cate {
+        margin-bottom: 40px;
+        h5 {
+          margin-bottom: 15px;
+        }
+      }
+    }
+    .time-line {
+      display: inline-block;
+      li {
+        text-align:left;
+        margin-bottom: 20px;
+        .time {
+          width:125px;
+        }
+        span {
+          display:inline-block;
+        }
+      }
+    }
+    .shop-list {
+      display: inline-block;
+      width: 320px;
+      vertical-align: top;
+      margin-top: 30px;
+      li {
+        background: url('~images/assist/about/shop-img.png') no-repeat transparent;
+        height: 57px;
+        width: 128px;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        a {
+          display:block;
+          height:100%;
+        }
+        &.tb {
+          background-position: -28px 0;
+        }
+        &.tmall {
+          background-position: -165px 0;
+        }
+        &.jd {
+          background-position: -28px -65px;
+        }
+        &.dd {
+          background-position: -165px -65px;
+        }
+        &.vip {
+          background-position: -28px -130px;
+        }
+        &.yhd {
+          background-position: -165px -130px;
+        }
+        &.amazon {
+          background-position: -28px -195px;
+        }
+        &.lightinthebox {
+          background-position: -165px -195px;
+        }
+        &.disney {
+          background-position: -28px -260px;
+        }
+        &.marvel {
+          background-position: -165px -260px;
+        }
+        &.pixar {
+          background-position: -28px -325px;
+        }
+        &.starwars {
+          background-position: -165px -325px;
+        }
+      }
+    }
+    .sub {
+      margin-bottom:25px;
+    }
+    .sign-artist-cont {
+      .btn {
+        padding: 8px 90px;
+      }
+      hr {
+        border-top-color: #dce0e0;
+      }
+      .sign-artist-list {
+        padding-left:0;
+        list-style: none;
+        li {
+          width: 105px;
+          height: 150px;
+          float: left;
+          background-repeat: no-repeat;
+          margin-right: 20px;
+          span {
+            margin-top: 115px;
+            display: block;
+          }
+          &.last {
+            margin-right:0;
+          }
+          &.al1 {
+            background-image: url('~images/assist/sign/1.png');
+          }
+          &.al2 {
+            background-image: url('~images/assist/sign/2.png');
+          }
+          &.al3 {
+            background-image: url('~images/assist/sign/3.png');
+          }
+          &.al4 {
+            background-image: url('~images/assist/sign/4.png');
+          }
+          &.al5 {
+            background-image: url('~images/assist/sign/5.png');
+          }
+          &.al6 {
+            background-image: url('~images/assist/sign/6.png');
+          }
+          &.al7 {
+            background-image: url('~images/assist/sign/7.png');
+          }
+          &.al8 {
+            background-image: url('~images/assist/sign/8.png');
+          }
+          &.al9 {
+            background-image: url('~images/assist/sign/9.png');
+          }
+          &.al10 {
+            background-image: url('~images/assist/sign/10.png');
+          }
+          &.al11 {
+            background-image: url('~images/assist/sign/11.png');
+          }
+          &.al12 {
+            background-image: url('~images/assist/sign/12.png');
+          }
+          &.al13 {
+            background-image: url('~images/assist/sign/13.png');
+          }
+          &.al14 {
+            background-image: url('~images/assist/sign/14.png');
+          }
+          &.al15 {
+            background-image: url('~images/assist/sign/15.png');
+          }
+          &.al16 {
+            background-image: url('~images/assist/sign/16.png');
+          }
+        }
+      }
+    }
+    .img-list {
+      img {
+        float: left;
+        margin-right: 25px;
+        &.last {
+          margin-right:0px;
+        }
+        &.top {
+          margin-bottom:25px;
+        }
+      }
+    }
+    .icon-list {
+      li {
+        .icon-wrap {
+          width: 100px;
+          height: 110px;
+          margin: 0 auto;
+        }
+        h3 {
+          font-size: 22px;
+          margin-top: 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .assist-cont {
+      width: 980px;
+      margin: 0 auto;
+    }
+    .word-cont {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      p {
+        line-height:24px;
+      }
+    }
+  }
+  .assist-hd {
+    background-repeat: no-repeat;
+    height: 540px;
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 0;
+    &.sign-hd {
+      background-image: url('~images/assist/sign/hd.png');
+    }
+    &.join-hd {
+      background-image: url('~images/assist/join/hd.png');
+    }
+    &.contact-hd {
+      background-image: url('~images/assist/contact/hd.jpg');
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+    p {
+      font-size:14px;
+      margin-bottom:0px;
+    }
+    .cont {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    h1 {
+      font-size:48px;
+      margin: 0 0 28px;
+    }
+  }
+}
+.color-p1 {
+  color: #26a7c7;
+}
+.assist-i {
+  display:inline-block;
+  background: url('~images/assist/assist-icon.png') no-repeat transparent;
+  &.simple {
+    background-position: -25px -111px;
+    width: 76px;
+    height: 72px;
+  }
+  &.correct {
+    background-position: -162px -111px;
+    width: 72px;
+    height: 72px;
+  }
+  &.worth {
+    background-position: -315px -112px;
+    width: 71px;
+    height: 70px;
+  }
+  &.design {
+    background-position: -29px -21px;
+    width: 67px;
+    height: 64px;
+  }
+  &.quality {
+    background-position: -164px -19px;
+    width: 69px;
+    height: 64px;
+  }
+  &.tech {
+    background-position: -319px -19px;
+    width: 62px;
+    height: 64px;
+  }
+  &.service {
+    background-position: -443px -19px;
+    width: 73px;
+    height: 66px;
+  }
+  &.create {
+    background-position: -25px -209px;
+    width: 76px;
+    height: 83px;
+  }
+  &.study {
+    background-position: -152px -225px;
+    width: 91px;
+    height: 59px;
+  }
+  &.fun {
+    background-position: -315px -204px;
+    width: 69px;
+    height: 91px;
+  }
+  &.email {
+    background-position: -34px -352px;
+    width: 57px;
+    height: 41px;
+  }
+  &.join {
+    background-position: -147px -335px;
+    width: 101px;
+    height: 66px;
+  }
+  &.phone {
+    background-position: -323px -340px;
+    width: 55px;
+    height: 57px;
+  }
+}
+.text-left {
+  text-align:left;
+  &.line-height0 {
+    line-height:25px;
+  }
+}
+.pb65 {
+  padding-bottom: 65px;
+}
+@media (min-width: 992px) {
+  .assist-wrap {
+    .assist-item {
+      .word-cont {
+        width: 80%;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .assist-wrap {
+    .assist-item {
+      .word-cont {
+        width: 81%;
+      }
+    }
+  }
+}
+.ww-wrap{
+  &.user-wrap {
+    margin-bottom:0px;
+  }
+}
+
+

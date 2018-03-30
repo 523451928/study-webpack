@@ -1,0 +1,17 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends ../public/_layout.pug
+
+block hd
+  title 认证
+block bd
+  .bd(v-cloak)
+    top
+    userhead
+    user-edit-nav
+    .ww-wrap.user-wrap.bg-white
+      .user-cont-wrap.cont-wrap.container
+        .row-setting
+          bg
+          router-view
+    foot

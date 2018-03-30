@@ -1,0 +1,13 @@
+@import '../_ww-variables';
+@import '../mixins/opacity';
+@import '../list/pro-list';
+.user-center-wrap {
+  width: 980px;
+  min-height: 550px;
+  margin: 0 auto 0 auto;
+  padding-bottom: 60px;
+  position: relative;
+}
+.no-more{
+  text-align: center;
+}

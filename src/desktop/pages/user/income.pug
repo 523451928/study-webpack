@@ -1,0 +1,14 @@
+
+extends ../public/_layout.pug
+block hd
+  title 我的收入
+block bd
+  .bd(v-cloak)
+    top
+    userhead
+    user-edit-nav
+    .ww-wrap.user-wrap.bg-white
+      .user-cont-wrap.cont-wrap.container
+        bg
+        router-view
+    foot

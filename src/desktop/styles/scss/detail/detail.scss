@@ -1,0 +1,21 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * product-detail page
+ */
+
+@import '../_ww-variables';
+@import '../public/layout';
+@import '../public/public-component';
+@import '../mixins/opacity';
+@import '../list/pro-list';
+@import '../create-product/_mat.scss';
+@import '../../swiper.min.css';
+@import '../custom/_toolbar.scss';
+@import "../create-product/_pop.scss";
+@import '../create-product/_mat.scss';
+@import './_pro-detail';
+@import './_box';
+@import './_comment';
+@import '../pagi';

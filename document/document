@@ -1,0 +1,34 @@
+前端多页面架构
+
+---lib  第三方控件
+
+---src  wallwa.com 根目录
+
+  ---assets 项目相关静态文件 *images  *fonts 等
+    ---images
+    ...
+
+  ---components 组件库
+      ---dir(pagename/public) 对应页面目录  *public 公用组件库
+        ---app   当前页面 页面逻辑相关scripts
+      *********** 一般组件的script以util的命名方式直接放到组件根目录 **************
+      *********** 当script比较多时放到app目录 **************
+      *********** 墙蛙网核心定制功能相关js, 为了方便定制和上传产品部分公用，放到根目录/scripts/utils/custom下 **************
+
+  ---pages 非_开头的对应页面文件 当前一个页面对应一个pug文件，暂时不需要目录，以后若页面逻辑复杂可增加
+           *使用.pug  方便处理静态页面逻辑
+      ---public  公用模板文件
+
+  ---scripts  项目相关JS文件根目录
+     ---app 页面相关逻辑  当前一个页面对应一个入口js文件，复杂的业务逻辑在components/page/app中处理
+     ---tools  项目中用到的工具性脚本  常量脚本等
+     ---utils  功能性工具脚本  和tools类似  暂时不合并
+
+  ---styles  样式文件根目录
+     ---sass  区分原始文件中的sty文件目录  样式根目录
+        ---bootstrap  bootstrap对应UI
+        ---pageDir  页面对应样式 SASS加载依赖js,这边复杂的页面放到dir,留一个main.scss输出
+        page.scss 简单的页面 直接放到根目录
+  .sty  后续仅使用SASS编译
+
+

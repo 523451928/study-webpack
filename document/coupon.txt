@@ -1,0 +1,132 @@
+1. 注册优惠信息
+    方法: GET
+    地址: /coupon/register
+    返回: { Data:[{
+		LowMoney:Integer    // 大于零时最低消费金额
+		Amount:Integer      // 优惠金额或折扣比例
+		AmountScale:Boolean // 是否折扣比例
+    }] }
+
+2. 当前用户优惠信息
+    方法: GET
+    地址: /coupon/user
+    返回: { Data:[{
+    	User:{
+    	    Id:Integer         // 个人Id或机构Id
+    	    Nickname:String    // 用户昵称
+    	    Avatar:String      // 用户头像
+    	}
+
+    	// 个人
+    	Person:true
+        Code:String            // 优惠码
+        LowMoney:Integer       // 大于零时最低消费金额
+        Amount:Integer         // 优惠金额或折扣比例
+        AmountScale:Boolean    // 是否折扣比例
+        Reward:Integer         // 返现金额或返现比例
+        RewardScale:Boolean    // 是否返现比例
+
+		// 机构
+    	Agency:true
+        Code:String            // 优惠码
+        Name:String            // 机构名称
+        LowMoney:Integer       // 大于零时最低消费金额
+        Amount:Integer         // 优惠金额或折扣比例
+        AmountScale:Boolean    // 是否折扣比例
+        Behalf:Integer         // 代购时优惠金额或折扣比例
+        BehalfScale:Boolean    // 代购时是否折扣比例
+        Reward:Integer         // 返现金额或返现比例
+        RewardScale:Boolean    // 是否返现比例
+    }] }
+
+3. 指定用户优惠信息
+    地址: /coupon/user/<UserId:Integer>
+    /* 同当前用户优惠信息 */
+
+4. 领取优惠券
+    方法: POST
+    地址: /coupon/take
+    参数(URL Query): Code:String // 优惠码，可多个
+    返回: { Data:{} }
+    说明: 键为优惠码，值为InvalidCode, SelfDisallowed, AlreadyTaken, ExceededMaxCount, Exhausted, Success
+
+5. 优惠券列表
+    方法: GET
+    地址: /coupon/list
+    参数(URL Query):
+        Status:[Integer] // 优惠券状态
+        // 分页参数
+        Page:Integer
+        Count:Integer
+    返回: { Pager, Data:[{
+        Id:Integer       // 优惠券Id
+        Type:Integer     // 优惠券类型 1任务优惠 2注册优惠 3个人优惠 4机构优惠
+        FromId:Integer   // 领取优惠的任务Id或机构Id或个人Id
+        FromCode:String  // 领取优惠的优惠码
+        Status:Integer   // 优惠券状态 0正常 1已禁用 2已使用
+        Detail:{         // 优惠详情
+            // 注册优惠
+            LowMoney:Integer    // 大于零时最低消费金额
+            Amount:Integer      // 优惠金额或折扣比例
+            AmountScale:Boolean // 是否折扣比例
+
+            // 个人优惠
+            LowMoney:Integer       // 大于零时最低消费金额
+            Amount:Integer         // 优惠金额或折扣比例
+            AmountScale:Boolean    // 是否折扣比例
+            Reward:Integer         // 返现金额或返现比例
+            RewardScale:Boolean    // 是否返现比例
+
+            // 机构优惠
+            Name:String            // 机构名称
+            LowMoney:Integer       // 大于零时最低消费金额
+            Amount:Integer         // 优惠金额或折扣比例
+            AmountScale:Boolean    // 是否折扣比例
+            Reward:Integer         // 返现金额或返现比例
+            RewardScale:Boolean    // 是否返现比例
+            Behalf:Integer         // 代购时优惠金额或折扣比例
+            BehalfScale:Boolean    // 代购时是否折扣比例
+            Start:Integer          // 起始日期，单位时间戳秒
+            End:Integer            // 结束日期，单位时间戳秒
+
+            // 任务优惠
+            Name:String            // 优惠名称
+            Tag:String             // 优惠标签
+            Start:Integer          // 起始日期，单位时间戳秒
+            End:Integer            // 结束日期，单位时间戳秒
+            LimitScope:Integer     // 优惠限制范围 0全站 1定制 2商店
+            LimitIds:{             // 优惠限制Ids
+                Category:[Integer] // 品类
+                Product:[Integer]  // 产品
+                Work:[Integer]     // 作品
+                Artist:[Integer]   // 艺术家
+            }
+            Amount:Integer         // 优惠金额或折扣比例
+            AmountScale:Boolean    // 是否折扣比例
+            LowMoney:Integer       // 大于零时最低消费金额
+        }
+    }] }
+
+6. 获取优惠任务
+    方法: GET
+    地址: /coupon/task
+    参数(URL Query): Code:String // 优惠码，可多个
+    返回: { Data:{} }
+    说明: 键为优惠码，值为任务优惠(见优惠列表)
+
+7. 获取优惠活动
+    方法: GET
+    地址: /coupon/activity/<Id:Integer>
+    返回: { Data:{
+    	Id:Integer
+    	PageTitle:String
+    	BackgroundImage:String // 可选
+    	BackgroundColor:String
+    	InviterAvatar:String
+    	InviteContent:String
+    	CouponCode:[String]
+    	Link:String   // 可选
+    	LinkTitle:String
+    	Explain:String
+    	ExplainTitle:String
+    } }

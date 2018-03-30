@@ -1,0 +1,33 @@
+<%range $index, $work := $.Data%>
+<li>
+    <div class="work-detail">
+        <a href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="displays-link">
+            <display class="displays" entry-id="<%$work.EntryId%>" category-id="<%$work.CategoryId%>" product-id="<%index $work.Packets 1%>" pictures="<%call $.Marshal $work.Pictures%>" displays="<%call $.Marshal $work.Displays%>"></display>
+        </a>
+        <div class="pro-detail clearfix">
+        <span class="pro-price pull-right">¥ <%$work.Money%></span>
+        <div class="pull-left pro-title">
+            <a href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="default-hover-link"><%$work.Title%></a>
+        </div>
+        <div class="clearfix"></div>
+        <span class="pull-right">
+            <a target="_self" packets="<%call $.Marshal $work.Packets%>" category-id="<%$work.CategoryId%>" entry-id="<%$work.EntryId%>" work-id="<%$work.WorkId%>" class="default-link list-like-btn like-btn" href="javascript:void(0)">
+                //- <like work-id="<%$work.WorkId%>" category-id="<%$work.CategoryId%>" :liked="<%$work.Liked%>" like-count="<%$work.LikeCount%>" entry-id="<%$work.EntryId%>" :packets="<%call $.Marshal $work.Packets%>"></like>
+                <span<%if $work.Liked%> class="wa wa-heart-fill like"<%else%> class="wa wa-heart-fill"<%end%>></span>
+                <span class="like-count"><%$work.LikeCount%></span>
+            </a>
+        </span>
+        <div class="author-name pull-left">
+            <a class="default-hover-link" href="/artist/<%$work.UserId%>"><%$work.Nickname%></a>
+        </div>
+    </div>
+</li>
+//<%if call $.Mod $index 4%><%end%>
+<%else%>
+<div class="no-product">
+    <span>暂无产品</span>
+</div>
+<%end%>
+<%if $.NextPage%>
+    <a class="next-page" href="/artist/<%$.Artist.Id%>?<%call $.PageQuery $.NextPage%>&amp;PullUp=true"></a>
+<%end%>

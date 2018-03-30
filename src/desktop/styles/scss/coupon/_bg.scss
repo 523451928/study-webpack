@@ -1,0 +1,269 @@
+$calendar-icon: '~images/cxcalendar.png';
+.bg-white{
+  background: #FFFFFF;
+}
+.profile-menu-list{
+  li{
+    margin-top: 25px;
+    text-align:center;
+    a {
+      color:#aaa;
+      &:hover,
+      &:focus,
+      &:active{
+        text-decoration: none;
+      }
+      &.active {
+        font-weight:700;
+        color:#565a5c;
+      }
+    }
+  }
+}
+
+.inv-list {
+  li {
+    margin-bottom: 10px;
+    .info {
+      display: inline-block;
+      margin-right: 10px;
+      &.inv-tit {
+        .inv-tit-update {
+          display: none;
+          input {
+            border: 0 none;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
+        &.stat-update {
+          .inv-tit-update {
+            display: block;
+          }
+          .words {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.social{
+  .social-title{
+    margin: 40px 0 20px 0;
+  }
+  .wa-wechat.active{
+    color:#64ab23;
+  }
+  .wa-weibo.active{
+    color:#d52b2a;
+  }
+  .we-qq.active{
+    color: #6ea8df;
+  }
+  .share-social{
+    i {
+      -webkit-transition: transform 0.5s linear;
+      transition: transform 0.5s linear;
+      cursor: pointer;
+    }
+    &:hover {
+      i {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .social-ac-list {
+    > li {
+      overflow: hidden;
+      border-bottom: 1px solid $hr-base;
+      height: 53px;
+      line-height: 53px;
+      .item {
+        display: inline-block;
+        vertical-align: middle;
+        .social-i {
+          vertical-align: middle;
+        }
+
+      }
+    }
+  }
+  .social-upload{
+    position: relative;
+    padding: 15px 0;
+  }
+  .social-upload-btn{
+    display:block;
+    width: 100px;
+    height: 100px;
+    top:-1px;
+    left: -1px;
+    background-color: #fff;
+    border: 1px solid $hr-base-dark;
+    text-align: center;
+    cursor: pointer;
+    .wa{
+      font-size: 50px;
+      color: $text-color-base;
+      line-height: 100px;
+    }
+    &:hover{
+      & .wa{
+        color:$brand-primary ;
+      }
+      border-color: $brand-primary;
+    }
+  }
+  .center-social-area{
+    position: relative;
+  }
+  .social-ewm{
+    position: absolute;
+    left: 112px;
+    display: none;
+    width: 360px;
+    height: 360px;
+    border: 1px solid $hr-base-dark;
+    overflow: hidden;
+    &.init-domain{
+      .social-upload-btn{
+        display: none;
+      }
+    }
+    &.no-img{
+      & .mask{
+        display: block;
+      }
+    }
+    .def-image{
+      width: 100%;
+      height: 100%;
+    }
+    & .mask{
+      position: absolute;
+      display: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.6);
+    }
+    & .update-erweima{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+    }
+    .big-image{
+      position: absolute;
+      left: -5px;
+      bottom: -5px;
+      max-width: 500px;
+      max-height: 500px;
+      z-index: 999;
+      -webkit-transition-property: opacity;
+      transition-property: opacity;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+      opacity: 0;
+    }
+    &:hover {
+      overflow: visible;
+      .big-image{
+        opacity: 1;
+      }
+      .social-upload-btn{
+        display: block;
+      }
+    }
+  }
+  .social-ewm-special{
+    display: block;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+.user-form {
+  .form-control {
+    width: 400px;
+    //cursor: default;
+  }
+  .sex-group {
+    .radio-inline {
+      text-align: left;
+    }
+  }
+  .birth-group {
+    .form-control{
+      width: 200px;
+      background: url($calendar-icon) no-repeat right center content-box;
+    }
+  }
+  .place-group {
+    select {
+      max-width: 180px;
+      float: left;
+      overflow: hidden;
+      margin-right: 10px;
+    }
+  }
+  .form-cont {
+    .msg {
+      float: right;
+      line-height: 34px;
+      margin-left: 10px;
+    }
+  }
+
+}
+
+// 手机验证
+.mobile-form-group{
+  .valid-item {
+    display: none;
+  }
+  .form-control {
+    width: 200px;
+  }
+  .normal-item {
+    .form-control {
+      display: inline-block;
+      //margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+  .user-phone-select{
+    height: 34px;
+    line-height: 34px;
+    outline: none;
+  }
+  .valid-block {
+    border: 1px solid $hr-base-dark;
+    padding: 6px;
+    display: none;
+  }
+  &.validated {
+    .valid-item {
+      display: block;
+    }
+    .normal-item {
+      display: none;
+    }
+  }
+}
+.identity-span{
+  color: #82888a;
+}

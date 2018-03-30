@@ -1,0 +1,15 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * product-detail page
+ */
+ 
+@import '../core/reset';
+@import '../core/variable.scss';
+@import '../_ww-variables';
+@import './_pro-detail';
+body {
+  font-size: .14rem;
+  color: $c-fc-1;
+}

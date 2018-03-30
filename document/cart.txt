@@ -1,0 +1,68 @@
+购物车
+  1. 购物车列表:
+    方法: GET
+    地址: /cart/list
+    返回: { Data:[{
+      Id:Integer       // 购物车Id
+      Count:Integer    // 商品数量
+      Discount:Integer // 添加购物车时的商品折扣
+      Price:Integer    // 添加购物车时的商品原价
+      Money:Integer    // 添加购物车时的商品售价
+      Checked:Boolean  // 是否选中
+      Item:Object{
+        Id:Integer                 // 商品Id
+        Status:Integer             // 商品状态, 0正常, 1商品失效, 2商品已下线或已删除(此时无其余字段)
+        Discount:Integer           // 最新的商品折扣
+        Price:Integer              // 最新的商品原价
+        Money:Integer              // 最新的商品售价
+        Work:Object{               // 商品为定制时无此字段
+          Id:Integer               // 作品Id
+          Title:String             // 作品标题
+        }
+        CategoryId:Integer         // 品类Id
+        PhotoWall,Entries,Pictures //* 通用商品展示数据
+      }
+    }] }
+  2. 设置购物车:
+    方法: POST
+    地址: /cart/set/${CartId}
+    参数:
+      Count:Integer        // 商品数量
+      Checked:Boolean      // 是否选中
+    返回: { Data:Integer } // 购物车Id
+  3. 全选购物车:
+    方法: POST
+    地址: /cart/batch/set
+    参数: Checked:Boolean  // 是否选中
+    返回: { Data:Integer } // 影响购物车数量
+  4. 删除购物车:
+    方法: DELETE
+    地址: /cart/remove
+    参数: Id:[Integer]     // 购物车Id, 可多个
+    返回: { Data:Integer } // 删除的购物车数量
+  5. 购物车下单列表:
+    方法: GET
+    地址: /cart/purchase
+    参数(URL Query):
+        Id:[Integer]   // 购物车Id, 可多个，不传则默认全部选中的购物车
+    返回: {
+      Data:[{
+        Id:Integer       // 购物车Id
+        Count:Integer    // 商品数量
+        Item:Object{
+            Id:Integer                 // 商品Id
+            Discount:Integer           // 最新的商品折扣
+            Price:Integer              // 最新的商品原价
+            Money:Integer              // 最新的商品售价
+            Work:Object{               // 商品为定制时无此字段
+              Id:Integer               // 作品Id
+              UserId:Integer           // 用户(艺术家)Id
+              Title:String             // 作品标题
+            }
+            CategoryId:Integer         // 品类Id
+            Packets                    //
+            PhotoWall,Entries,Pictures //* 通用商品展示数据
+        }
+      }],
+      Postage:Integer // 邮费，0为免邮
+    }

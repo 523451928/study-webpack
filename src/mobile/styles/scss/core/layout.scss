@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@import "./variable.scss";
+
+// 0表示flex 1表示Inline-flex
+@mixin flex($direction: column, $flex: 0, $wrap: nowrap, $main: flex-start, $align: flex-start) {
+  @if ($flex == 0) {
+    display: flex;
+  } @else {
+    display: inline-flex;
+  }
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $main;
+}

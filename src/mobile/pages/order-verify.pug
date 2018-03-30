@@ -1,0 +1,7 @@
+extends public/_layout.pug
+block hd
+  title 订单确认
+block bd
+  .bd(v-cloak)
+    <order-title :title="'确认订单'"></order-title>
+    <order-verify></order-verify>

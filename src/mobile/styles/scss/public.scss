@@ -1,0 +1,85 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ */
+
+@import 'ww-variables';
+html, body, .bd{
+  //height: 100%;
+  overflow-x: hidden;
+}
+a{
+  &:focus{
+    text-decoration: none !important;
+  }
+  &:hover{
+    text-decoration: none !important;
+  }
+}
+.ww-wrap {
+  background-color: $bg-base;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  //padding-top: 64px;
+  .cont-wrap{
+    position: relative;
+  }
+  &.user-wrap {
+    //margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}
+.bg-white{
+  background-color: #fff;
+}
+
+.nav>li, .nav>li>a {
+  position: relative;
+  display: block;
+  &:hover,&:focus{
+    text-decoration: none;
+  }
+}
+.no-pro-msg h2 {
+  color: #aaa;
+  text-align: left;
+  font-size: 24px;
+}
+@media (min-width: 768px){
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+}
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 30px;
+  height: 30px;
+  overflow: scroll;
+}
+.uploader{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.uploader-input{
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer!important;
+}
+.default-link{
+  color: #565a5c;
+  text-decoration: none;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $text-color-base;
+    text-decoration: none;
+  }
+}

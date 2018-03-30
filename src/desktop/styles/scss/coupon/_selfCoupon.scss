@@ -1,0 +1,151 @@
+.user-wrap {
+  background-color: #ffffff;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default {
+  border-color: #dce0e0;
+  > .panel-heading {
+    color: #333333;
+    background-color: #EDEFED;
+    border-color: #dce0e0;
+  }
+}
+.panel-heading {
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+}
+.panel-body {
+  padding: 15px;
+}
+.coupon-panel {
+  .top {
+    border-bottom: 1px solid #dce0e0;
+    padding: 10px 0 25px;
+    .tit {
+      font-size: 20px;
+    }
+    .wa-discount {
+      color: #f1cf76;
+      font-size: 26px;
+      top: 0;
+      vertical-align: bottom;
+    }
+    .notFloat {
+      display: inline-block;
+      float: inherit;
+    }
+    .desc {
+      display:inline-block;
+    }
+  }
+  .bottom {
+    padding:40px 0;
+    .desc {
+      color: #82888a;
+      margin-right: 20px;
+      vertical-align: middle;
+      strong {
+        display: inline-block;
+        font-size: 25px;
+        margin: 0 5px;
+        font-weight: 500;
+        color: #565a5c;
+      }
+    }
+    .social-list {
+      position: relative;
+      margin-top: 5px;
+      span {
+        line-height: 1.92857143;
+        vertical-align: middle;
+      }
+      .social-color {
+        vertical-align: middle;
+      }
+      .btn {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        width: 120px;
+        margin-right: 10px;
+        overflow: hidden;
+        i {
+          -webkit-transition: transform .5s ease-out;
+          transition: transform .5s ease-out
+        }
+        &:hover{
+          i {
+            -webkit-transform: rotate(1turn);
+            transform: rotate(1turn)
+          }
+        }
+      }
+    }
+  }
+}
+.mt10 {
+  margin-top:10px;
+}
+.mb10 {
+  margin-bottom:10px;
+}
+.ww-icon {
+  background: url('http://wallwa.com/images/ww-icon.png') no-repeat;
+  display: inline-block;
+  &.social-color {
+    width:27px;
+    height:27px;
+    &.weibo-light-color {
+      background-position: -6px -371px;
+    }
+    &.qq-light-color {
+      background-position: -35px -371px;
+    }
+    &.weixin-light-color {
+      background-position: -65px -371px;
+    }
+    &.douban-light-color {
+      background-position: -95px -371px;
+    }
+  }
+}
+.share-erweima {
+  position: absolute;
+  //display: none;
+  font-size: 14px;
+  left: 268px;
+  width: 220px;
+  border: 1px solid #dce0e0;
+  padding: 10px;
+  border-radius: 0 0 2px 2px;
+  text-align: center;
+  background-color: #fff;
+  top: 45px;
+  z-index: 9;
+  .code {
+    max-width: 150px;
+  }
+}
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
+  filter: alpha(opacity=20)
+}
+.close:focus,.close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .5;
+  filter: alpha(opacity=50)
+}

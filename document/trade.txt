@@ -1,0 +1,148 @@
+1. 下单:
+    方法: POST
+    地址: /trade/add
+    参数(JSON): {
+        AddressId:Integer   // 地址Id
+        InvoiceId:Integer   // 增值税发票Id
+        InvoiceTitle:String // 发票抬头
+        CartIds:[Integer]   // 购物车Id列表
+        PayType:Integer     // 支付方式，1在线支付
+        PayMoney:Integer    // 支付金额，单位分
+        BuyerRemark:String  // 买家备注
+        CouponId:Integer    // 优惠券Id
+    }
+    返回: { Data:Integer } // 交易Id
+
+2. 订单列表:
+    方法: GET
+    地址: /trade/list
+    参数(URL Query):
+        Status:[Integer] // 订单状态
+        // 分页参数
+        Page:Integer
+        Count:Integer
+    返回: { Pager, Data:[{
+        Id:Integer       // 交易Id
+        Status:Integer   // 交易状态，1待付款 2待发货 3已发货 4已完成 5已关闭 6已退款
+        PayType:Integer  // 支付方式，1在线支付
+        PayMoney:Integer // 支付金额，单位分
+        Inserted:Integer // 下单时间，单位毫秒
+        Orders: [{
+            Id:Integer                     // 订单Id
+            Status:Integer                 // 订单状态，1待付款 2待发货 3已发货 4已完成 5已关闭 6已退款
+            Discount:Integer               // 折扣
+            Count:Integr                   // 数量
+            Money:Integr                   // 价格，已计算折扣和佣金，佣金仅商店
+            PayMoney:Integer               // 支付金额，已计算数量和优惠等
+            Item:{
+                Id:Integer                 // 商品Id
+                Work:{                     // 仅商店商品
+                    Id:Integer             // 作品Id
+                    Title:String           // 作品标题
+                }
+                CategoryId:Integer         // 品类Id
+                PhotoWall,Entries,Pictures //* 通用商品展示数据
+            }
+        }]
+    }] }
+
+3. 关闭订单
+    方法: POST
+    地址: /trade/close/<TradeId:Integer>
+    返回: { Data:Integer }
+    说明: 成功返回TradeId，失败返回null
+
+4. 交易详情
+    方法: GET
+    地址: /trade/get/<TradeId:Integer>
+    返回: { Data:{
+        Id:Integer       // 交易Id
+        Status:Integer   // 交易状态，1待付款 2待发货 3已发货 4已完成 5已关闭 6已退款
+        PayType:Integer  // 支付方式，1在线支付
+        PayMoney:Integer // 支付金额，单位分
+        Inserted:Integer // 下单时间，单位毫秒
+        Orders: [{
+            Id:Integer                     // 订单Id
+            Status:Integer                 // 订单状态，1待付款 2待发货 3已发货 4已完成 5已关闭 6已退款
+            Discount:Integer               // 折扣
+            Count:Integr                   // 数量
+            Money:Integr                   // 价格，已计算折扣和佣金，佣金仅商店
+            PayMoney:Integer               // 支付金额，已计算数量和优惠等
+            Item:{
+                Id:Integer                 // 商品Id
+                Work:{                     // 仅商店商品
+                   Id:Integer              // 作品Id
+                   Title:String            // 作品标题
+                }
+                CategoryId:Integer         // 品类Id
+                PhotoWall,Entries,Pictures //* 通用商品展示数据
+            }
+        }],
+        OrderFlows: [{
+            OldStatus:Integer // 旧状态
+            NewStatus:Integer // 新状态
+            Inserted:Integer  // 状态变化时间
+        }],
+        BuyerRemark:String  // 买家备注
+        Address:Address     //* 见地址
+        Invoice:Invoice     //* 见发票
+        InvoiceTitle:String // 发票抬头
+        Expresses:[{        // 快递信息
+            Company:String // 快递公司 shunfeng顺丰 shentong申通 zhongtong中通
+            Number:String  // 快递单号
+            Data:String    // JSON，快递信息
+            Orders:[[
+                OrderId:Integer // 订单Id
+                Count:Integer   // 发货数量
+            ]]
+            Id:Integer     // 快递Id
+        }]
+    } }
+
+5. 再次购买
+    方法: POST
+    地址: /trade/purchase/<TradeId:Integer>
+    返回: { Data:{
+        Yes:Integer      // 加购成功商品数量
+        No:Integer       // 加购失败商品数量
+    } }
+
+
+// 快递信息
+名称 类型 示例值 描述
+└ status string  polling 监控状态:polling:监控中，shutdown:结束，abort:中止，updateall：重新推送。其中当快递单为已签收时status=shutdown，当message为“3天查询无记录”或“60天无变化时”status= abort ，对于stuatus=abort的状度，需要增加额外的处理逻辑
+└ billstatus  string  got 包括got、sending、check三个状态，由于意义不大，已弃用，请忽略
+└ message string    监控状态相关消息，如:3天查询无记录，60天无变化
+└ autoCheck string  1 快递公司编码是否出错，0为本推送信息对应的是贵司提交的原始快递公司编码，1为本推送信息对应的是我方纠正后的新的快递公司编码。一个单如果我们连续3天都查不到结果，我方会（1）判断一次贵司提交的快递公司编码是否正确，如果正确，给贵司的回调接口（callbackurl）推送带有如下字段的信息：autoCheck=0、comOld与comNew都为空；（2）如果贵司提交的快递公司编码出错，我们会帮忙用正确的快递公司编码+原来的运单号重新提交订阅并开启监控（后续如果监控到单号有更新就给贵司的回调接口（callbackurl）推送带有如下字段的信息：autoCheck=1、comOld=原来的公司编码、comNew=新的公司编码）；并且给贵方的回调接口（callbackurl）推送一条含有如下字段的信息：status=abort、autoCheck=0、comOld为空、comNew=纠正后的快递公司编码。
+└ comOld  string  yuantong  贵司提交的原始的快递公司编码。详细见autoCheck后说明。若开启了国际版（即在订阅请求中增加字段interCom=1），则回调请求中暂无此字段
+└ comNew  string  ems 我司纠正后的新的快递公司编码。详细见autoCheck后说明。若开启了国际版（即在订阅请求中增加字段interCom=1），则回调请求中暂无此字段
+└ -lastResult lastResult    最新查询结果，若在订阅报文中通过interCom字段开通了国际版，则此lastResult表示出发国的查询结果，全量，倒序（即时间最新的在最前）
+   └ message  string    消息体，请忽略
+   └ state  string  0 快递单当前签收状态，包括0在途中、1已揽收、2疑难、3已签收、4退签、5同城派送中、6退回、7转单等7个状态，其中4-7需要另外开通才有效
+   └ status string  200 通讯状态，请忽略
+   └ condition  string  F00 快递单明细状态标记，暂未实现，请忽略
+   └ ischeck  string  0 是否签收标记
+   └ com  string  yuantong  快递公司编码,一律用小写字母
+   └ nu string  V030344422  单号
+   └ -data  data    数组，包含多个对象，每个对象字段如展开所示
+     └ context  string  上海分拨中心/装件入车扫描 内容
+     └ time string  2012-08-28 16:33:19 时间，原始格式
+     └ ftime  string  2012-08-28 16:33:19 格式化后时间
+     └ status string  在途  本数据元对应的签收状态。只有在开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现
+     └ areaCode string  310000000000  本数据元对应的行政区域的编码，只有在开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现
+     └ areaName string  上海市 本数据元对应的行政区域的名称，开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现
+└ -destResult destResult    表示最新的目的国家的查询结果，只有在订阅报文中通过interCom=1字段开通了国际版才会显示此数据元，全量，倒序（即时间最新的在最前）
+   └ message  string    消息体，请忽略
+   └ state  string  0 快递单当前签收状态，包括0在途中、1已揽收、2疑难、3已签收、4退签、5同城派送中、6退回、7转单等7个状态，其中4-7需要另外开通才有效
+   └ status string  200 通讯状态，请忽略
+   └ condition  string  F00 快递单明细状态标记，暂未实现，请忽略
+   └ ischeck  string  0 是否签收标记
+   └ com  string  speedpost 快递公司编码,一律用小写字母
+   └ nu string  EX015142583SG 单号
+   └ -data  data    数组，包含多个对象，每个对象字段如展开所示
+     └ context  string  [01000]Final delivery Delivered to: SLOVESNOV 内容
+     └ time string  2016-05-24 14:00:00 时间，原始格式
+     └ ftime  string  2016-05-24 14:00:00 格式化后时间
+     └ status string  在途  本数据元对应的签收状态。只有在开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现
+     └ areaCode string  310000000000  本数据元对应的行政区域的编码，只有在开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现
+     └ areaName string  上海市 本数据元对应的行政区域的名称，开通签收状态服务（见上面"status"后的说明）且在订阅接口中提交resultv2标记后才会出现

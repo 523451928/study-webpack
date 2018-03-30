@@ -1,0 +1,41 @@
+.follow-area{
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  margin-left: 50px;
+  z-index: 9;
+  a{
+    margin-top:10px;
+    padding:5px 15px;
+    width: 80px;
+    height: 30px;
+    .flw-text-normal{
+      display: none;
+    }
+    .flw-text-hover{
+      display: none;
+    }
+    .no-flw-text{
+      display: inline;
+    }
+    &:hover{
+      border-color: #adadad;
+    }
+    &.active{
+      &:hover{
+        .flw-text-hover{
+          display: inline;
+        }
+        .flw-text-normal{
+          display: none;
+        }
+      }
+      .no-flw-text{
+        display: none;
+      }
+      .flw-text-normal{
+        display: inline;
+      }
+    }
+  }
+}

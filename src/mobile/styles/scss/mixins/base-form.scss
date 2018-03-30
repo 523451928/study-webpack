@@ -1,0 +1,17 @@
+// 基础的表单 base form
+.form-base {
+  label {
+    width: 120px;
+    text-align: right;
+    vertical-align: top;
+  }
+
+  .form-cont {
+    display: inline-block;
+    position: relative;
+    .form-cont-input{
+      display: inline-block;
+      position: relative;
+    }
+  }
+}

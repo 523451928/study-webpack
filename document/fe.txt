@@ -1,0 +1,22 @@
+ 页头:
+  方法: GET
+  地址: /_header
+  返回: { Data:{
+    UserId:Integer?   // 用户Id
+    Nickname:String?  // 用户昵称
+    Avatar:String?    // 头像文件名
+    CartCount:Integer // 购物车数量
+  } }
+  说明: ?仅当用户已登录
+
+我的:
+  方法: GET
+  地址: /_me
+  返回: { Data:{
+    FollowCount:Integer // 关注数量
+    LikeCount:Integer   // 喜欢数量
+    CouponCount:Integer // 优惠券数量
+    WaCoin:Integer      // 蛙币金额，单位分
+    AgencyId:Integer?   // 机构Id，仅当此用户为机构用户
+    UserCode:String     // 专属优惠码
+  } }

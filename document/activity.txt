@@ -1,0 +1,19 @@
+1. 获取活动
+  方法: GET
+  地址: /activity/<Id:Integer>
+  返回: { Data:{
+      Id:Integer
+      PageTitle:String
+      TaskPartner:String
+      TaskTitle:String
+      PartnerAvatar:String
+      TaskContent:String
+      BackgroundImage:String
+      TopIcon:String
+      BackgroundColor:String
+      RuleColor:String
+      CouponCode:String
+      RuleTitle:String
+      RuleDetail:String
+      GuangURL:String
+  } }

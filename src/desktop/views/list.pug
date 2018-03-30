@@ -1,0 +1,120 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends ../pages/public/_layout.pug
+
+block hd
+  title 墙蛙商店(线上)
+block bd
+  .bd(v-cloak)
+    top
+    .ww-wrap.product-wrap.public-pro-wrap
+      category
+      banner
+      childcategory
+      .product-list-con
+        .product-sort-area.product-sorts-list.clearfix
+          <div class="product-list-con">
+            <div class="sort">
+              <span class="tags-cate-title tags-title">排序：</span>
+              <a<%if call $.IsAsc 1%> class="asc" <%else if call $.IsDesc 1%> class="desc"<%end%> href="/work?<%call $.OrderQuery 1%>">综合</a>
+              //<a<%if call $.IsAsc 3%> class="asc" <%else if call $.IsDesc 3%> class="desc"<%end%> href="/work?<%call $.OrderQuery 3%>">销量</a>
+              <a<%if call $.IsAsc 4%> class="asc" <%else if call $.IsDesc 4%> class="desc"<%end%> href="/work?<%call $.OrderQuery 4%>">喜欢</a>
+              <a<%if call $.IsAsc 2%> class="asc" <%else if call $.IsDesc 2%> class="desc"<%end%> href="/work?<%call $.OrderQuery 2%>">价格
+                <i class="sort-icon"></i>
+              </a>
+              <span class="search-query"></span>
+              <span class="more-sort ">更多排序
+                <span class="rotate wa-angle-down "></span>
+              </span>
+            </div>
+            //- 标签开始
+            <div class="product-sort-area product-sorts-list clearfix">
+              <div class="tags<%if $.HasTag%> open<%end%> clearfix">
+                <div class="kind-tags tags-list clearfix tags-lists">
+                  <span class="tags-cate-title tags-title">分类：</span>
+                  <ul class="tags-list-ul clearfix">
+                    <li>
+                      <a <%if not $.HasKindTag%> class="active"<%end%> href="/work?<%call $.AllTagQuery $.KindTags%>">全部</a>
+                    </li>
+                    <%range $index, $kindTag := $.KindTags%>
+                    <li>
+                      <a <%if call $.IsSelectedTag $kindTag.Id%> class="active"<%end%> href="/work?<%call $.TagQuery $kindTag.Id%>"><%$kindTag.Name%><span class="wa wa-close tags-x"></span></a>
+                    </li>
+                    <%end%>
+                  </ul>
+                </div>
+                <div class="label-tags tags-list clearfix tags-lists">
+                  <span class="tags-cate-title tags-title">标签：</span>
+                  <ul class="tags-list-ul clearfix">
+                    <li>
+                      <a <%if not $.HasLabelTag%> class="active"<%end%> href="/work?<%call $.AllTagQuery $.LabelTags%>">全部</a>
+                    </li>
+                    <%range $index, $labelTag := $.LabelTags%>
+                      <li>
+                        <a <%if call $.IsSelectedTag $labelTag.Id%> class="active"<%end%>href="/work?<%call $.TagQuery $labelTag.Id%>"><%$labelTag.Name%><span class="wa wa-close tags-x"></span></a>
+                      </li>
+                    <%end%>
+                  </ul>
+                </div>
+                <div class="color-tags tags-list clearfix tags-lists">
+                  <span class="tags-cate-title tags-title">颜色：</span>
+                  <div class="tags-list tags-color-area clearfix">
+                    <span>
+                      <a <%if not $.HasColorTag%> class="active"<%end%> href="/work?<%call $.AllTagQuery $.ColorTags%>">全部</a>
+                    </span>
+                    <%range $index, $colorTag := $.ColorTags%>
+                      <label class="checkbox-inline" >
+                        <a class="block-tag-block all-link <%if call $.IsSelectedTag $colorTag.Id%> active<%end%>" title="<%$colorTag.Name%>" href="/work?<%call $.TagQuery $colorTag.Id%>" style="background-color: <%$colorTag.Color%>;"></a>
+                      </label>
+                    <%end%>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 标签结束-->
+            <!-- 详情开始-->
+            <div class="product-list-area clearfix">
+              <%range $index, $work := $.Data%>
+              <div class="pro-list grey-border">
+                <a target="blank" href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="displays-link">
+                  <display class="displays" entry-id="<%$work.EntryId%>" category-id="<%$work.CategoryId%>" product-id="<%index $work.Packets 1%>" :pictures="<%call $.Marshal $work.Pictures%>" :displays="<%call $.Marshal $work.Displays%>"></display>
+                </a>
+                <div class="pro-detail clearfix">
+                  <span class="pro-price pull-right">¥ <%$work.Money%></span>
+                  <div class="pull-left pro-title">
+                    <a target="black" href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="default-hover-link"><%$work.Title%></a>
+                  </div>
+                  <div class="clearfix"></div>
+                  <span class="pull-right">
+                    <a target="blank" packets="<%call $.Marshal $work.Packets%>" category-id="<%$work.CategoryId%>" entry-id="<%$work.EntryId%>" work-id="<%$work.WorkId%>" class="default-link list-like-btn like-btn" href="javascript:void(0)">
+                      <span<%if $work.Liked%> class="wa wa-heart-fill active"<%else%> class="wa wa-heart-fill"<%end%>></span>
+                      <span class="like-count"><%$work.LikeCount%></span>
+                    </a>
+                  </span>
+                  <div class="author-name pull-left">
+                    <a class="default-hover-link" href="/artist/<%$work.UserId%>"><%$work.Nickname%></a>
+                  </div>
+                </div>
+              </div>
+              //<%if call $.Mod $index 4%><br><%end%>
+              <%else%>
+              <span>暂无产品</span>
+              <%end%>
+            </div>
+          <!-- 详情结束-->
+          </div>
+            <!-- 分页开始-->
+            <div class="page-bar text-center">
+              <ul class="pagination">
+                <%range $index, $page := (call $.Pages 5)%>
+                <li class="page-item <%if eq $page $.Page%>active<%end%>">
+                  <a href="/work?<%call $.PageQuery $page%>">
+                    <span class="page-link"><%if lt $page 0%>...<%else%><%$page%><%end%></span>
+                  </a>
+                </li>
+                <%end%>
+              </ul>
+            </div>
+            <!-- 分页结束-->
+          </div>
+      foot

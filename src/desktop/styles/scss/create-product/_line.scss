@@ -1,0 +1,33 @@
+@import "../public/variable.scss";
+@import "../public/public-component.scss";
+@import "../public/mixin.scss";
+
+.m-edit-line {
+  width: 100%;
+  >.line-list {
+    font-size: 0;
+    >.list-item {
+      margin: 0 5px 8px 0;
+      display: inline-block;
+      box-sizing: border-box;
+      border: 1px solid $c-bc-2;
+      width: 65px;
+      cursor: pointer;
+      &:nth-of-type(4n) {
+        margin-right: 0;
+      }
+      &.active {
+        border: 3px solid $c-jxc-1;
+      }
+      &:hover {
+        border: 3px solid $c-jxc-1;
+      }
+      >img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+

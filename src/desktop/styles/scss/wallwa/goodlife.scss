@@ -1,0 +1,276 @@
+.layer-md{
+  width: 1000px;
+}
+.scale-enter-active,.scale-leave-active {
+  transition: all .3s ease;
+}
+.scale-enter, .scale-leave-active {
+  opacity: 0;
+  .group-modal {
+    opacity: 0 !important;
+    transform: scale(0.3) !important;
+  }
+}
+//周一惠生活
+.discount-life {
+  a {
+    text-decoration: none;
+  }
+  .discount-life-wrap {
+    margin-top: 40px;
+    height: 280px;
+    .discount-life-item {
+      position: relative;
+      float: left;
+      margin-right: 10px;
+      height: 280px;
+      .item-p {
+        position: absolute;
+        p:nth-of-type(1) {
+          font-size: 22px;
+          color: #565A5C;
+          font-weight: 500;
+          margin-bottom: 3px;
+        }
+        p:nth-of-type(2) {
+          font-size: 14px;
+          color: #82888a;
+        }
+      }
+    }
+    .item-left {
+      width: 490px;
+      .item-p {
+        top: 33px;
+        left: 50px;
+      }
+    }
+    .item-right {
+      margin-right: 0;
+      width: 245px;
+      .item-p {
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+    .item-center {
+      width: 245px;
+      .item-p {
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
+  }
+}
+.item-animate {
+  transition: all 0.2s linear ;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  &:hover {
+    transform: translate3d(0,-2px,0);
+    -webkit-transform: translate3d(0,-2px,0);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    -o-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+}
+//绿植合集
+.green-plant {
+  h2{
+    text-align: center;
+    color: #565a5c;
+    font-size: 40px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding-top: 55px;
+    margin-bottom: 38px;
+  }
+  .item-top {
+    margin-bottom: 10px;
+  }
+  .fl{
+    float: left;
+  }
+  .green-plant-left {
+    margin-right: 10px;
+    width: 210px;
+  }
+  .green-plant-center {
+    margin-right: 10px;
+    width: 560px;
+  }
+  .green-plant-right{
+    width: 210px;
+  }
+}
+//环球合作
+.world-cooperation {
+  h2 {
+    padding-top: 55px;
+  }
+}
+//为你
+.do-for-you {
+  .special-h2 {
+    color: #565A5C;
+    text-align: center;
+    font-size: 40px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding-top: 55px;
+    margin-bottom: 38px;
+  }
+  .dfyou-lists {
+    overflow: hidden;
+    .dfyou-list {
+      float: left;
+      a {
+        text-decoration: none;
+        &:hover,&:focus {
+          text-decoration: none;
+        }
+      }
+    }
+    .dfyou-title {
+      position: relative;
+      h2 {
+        font-size: 22px;
+        color: #565A5C;
+        margin-bottom: 18px;
+      }
+      p {
+        font-size: 14px;
+        color: #82888a;
+        margin-bottom: 2px;
+      }
+      width: 250px;
+      height: 250px;
+      padding: 78px 0 0 30px;
+      background-color: #F9F9F9;
+    }
+  }
+  .dfyou-two-wrap {
+    width: 500px;
+    height: 250px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    //文字标题
+    .dfyou-title-mask {
+      display: block;
+      transition: all 0.3s ease-out;
+    }
+    .button-mask {
+      position: absolute;
+      left: 12%;
+      bottom: -17px;
+      font-size: 14px;
+      opacity: 0;
+      transition: all 0.3s ease-out;
+      .much-icon {
+        padding-left: 9px;
+        font-size: 13px;
+      }
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    &:hover .button-mask {
+      text-decoration: none;
+      opacity: 1;
+      bottom: 27px;
+    }
+    &:hover .dfyou-title-mask {
+      transform: translateY(-25px);
+    }
+  }
+}
+//线下案例
+.offline-case {
+  h2 {
+    padding-top: 55px;
+  }
+}
+.group-modal-wrap {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  z-index: 1031;
+  .group-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transition: all .3s;
+    //transform: translate(-50%, -48%);
+    margin-left: -300px;
+    margin-top: -180px;
+    background-color: #FFFFFF;
+    width: 600px;
+    height: 377px;
+    padding: 20px;
+    z-index: 1032;
+    border-radius: 2px;
+    .group-modal-title {
+      .wa {
+        font-size: 14px;
+        color: #aaaaaa;
+        cursor: pointer;
+      }
+    }
+    .group-modal-desc {
+      h1 {
+        font-size: 30px;
+        color: #565A5C;
+        text-align: center;
+        margin-top: 36px;
+      }
+      .user-product-hr {
+        width: 26px;
+        height: 4px;
+        display: block;
+        margin: 20px auto;
+        background-color: #82888a;
+      }
+      p {
+        text-align: center;
+        color: #565A5C;
+        font-size: 14px;
+        .span-td {
+          text-decoration: underline;
+          font-weight: 700;
+        }
+      }
+    }
+    .group-modal-btn {
+      width: 160px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      border-radius: 25px;
+      margin: 0 auto;
+      font-size: 14px;
+      background-color: #26A7C7;
+      margin-top: 30px;
+      a {
+        color: #FFFFFF;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover,&:focus {
+        text-decoration: none;
+        color: #FFFFFF;
+      }
+    }
+  }
+}

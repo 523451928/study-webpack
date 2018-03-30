@@ -1,0 +1,223 @@
+body,html,.bd{
+  height: 100%;
+}
+.warp {
+  background:#f5f5f5;
+  height:100%;
+}
+.user-head-bnr{
+  z-index: 1;
+  border-bottom: 1px solid #ddd;
+  height:100px;
+  line-height: 100px;
+  background-image: url('~images/user/user-nav-bg.jpg');
+  background-position:50% 50% ;
+  background-repeat: repeat-x;
+  position: relative;
+  .user-set-link {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    .wa {
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+  .user-bnr-info {
+    .head-icon {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      font-size: 14px;
+      margin: 0 8px 0 20px;
+      .item {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+    }
+    .wa-right{
+      color: #fff;
+      position: relative;
+      top: 2px;
+      left: 2px;
+    }
+    .user-info-name {
+      text-align: center;
+      padding:2px 0;
+      color:#fff;
+      font-size:14px;
+      white-space: nowrap;
+    }
+  }
+  .user-social-links {
+    height: 40px;
+    width: 100%;
+    background-color: rgba(0,0,0,.2);
+    position: absolute;
+    bottom: 0;
+    a {
+      width: 50%;
+      line-height: 40px;
+      text-align: center;
+      display: block;
+      float: left;
+      color: #fff;
+    }
+  }
+}
+
+.user-center-wrap {
+  &:last-child{
+    margin-bottom:65px;
+  };
+  width: 100%;
+  padding-bottom: 60px;
+  padding: 0 15px;
+  margin-bottom: 10px;
+  background: #fff;
+  
+  .item-title{
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  .order-row {
+    border-bottom: 1px solid #dce0e0;
+    height: 44px;
+    line-height: 44px;
+    background: #fff;
+    .user-order-link {
+      display:block;
+      .user-order-text {
+        font-size: 14px;
+        color: #565a5c;
+      }
+      .user-order-tag {
+        font-size: 12px;
+        color: #aaa;
+      }
+    }
+  }
+  .bottom-border{
+    border-bottom: 1px solid #dce0e0;
+  }
+  .order-sort {
+    padding: 12px 0 15px 0;
+    background: #fff;
+    .red-dot-wrap{
+      position: relative;
+      .red-dot{
+        position: absolute;
+        top: 0px;
+        right: 32%;
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        display: inline-block;
+        background: #DA4453;
+      }
+    }
+    .order-sort-link {
+      display: block;
+      color: #565a5c;
+      font-size: 12px;
+      .wa {
+        margin-bottom:5px;
+        font-size: 24px;
+        color: #82888A;
+      }
+    }
+  }
+}
+.shop-row {
+  border-bottom: 1px solid #dce0e0;
+  height: 44px;
+  line-height: 44px;
+  background: #fff;
+  margin: 10px -15px;
+  .user-shop-link {
+    display:block;
+    .user-shop-text {
+      font-size: 15px;
+      color: #565a5c;
+    }
+    .user-shop-tag{
+      font-size:12px;
+      color:#82888a;
+      .wa {
+        font-size:12px;
+      }
+    }
+  }
+}
+.coupon-row {
+  border-bottom: 1px solid #dce0e0;
+  line-height: 44px;
+  background: #fff;
+  margin: 10px -15px;
+  .user-coupon-link {
+    display:block;
+    .user-coupon-text {
+      font-size: 15px;
+      color: #565a5c;
+    }
+    .user-coupon-tag {
+      font-size:12px;
+      color:#82888a;
+      .wa {
+        font-size:12px;
+      }
+    }
+    &.border-bottom {
+      border-bottom: 1px solid #dce0e0
+    }
+  }
+}
+.coupon-row {
+  .user-coupon-link {
+    .user-balance-value {
+      font-size: 14px;
+      color: #ed5565;
+    }
+    .user-coupon-value {
+      font-size: 14px;
+      color: #ed5565;
+    }
+    .user-ticket-count {
+      font-size: 14px;
+      color: #ed5565;
+    }
+  }
+}
+.fixed-cart-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 65px;
+  width: 38px;
+  height: 38px;
+  padding-top: 5px;
+  border-radius: 19px;
+  background: rgba(0,0,0,.5);
+  z-index: 999;
+  text-align: center;
+  .wa {
+    font-size: 25px;
+    color:#fff;
+  }
+  .point {
+    position: absolute;
+    width: 10px;
+    right: 5px;
+    top: 6px;
+    height: 10px;
+    border-radius: 5px;
+    background: #ed5565;
+    border: 2px solid #fff;
+    z-index: 1;
+    &.active {
+      display:block;
+    }
+  }
+}

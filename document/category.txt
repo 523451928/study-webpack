@@ -1,0 +1,11 @@
+品类:
+1. 品类列表:
+    方法: GET
+    地址: /category/list
+    返回: { Data:[{
+        Id:Integer        // 品类Id
+        ParentId:Integer? // 父品类Id
+        Name:String       // 品类名称
+        DPI:Integer
+        Discount:Integer  // 品类折扣，折扣向下取整到元
+    }] }

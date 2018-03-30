@@ -1,0 +1,141 @@
+.ww-uphead-thumDefult{
+  width:50px;
+  height:50px;
+  background:#efefef;
+  margin:30px auto;
+  overflow: hidden;
+}
+
+@mixin block-icon($x,$y){
+  width:$x;
+  height:$y;
+  position:absolute;
+  display:block;
+  cursor: pointer;
+}
+.block-icon{
+  @include block-icon(25px,25px)
+}
+
+// for the edit head image area
+.ww-uphead-button{
+  display:inline-block;
+  padding:0 50px;
+  color: #565a5c;
+  line-height:26px;
+  background:#fff;
+  border:1px solid #c4c4c4;
+  border-radius:2px;
+}
+.ww-uphead-tips{
+  color: #565a5c;
+  line-height:26px;
+  padding:8px 0;
+  border-bottom:1px solid #efefef;
+}
+.ww-uphead-img{
+  width:400px;
+  height:400px;
+  background:#efefef;
+  margin:30px auto;
+  & img{
+    margin:0 auto;
+  }
+}
+
+.ww-uphead-thum{
+  @extend .ww-uphead-thumDefult;
+  width: 100px;
+  height: 100px;
+  & img{
+    margin:0 auto;
+  }
+}
+.save-container{
+  margin-bottom:30px;
+}
+
+// For the new actions of the albums
+.album-list{
+  & li{
+    position:relative;
+  }
+  & li:hover .album-hover-box{
+    display:block;
+  }
+}
+.album-hover-box{
+  display:none;
+}
+.ww-album-hover-actions,.actions-arrow-icon{
+  background-image:url('~images/user/hover-detail-bg.png');
+  background-repeat:no-repeat;
+}
+
+.ww-album-hover-actions{
+  @include block-icon(20px,20px);
+  background-position:-20px -147px;
+  top:8px;
+  right:20px;
+  &:hover{
+    background-position:-64px -147px;
+  }
+  &:hover .actions-list{
+    display:block;
+  }
+}
+
+.actions-list{
+  list-style:none;
+  width:90px;
+  padding:0;
+  margin:0;
+  position:absolute;
+  border:1px solid #d3d6cf;
+  border-radius:2px;
+  background:#fff;
+  right:-15px;
+  top:29px;
+  display:none;
+  & .actions-arrow-icon{
+    @include block-icon(21px,11px);
+    top:-10px;
+    right:15px;
+    background-position:0 -120px;
+  }
+  & .ww-album-action{
+    display:block;
+    padding:5px 10px;
+    color:#535456;
+    line-height:1.2;
+    text-align:center;
+    text-decoration:none;
+  }
+  & .ww-album-action:hover{
+    background:#f7f7f7;
+  }
+}
+.ww-album-hover-detail{
+  text-align:left;
+  position:absolute;
+  bottom:0;
+  height:50px;
+  line-height: 50px;
+  padding:0 10px;
+  width:100%;
+  background:url('~images/user/hover-shadow.png') center repeat-x;
+  & .ww-album-title{
+    margin:0;
+    width:50px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    height:21px;
+    white-space:nowrap;
+    line-height:21px;
+  }
+  & .ww-album-count{
+    float:right;
+    line-height:48px;
+  }
+}
+

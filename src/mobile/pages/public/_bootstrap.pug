@@ -1,0 +1,4 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+mixin badge(s, c = 'default', p = false)
+  span.badge(class=['badge-' + c, {'badge-pill': p}])= s

@@ -1,0 +1,40 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+.paging(v-if='$parent.pager')
+  ul.pagination
+    li.page-item(v-bind:class='{disabled: !$parent.pager.hasPrevious}')
+      a.page-link(
+        href='javascript:'
+        title='上一页'
+        v-on:click='$parent.changePage(-1, true)'
+      )
+        i.fa.fa-angle-left.fa-fw
+    li.page-item(
+      v-for='p of $parent.pages'
+      v-bind:class='{active: p === $parent.pager.Page}'
+    )
+      a.page-link(
+        v-if='p > 0'
+        href='javascript:'
+        v-on:click='$parent.changePage(p)'
+      ) {{p}}
+      a.page-link(
+        v-else
+        href='javascript:'
+        v-on:click='$parent.changePage(-p)'
+      )
+        i.fa.fa-ellipsis-h.fa-fw
+    li.page-item(v-bind:class='{disabled: !$parent.pager.hasNext}')
+      a.page-link(
+        href='javascript:'
+        title='下一页'
+        v-on:click='$parent.changePage(1, true)'
+      )
+        i.fa.fa-angle-right.fa-fw
+  .btn-group(v-if='$parent.showCounts')
+    button.btn.btn-secondary(
+      type='button'
+      v-for='c of $parent.pager.Counts'
+      v-on:click='$parent.changeCount(c)'
+      v-bind:class='{active: $parent.pager.Count === c}'
+    ) {{c}}

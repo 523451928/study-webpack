@@ -1,0 +1,68 @@
+订单:
+1. 下单:
+    方法: POST
+    地址: /trade/add
+    参数(JSON): {
+        AddressId:Integer   // 地址Id
+        InvoiceId:Integer   // 增值税发票Id
+        InvoiceTitle:String // 发票抬头
+        CartIds:[Integer]   // 购物车Id列表
+        PayType:Integer     // 支付方式，1在线支付
+        PayMoney:Integer    // 支付金额，单位分
+        BuyerRemark:String  // 买家备注
+    }
+    返回: { Data:Integer } // 交易Id
+2. 订单列表:
+    方法: GET
+    地址: /trade/list
+    参数(URL Query):
+        Status:[Integer] // 订单状态
+        // 分页参数
+        Page:Integer
+        Count:Integer
+        返回: { Pager, Data:[{
+      Id:Integer       // 交易Id
+      Status:Integer   // 交易状态，1待付款 2待发货 3已发货 4已完成 5已关闭 6已退款
+      PayType:Integer  // 支付方式，1在线支付
+      PayMoney:Integer // 支付金额，单位分
+      Inserted:Integer // 下单时间，单位毫秒
+      Orders: [{
+                Id:Integer                     // 订单Id
+                Status:Integer                 // 订单状态，同交易状态
+                Discount:Integer               // 折扣
+                Count:Integr                   // 数量
+                Money:Integr                   // 价格，已计算折扣和佣金，佣金仅商店
+                PayMoney:Integer               // 支付金额，已计算数量和优惠等
+                Item:{
+                    Id:Integer                 // 商品Id
+                    CategoryId:Integer         // 品类Id
+                    PhotoWall,Entries,Pictures //* 通用商品展示数据
+                }
+      }]
+        }]}
+
+
+
+支付:
+1. 第三方支付:
+    方法: GET
+    地址: /pay/for
+    参数(URL Query):
+        TradeId:Integer   // 交易Id
+        Platform:String   // 支付平台，weixin或alipay
+        Wap:Boolean       // 是否移动端支付
+        Jump:Boolean      // 是否自动跳转
+    返回:
+        Jump=false
+            { Data:String } // 第三方支付链接，Platform=weixin且Wap=false时为二维码
+        Jump=true
+            跳转到第三方支付网站
+2. 支付状态和金额:
+    方法: GET
+    地址: /pay/get
+    参数(URL Query):
+        TradeId:Integer // 交易Id
+    返回: { Data:{
+        PayStatus:Integer // 支付状态，0未支付 1已支付 2无需支付 3无法支付
+        PayMoney:Integer  // 支付金额
+    } }

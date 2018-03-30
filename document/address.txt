@@ -1,0 +1,40 @@
+收货地址
+  1. 获取地址列表
+    方法: GET
+    地址: /address/list
+    返回: { Pager, Data:[{
+        Id:Integer       // 收货地址Id
+        PlaceId:Integer  // 省市区叶子节点Id，PlaceId
+        Detail:String    // 详细收货地址
+        Postcode:String  // 邮编
+        Receiver:String  // 收件人
+        Cellphone:String // 手机号
+        Telephone:String // 固定电话，格式/\d{3,4}-\d{8}/
+        Default:Boolean  // 是否默认收货地址
+    }] }
+  2. 保存收货地址
+    方法: POST
+    地址: /address/save
+    参数(JSON): {
+        Id:Integer       // 收货地址Id，新增时设为0或不传
+        PlaceId:Integer  // 省市区叶子节点，PlaceId
+        Detail:String    // 详细收货地址
+        Postcode:String  // 邮编
+        Receiver:String  // 收件人
+        Cellphone:String // 手机号
+        Telephone:String // 固定电话，格式/\d{3,4}-\d{8}/
+        Default:Boolean  // 是否默认收货地址
+    }
+    返回: 同提交的数据，新增时会返回Id，Default可能和提交的不一致
+    说明: 手机号和固定电话至少选择一种，详细地址不要再填省市区了，其余均为必须
+  3. 设置默认地址
+    方法: POST
+    地址: /address/set/<AddressId:Integer>
+    参数(URL Query):
+        Default:Boolean  // 是否默认收货地址
+    返回: 同保存接口
+  4. 删除收货:
+    方法: DELETE
+    地址: /address/remove/<AddressId:Integer>
+    返回: { Data:Integer } // 收货地址Id
+    说明: 删除失败返回null

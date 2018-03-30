@@ -1,0 +1,15 @@
+@charset "UTF-8";
+@import "./variable.scss";
+
+@mixin textOverflowHidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin clearFloat {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

@@ -1,0 +1,5 @@
+// 工具类css
+
+@function mobileSize ($size) {
+  @return $size / 2
+}

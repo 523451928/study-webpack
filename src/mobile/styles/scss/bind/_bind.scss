@@ -1,0 +1,20 @@
+.tips {
+  padding: 10px 0;
+  background-color: #fff9e4;
+  color: #82888a;
+  text-align: center;
+}
+// 第三方登录
+.tab-pane {
+  display:none;
+}
+.tab-pane{
+  &.active {
+    display:block;
+  }
+}
+
+.rl-form .captcha-group {
+  margin:0px;
+}
+

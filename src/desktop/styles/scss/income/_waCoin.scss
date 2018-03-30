@@ -1,0 +1,75 @@
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.panel-default {
+  border-color: #dce0e0;
+  > .panel-heading {
+    color: #333333;
+    background-color: #EDEFED;
+    border-color: #dce0e0;
+  }
+}
+.panel-heading {
+  padding: 15px;
+  border-bottom: 1px solid transparent;
+}
+.panel-body {
+  padding: 15px;
+}
+.coupon-panel {
+  padding: 15px;
+  .top {
+    border-bottom: 1px solid #dce0e0;
+    padding: 10px 0 25px;
+    .desc {
+      display:inline-block;
+      strong {
+        line-height:1;
+        font-size:20px;
+      }
+    }
+  }
+  .bottom {
+    padding: 40px 0;
+    .desc {
+      display:inline-block;
+      margin-bottom:20px;
+    }
+  }
+  .link {
+    float: right;
+  }
+  .table {
+    thead {
+      background-color: #edefed;
+      th {
+        border: 0 none;
+        color: #565a5c;
+        font-weight: 500;
+        text-align:center;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          text-align:center;
+          border: 1px solid #dce0e0;
+          padding: 8px;
+          line-height: 1.42857143;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+.color-red {
+  color:#ed5565;
+}
+.text-center {
+  text-align:center;
+}
+

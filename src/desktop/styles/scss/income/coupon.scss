@@ -1,0 +1,116 @@
+//.coupon-cont {
+//  float: left;
+//}
+.coupon-code-con {
+  padding:15px 0;
+}
+.coupon-panel {
+  .link {
+    float: right;
+  }
+  .top{
+    .notFloat {
+      display: inline-block;
+      float: inherit;
+    }
+  }
+  .top {
+    border-bottom: 1px solid #dce0e0;
+    padding: 10px 0 25px;
+    .tit {
+      font-size: 20px;
+    }
+    .desc {
+      display: inline-block;
+      strong {
+        line-height: 1;
+        font-size: 20px;
+      }
+    }
+    .wa-discount {
+      color: #f1cf76;
+      font-size: 26px;
+      top: 0;
+      vertical-align: bottom;
+    }
+  }
+  .bottom {
+    padding: 40px 0;
+    .desc {
+      display: inline-block;
+      color: #82888a;
+      margin-right: 20px;
+      vertical-align: middle;
+      strong {
+        display: inline-block;
+        font-size: 25px;
+        margin: 0 5px;
+        font-weight: 500;
+        color: #565a5c;
+      }
+    }
+    .social-list {
+      position: relative;
+      display: inline-block;
+      margin-top: 5px;
+      .btn {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+        width: 120px;
+        margin-right: 10px;
+        overflow: hidden;
+        i {
+          -webkit-transition: transform 0.5s ease-out;
+          transition: transform 0.5s ease-out;
+        }
+        &:hover {
+          i {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+      }
+      .social-color {
+        vertical-align: middle;
+      }
+      span {
+        line-height: 1.9285714285714286;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &.balance-panel {
+    .bottom {
+      .desc {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .table {
+    td,
+    th {
+      text-align: center;
+    }
+    thead {
+      background-color: #EDEFED;
+      th {
+        border: 0 none;
+        color: #565a5c;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .nav-wrap {
+    margin-bottom: 30px;
+    .pull-right {
+      padding-top: 6px;
+    }
+  }
+}
+

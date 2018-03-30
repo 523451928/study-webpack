@@ -1,0 +1,53 @@
+//- Created by Administrator on 2017/4/17.
+nav#m-nav.m-nav
+  .nav-item.col-xs-3(onclick='navClick("0")')
+    a.nav-link(href='/')
+      i.wa.wa-home
+      br
+      span 首页
+  .nav-item.col-xs-3(onclick='navClick("1")')
+    a.nav-link(href='/custom.html')
+      i.wa.wa-pencil
+      br
+      span 定制
+  .nav-item.col-xs-3(onclick='navClick("2")')
+    a.nav-link(href='/public/list')
+      i.wa.wa-new-store
+      br
+      span 商店
+  .nav-item.col-xs-3(onclick='navClick("3")')
+    a.nav-link(href='#')
+      i.wa.wa-man
+      br
+      span 我的
+style.
+  #m-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 999;
+    background-color: #fff;
+  }
+  .nav-item {
+    color: #565a5c;
+  }
+
+  .active {
+    color: #26a7c7;
+  }
+  .nav-item > a {
+    color: inherit;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    padding: 6px 0;
+  }
+script.
+  function navClick(flag) {
+    sessionStorage.setItem('navFlag', flag)
+  }
+

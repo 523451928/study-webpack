@@ -1,0 +1,106 @@
+@import "../public/variable.scss";
+@import "../public/public-component.scss";
+@import "../public/mixin.scss";
+
+.m-edit-pop {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    min-height: 310px;
+    box-sizing: border-box;
+    background-color: $c-nc-1;
+    border-radius: 2px;
+    >.head {
+      width: inherit;
+      height: 58px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $c-line-2;
+      @include clearFloat;
+      >.select {
+        float: left;
+        height: inherit;
+        line-height: 58px;
+        color: $c-fc-1;
+        font-size: 16px;
+      }
+      >.close {
+        float: right;
+        height: inherit;
+        line-height: 58px;
+        &::hover {
+          >.wa {
+            color: $c-jxc-1;
+          }
+        }
+        >.wa {
+          font-size: 16px;
+          color: $c-fc-1;
+          cursor: pointer;
+        }
+      }
+    }
+    >.content {
+      padding: 20px 20px 10px 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid $c-line-2;
+      >.mat-list {
+        font-size: 0;
+        >.mat-item {
+          display: inline-block;
+          margin: 0 5px 8px 0;
+          width: 65px;
+          height: 65px;
+          cursor: pointer;
+          border: 1px solid $c-line-2;
+          &:nth-child(8n) {
+            margin-right: 0;
+          }
+          &.current {
+            border: 2px solid $c-jxc-1;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    >.footer {
+      padding: 20px;
+      @include clearFloat;
+      .btn {
+        float: right;
+        padding: 0;
+        height: 34px;
+        width: 120px;
+        &:nth-child(2) {
+          margin-right: 10px;
+        }
+        >p {
+          margin: 0;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+}

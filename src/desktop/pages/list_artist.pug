@@ -1,0 +1,110 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends ../pages/public/_layout.pug
+
+block hd
+  title 艺术家主页(本地测试)
+block bd
+  .bd(v-cloak)
+    top
+    //- userhead(is-followed="false",
+    //-   banner-id="1",
+    //-   banner-img="ea4db84d8716e8ff48c23e70e366cf48-1920x200.jpg",
+    //-   banner-title="",
+    //-   artist-id="2",
+    //-   artist-nickname="2  ",
+    //-   artist-avatar="f46c2931e37fa929300cc89c88b8b6bd-1766x1766.jpg")
+    .user-hear-warp
+      <div class="user-head-bnr" style="background: url(http://192.168.1.6:8000/thumbnail/banner/1/1920/ea4db84d8716e8ff48c23e70e366cf48-1920x200.jpg)">
+        <div class="user-content">
+          <div class="follow">
+            <a id="js_follow_btn" class="btn u-primary-btn" data-id="1">
+              span +关注
+            </a>
+          </div>
+          .user-bnr-info
+            a(class='head-icon layout-avata' href='javascript:;')
+              <img class="item" src="http://192.168.1.6:8000//thumbnail/avatar/1/100/0680810e408dd8c0440cd65cb3999ee7-350x350.jpg">
+            .user-info
+              .line
+                .user-info-name 名字
+                .user-date(data-join='2017111')
+              .user-introduction 这里是一段描述文字的内宿
+        </div>
+      </div>
+      <div class="user-nav">
+        <ul class="user-nav-ul clearfix">
+          <li class="active">
+            <a href="/artist/<%$.Artist.Id%>">店铺</a>
+          </li>
+        </ul>
+      </div>
+    .ww-wrap.bg-white
+      .product-list-con
+        //- 标签开始
+        #product-type-area.product-sort-area.clearfix
+          //- <div id="label-list" class="label-list tags-list clearfix">
+          //-   <label class="tags-cate-title">标签:</label>
+          //-   <ul class="tags-list-ul clearfix">
+          //-     <%range $index, $labelTag := $.LabelTags%>
+          //-     <li<%if call $.IsSelectedTag $labelTag.Id%> class="active"<%end%>>
+          //-       <a class="filter-link" href="/artist/<%$.Artist.Id%>?<%call $.TagQuery $labelTag.Id%>"><%$labelTag.Name%><i class="wa wa-close tags-x"></i></a>
+          //-     </li>
+          //-     <%end%>
+          //-   </ul>
+          //- </div>
+          <div id="category-list" class="tags-list clearfix category-list">
+            <span>品类:</span>
+            <ul class="tags-list-ul clearfix">
+              <%range $index, $cat := $.Categories%>
+              <li<%if call $.IsSelectedCategory $cat.Id%> class="active"<%end%>>
+                <a href="/artist/<%$.Artist.Id%>?<%call $.CategoryQuery $cat.Id%>"><%$cat.Name%><i class="wa wa-close tags-x"></i></a>
+              </li>
+              <%end%>
+            </ul>
+          </div>
+          //- 标签结束
+          //- 详情开始
+          list(slot="prolist")
+            <div id="product-list-area" class="product-list-area clearfix">
+              <%range $index, $work := $.Data%>
+              <div class="pro-list grey-border">
+                <a href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="displays-link">
+                  <display class="displays" entry-id="<%$work.EntryId%>" category-id="<%$work.CategoryId%>" product-id="<%$work.Packets.ProductId%>" pictures="<%call $.Marshal $work.Pictures%>" displays="<%call $.Marshal $work.Displays%>"></display>
+                </a>
+                <div class="pro-detail clearfix">
+                  <span class="pro-price pull-right">¥ <%$work.Money%></span>
+                  <div class="pull-left pro-title">
+                    <a href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="default-hover-link"><%$work.Title%></a>
+                  </div>
+                  <div class="clearfix"></div>
+                  <span class="pull-right">
+                    <a class="default-link list-like-btn like-btn" href="javascript:void(0)">
+                      <like item-id="<%$work.WorkId%>" liked="$work.Liked%" like-count="<%$work.LikeCount%>"></like>
+                    </a>
+                  </span>
+                  <div class="author-name pull-left">
+                    <a class="default-hover-link" href="/artist/2">2</a>
+                  </div>
+                </div>
+              </div>
+              <%if call $.Mod $index 4%><br><%end%>
+              <%else%>
+              <span>暂无产品</span>
+              <%end%>
+            </div>
+            //- 详情结束
+            //- 分页开始
+            <div class="page-bar text-center">
+              <ul class="pagination">
+                <%range $index, $page := (call $.Pages 5)%>
+                <li class="page-item <%if eq $page $.Page%>active<%end%>">
+                  <a href="/artist?<%call $.PageQuery $page%>">
+                    <span class="page-link"><%if lt $page 0%>...<%else%><%$page%><%end%></span>
+                  </a>
+                </li>
+                <%end%>
+              </ul>
+            </div>
+            //- 分页结束
+    foot

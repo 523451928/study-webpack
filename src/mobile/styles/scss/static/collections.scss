@@ -1,0 +1,230 @@
+.m-title-fix {
+  .wa-left {
+    top: 2px;
+  }
+}
+$bg-base: #f5f5f5;
+$font-size-base: 14px;
+$text-color-base: #565a5c;
+$text-color-light: #82888a;
+$brand-primary: #26A7C7;
+.container{
+  img{
+    width: 100%;
+  }
+}
+.user-head{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  z-index: 1001;
+  background: #fff;
+  margin-bottom: 10px;
+  border-bottom: none;
+  span{
+    position: relative;
+    left: 3px;
+    top: -1px;
+  }
+  h2{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 42px;
+  }
+}
+.user-head .wa-left{
+  font-size: 17px;
+  color: #82888a;
+}
+.user-head .back{
+  position: absolute;
+  left: 10px;
+}
+.atlas {
+  width: 100%;
+  background-color: $bg-base;
+  padding-top: 45px;
+  .case-item-wrap {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 13px;
+    .img-wrap {
+      width: 100%;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .title-wrap {
+      width: 100%;
+      background-color: #FFFFFF;
+      padding: 15px 0 22px 20px;
+      span {
+        display: inline-block;
+        font-size: $font-size-base;
+        color: $text-color-base;
+      }
+      p {
+        margin-top: 2px;
+        font-size: 12px;
+        margin-bottom: 0;
+        color: $text-color-light;
+      }
+    }
+  }
+}
+
+//周一惠生活
+.discountLife {
+  a {
+    width: 100%;
+    display: block;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+//案例展示
+.case {
+  width: 100%;
+  background-color: $bg-base;
+  padding-top: 45px;
+  .case-item-wrap {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 13px;
+    .img-wrap {
+      width: 100%;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+//团体定制
+.group-studio {
+  padding-top: 45px;
+  .item-wrap {
+    width: 100%;
+    overflow: hidden;
+    .img-wrap {
+      width: 100%;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    .title-wrap {
+      padding: 15px 10px 0 10px;
+      p {
+        font-size: $font-size-base;
+        color: $text-color-base;
+        margin-bottom: 30px;
+        span {
+          font-weight: bold;
+          text-decoration: underline;
+        }
+      }
+      p:nth-of-type(2) {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .contact-customer {
+    width: 100%;
+    height: 49px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    line-height: 49px;
+    text-align: center;
+    background-color: $brand-primary;
+    a {
+      display: block;
+      text-decoration: none;
+      height: 49px;
+      .wa-woman {
+        font-size: 20px;
+        margin-right: 2px;
+        color: #FFFFFF;
+      }
+      span:nth-of-type(2) {
+        font-size: 17px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
+//线下体验馆
+.offline-img-wrap {
+  width: 100%;
+  position: relative;
+  .offline-list {
+    width: 100%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  a {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-decoration: none;
+    width: 100%;
+    height: 56px;
+    &:hover,&:focus {
+      text-decoration: none;
+    }
+  }
+}
+.custom-list{
+  padding: 0 0 50px 0 !important;
+}
+.chink {
+  display: inline-block;
+  padding: 40px 0 15px 0;
+  font-size: 20px;
+  color: #565a5c;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+.chink2 {
+  display: inline-block;
+  padding: 10px 0 0px 0;
+  font-size: 12px;
+  color: #565a5c;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  &.active {
+    padding: 10px 0 25px 0;
+  }
+}
+.artist-wrapper{
+  .shop-guide-link{
+    position: fixed;
+    color: #fff;
+    display: inline-block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 49px;
+    font-size: 17px;
+    background-color: #26a7c7;
+    line-height: 49px;
+    text-align: center;
+    z-index: 99;
+  }
+}

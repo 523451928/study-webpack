@@ -1,0 +1,129 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends ../pages/public/_layout.pug
+
+block hd
+  title <%$.Work.Title%>-<%$.Category.Name%> by <%$.Artist.Nickname%>|墙蛙-唤醒你的生活
+block bd
+  .bd(v-cloak)
+    top
+    <div class="ww-wrap product-wrap">
+      <div class="layout-content"> 
+        <ul slot="crumb" class="u-crumbs crumbs">
+          <li class="crumbs-item">
+            <a href="/work">商店</a>
+          </li>
+          <li class="crumbs-item">
+            <a href="/work?CategoryId=<%$.Category.Id%>"><%$.Category.Name%></a>
+          </li>
+          <li class="crumbs-item">
+            //- <a href="/work/<%$.Work.Id%>?CategoryId=<%$.Category.Id%>"><%$.Work.Title%></a>
+            <a><%$.Work.Title%></a>
+          </li>
+        </ul>
+        <work-detail :work-title="<%call $.Marshal $.Work.Title%>" :work-id="<%call $.Marshal $.Work.Id%>" :category-name="<%call $.Marshal $.Category.Name%>" :category-id="<%call $.Marshal $.CategoryId%>" :work-income="<%call $.Marshal $.Incomes%>" :liked="<%call $.Marshal $.Liked%>" :like-count="<%call $.Marshal $.LikeCount%>" ></work-detail>
+      </div>
+      <div class="product-detail">
+        <div class="m-nav-bar">
+          <div class="layout-content" flex="dir:left cross:center main:justify">
+            <div class="user-avatar">
+              <div class="avatar" @click="onHref('<%$.Work.UserId%>', '<%$.Category.Id%>')">
+                <img src="/thumbnail/avatar/<%$.Work.UserId%>/100/<%$.Artist.Avatar%>">
+              </div>
+              <div class="user-info">
+                <h5 class="name" @click="onHref('<%$.Work.UserId%>', '<%$.Category.Id%>')"><%$.Artist.Nickname%></h5>
+                <%if $.Followed%>
+                  <div class="follow-btn" @click="onFollow('<%$.Followed%>','<%$.Work.UserId%>')" ref="follow">取消关注</div>
+                <%else%>
+                  <div class="follow-btn" @click="onFollow('<%$.Followed%>', '<%$.Work.UserId%>')" ref="follow">关注TA</div>                  
+                <%end%>
+              </div>
+            </div>
+            <ul class="tab-nav" flex="dir:left cross:center main:left">
+              <li class="nav-item" flex="dir:top main:center cross:center" :class="current=== 0 && 'active'" @click="tabClick(0)">
+                <p>详情说明</p>
+                <p>...</p>
+              </li>
+              <li class="nav-item" flex="dir:top main:center cross:center" :class="current===1 && 'active'" @click="tabClick(1)">
+                <p>其他商品</p>
+                <p><%len $.Pieces%></p>
+              </li>
+              <li class="nav-item" flex="dir:top main:center cross:center" :class="current===2 && 'active'" @click="tabClick(2)">
+                <p>作者说</p>
+                <p>
+                  <span class="wa wa-about"></span>
+                </p>
+              </li>
+              <li class="nav-item" flex="dir:top main:center cross:center" :class="current===3 && 'active'" @click="tabClick(3)">
+                <p>用户评论</p>
+                <p id="js_comment">{{commentL}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="product-detaile" v-show="current === 0">
+          <div class="layout-content">
+            <img :src="detail" alt="detail" class="lazy">
+          </div>
+        </div> 
+        <div class="product-list" v-show="current === 1 && render">
+          <div class="layout-content">
+            <ul>
+              <%range $i, $p := $.Pieces%>
+              <li class="item">
+                <work-display :entry-id="<%$p.Entry.Id%>" :product-id="<%$p.Entry.ProductId%>" :category-id="<%$p.Category.Id%>" :pictures="<%call $.Marshal $p.Pictures%>" :work-id="<%$.Work.Id%>" :displays="<%call $.Marshal $p.Displays%>"></work-display>
+              </li>
+              <%end%>
+            </ul>
+          </div>
+        </div>
+        <div class="m-user-detail" v-show="current === 2">
+          <div class="layout-content">
+            <div class="work-info">
+              <h5 class="detail-title">作品介绍</h5>
+              <p v-if="description!==''"><%$.Work.Description%></p>
+              <p v-else>这个艺术家很酷,什么都没说</p>
+            </div>
+            <div class="work-tags">
+              <h5 class="detail-title">所属标签</h5>
+              <ul class="tags-list">
+                <%range $index, $tag := $.Work.Tags%>
+                  <li class="tag-item">
+                    <a href="/work?CategoryId=<%$.Category.Id%>&Query=<%$tag.Name%>" target="_blank">
+                      <%$tag.Name%>
+                    </a>
+                  </li>
+                <%end%>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <comment :work-id="<%$.Work.Id%>" v-show="current === 3" @commentData="commentData"></comment>
+        <%if $.MorePieces%>
+          <div class="m-swiper-list">
+            <h5 class="detail-title">本店更多商品</h5>
+            <div class="swiper-container" ref="swiper">
+              <ul class="swiper-wrapper" style="padding-right: 100px;">
+                <%range $i, $p := $.MorePieces%>
+                  <li class="list-item swiper-slide">
+                    <work-display :entry-id="<%$p.Entry.Id%>" :product-id="<%$p.Entry.ProductId%>" :category-id="<%$p.Category.Id%>" :pictures="<%call $.Marshal $p.Pictures%>" :work-id = "<%$p.WorkId%>" :displays="<%call $.Marshal $p.Displays%>"></work-display>
+                  </li>
+                <%end%>
+              </ul>
+            </div>
+            <div class="wa wa-left"></div>
+            <div class="wa wa-right"></div>
+          </div>
+        <%end%>
+        <div class="des-wrapper layout-content">
+          <h2 class="detail-title">物流与包装</h2>
+          <div class="des-con">
+            <p>墙蛙为您考虑到每一步，采用行业专用包装方案——用缓冲层抗挤压，抗摔落；专用气泡塑料包裹，抗潮湿，防止液体流入。确保在快递与转运过程中，多次周转无破损。 请您放心，如果您的商品不幸在物流中遭遇百斤挤压/重力撞击/野蛮踩踏/高空坠落，外伤与内伤并发，墙蛙会尽千分之千的努力，为您补发商品，直到您满意为止！</p>
+            <p>1.墙蛙网合作物流为<span class="txt-blue">中通包邮</span>；(注意:包邮地区不含澳台)</p>
+            <p>2.墙蛙网产品均为手工工艺品，制作需耗费时间，墙蛙承诺在您付款后48小时内发货（周日及法定节假日不发货），还请耐心等待。</p>
+            <p>3.鉴于墙蛙网提供的个性化定制服务的特殊性，定制的产品发货后概不支持退货。如遇产品质量问题，可咨询在线客服。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    foot 

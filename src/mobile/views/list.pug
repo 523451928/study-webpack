@@ -1,0 +1,114 @@
+extends ../pages/public/_layout.pug
+
+block hd
+  title 墙蛙商店
+block bd
+  .bd(v-cloak)
+    .ww-wrap.product-wrap.public-pro-wrap
+      category
+      <div class="sort-wrapper clearfix">
+        <ul class="order">
+          <li<%if call $.IsAsc 1%> class="asc"<%else if call $.IsDesc 1%> class="desc"<%end%>>
+            <a href="/work?<%call $.OrderQuery 1%>">综合</a>
+          </li>
+          <li<%if call $.IsAsc 4%> class="asc"<%else if call $.IsDesc 4%> class="desc"<%end%>>
+            <a href="/work?<%call $.OrderQuery 4%>">喜欢</a>
+          </li>
+          <li<%if call $.IsAsc 2%> class="asc"<%else if call $.IsDesc 2%> class="desc"<%end%>>
+            <a href="/work?<%call $.OrderQuery 2%>">价格<i class="sort-icon"></i></a>
+          </li>
+          <li id="wa-menu">
+            <a href="javascript:void(0);">筛选</a><span class="wa-menu"></span>
+          </li>
+        </ul>
+      </div>
+      <div class="tags-mask">
+        <div class="tags-container">
+          <div class="tags-header scale-1px">
+            //<span>选择筛选条件:</span>
+            <span class="cancel-btn fr">取消</span>
+            <span class="reset-btn fr">重置选择</span>
+          </div>
+          <div class="tags<%if $.HasTag%> open<%end%>">
+            <div class="kind-tags tags-list clearfix">
+              <span>分类</span>
+                <ul>
+                  <li<%if not $.HasKindTag%> class="active"<%end%>>
+                    <a href="/work?<%call $.AllTagQuery $.KindTags%>">全部</a>
+                  </li>
+                <%range $index, $kindTag := $.KindTags%>
+                  <li<%if call $.IsSelectedTag $kindTag.Id%> class="active"<%end%>>
+                    <a href="/work?<%call $.TagQuery $kindTag.Id%>"><%$kindTag.Name%></a>
+                  </li>
+                <%end%>
+                </ul>
+            </div>
+            <div class="label-tags tags-list clearfix">
+              <span>标签</span>
+              <ul>
+                <li<%if not $.HasLabelTag%> class="active"<%end%>>
+                  <a href="/work?<%call $.AllTagQuery $.LabelTags%>">全部</a>
+                </li>
+                <%range $index, $labelTag := $.LabelTags%>
+                  <li<%if call $.IsSelectedTag $labelTag.Id%> class="active"<%end%>>
+                    <a href="/work?<%call $.TagQuery $labelTag.Id%>"><%$labelTag.Name%></a>
+                  </li>
+                <%end%>
+              </ul>
+            </div>
+            <div class="color-tags clearfix">
+              <span class="color-span">颜色</span>
+              <ul>
+                <li<%if not $.HasColorTag%> class="active"<%end%>>
+                  <a href="/work?<%call $.AllTagQuery $.ColorTags%>">全部</a>
+                </li>
+                <%range $index, $colorTag := $.ColorTags%>
+                  <li<%if call $.IsSelectedTag $colorTag.Id%> class="active"<%end%>>
+                    <a href="/work?<%call $.TagQuery $colorTag.Id%>">
+                      <span title="<%$colorTag.Name%>" style=" background-color: <%$colorTag.Color%>; display: inline-block;"></span>
+                    </a>
+                  </li>
+                <%end%>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shop-loadmore-content">
+        <div class="product-list-area clearfix">
+          <%range $index, $work := $.Data%>
+            <div class="pro-list grey-border">
+            <a target="_self" href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="displays-link">
+              <div :displays="<%call $.Marshal $work.Displays%>" entry-id="<%$work.EntryId%>" category-id="<%$work.CategoryId%>" product-id="<%index $work.Packets 1%>" :pictures="<%call $.Marshal $work.Pictures%>"></div>
+              <display class="displays" entry-id="<%$work.EntryId%>" category-id="<%$work.CategoryId%>" product-id="<%index $work.Packets 1%>" :pictures="<%call $.Marshal $work.Pictures%>" :displays="<%call $.Marshal $work.Displays%>"></display>
+            </a>
+            <div class="pro-detail clearfix">
+              <div class="pull-left pro-title">
+                <a target="black" href="/work/<%$work.WorkId%>?CategoryId=<%$.Category.Id%>" class="default-hover-link"><%$work.Title%></a>
+                </div>
+                <div class="clearfix"></div>
+                <span class="pull-right">
+                  <a target="_self" packets="<%call $.Marshal $work.Packets%>" category-id="<%$work.CategoryId%>" entry-id="<%$work.EntryId%>" work-id="<%$work.WorkId%>" class="default-link list-like-btn like-btn" href="javascript:void(0)">
+                  <span<%if $work.Liked%> class="wa wa-heart-fill active"<%else%> class="wa wa-heart-fill"<%end%>></span>
+                  <span class="like-count"><%$work.LikeCount%></span>
+                  </a>
+                </span>
+              <div class="author-name pull-left">
+                <span class="pro-price">¥ <%$work.Money%></span>
+                //<a class="default-hover-link" href="/artist/<%$work.UserId%>"><%$work.Nickname%></a>
+              </div>
+            </div>
+          </div>
+          //<%if call $.Mod $index 4%><br><%end%>
+          <%else%>
+          <div class="no-product">
+            <span>暂无产品</span>
+          </div>
+          <%end%>
+        </div>
+        <div class="wa-nomore-text">没有更多了...</div>
+        <%if $.NextPage%>
+          <a class="next-page" href="/work?<%call $.PageQuery $.NextPage%>&amp;PullUp=true"></a>
+        <%end%>
+      </div>
+    nav-bar

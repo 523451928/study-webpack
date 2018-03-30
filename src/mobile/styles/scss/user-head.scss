@@ -1,0 +1,336 @@
+.li-link{
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+.contact-wechat {
+  position: fixed;
+  top: 280px;
+  right: 10px;
+  z-index: 999
+}
+.contact-box {
+  position: relative;
+  cursor: pointer;
+  padding-left: 15px
+}
+.wechat-erwm {
+  position: absolute;
+  display: none;
+  left: -89px;
+  top: 0
+}
+.contact-box:hover .wechat-erwm {
+  display: block
+}
+.user-head-bnr {
+  z-index: 1;
+  margin-top: 64px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  height: 200px;
+  position: relative
+}
+#set-bnr-posBtn {
+  display: none
+}
+.user-head-bnr.set-position #set-bnr-posBtn {
+  display: block
+}
+
+.user-head-bnr.set-position .set-link {
+  display: none
+}
+.user-bnr-info {
+  position: absolute;
+  bottom: -90px;
+  left: 50%;
+  margin-left: -150px
+}
+.user-head-bnr .user-bnr-info .head-icon {
+  display: block;
+  border-radius: 51px;
+  background: #fff;
+  position: relative;
+  width: 102px;
+  padding: 1px;
+  height: 102px;
+  margin: 0 auto
+}
+.user-head-bnr .user-bnr-info .head-icon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 2px solid #fff
+}
+.user-head-bnr .user-bnr-info .user-info-name {
+  padding: 2px 0;
+  width: 300px;
+  font-size: 24px;
+  white-space: nowrap;
+  text-align: center;
+}
+.user-nav {
+  width: 100%;
+  border-bottom: 1px solid #dce0e0;
+  padding-top: 100px;
+  text-align: center;
+  background: #fff
+}
+.user-nav-ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  bottom: -5px;
+  border-bottom: none
+}
+.user-nav-ul li {
+  float: left
+}
+.user-nav .user-nav-ul li a {
+  display: block;
+  padding: 15px 25px;
+  color: #565a5c;
+  font-size: 16px;
+  border: none
+}
+.user-nav .user-nav-ul li:hover a {
+  border: none
+}
+.user-nav .user-nav-ul li.active a {
+  color: #26a7c7;
+  border: none;
+  border-bottom: 4px solid #26a7c7
+}
+.user-head-bnr .link-container {
+  width: 980px;
+  position: absolute;
+  left: 50%;
+  margin-left: -466px;
+  padding: 15px;
+  bottom: -60px
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+}
+.modal-backdrop.in {
+  opacity: 0.5;
+}
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+.change-bnr-title {
+  font-size: 20px;
+  margin: 0 0 15px;
+}
+.img-list-wrap {
+  list-style-type: none;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  padding: 0 10px;
+  height: 405px;
+}
+.select-img-area .album-select {
+  display: none;
+  margin-bottom: 15px;
+  position: relative;
+  height: 40px;
+}
+.img-list-wrap h4 {
+  font-size: 16px;
+}
+.img-list-wrap li {
+  float: left;
+  cursor: pointer;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.img-list-wrap a {
+  position: relative;
+  border: 3px solid #fff;
+  width: 101px;
+  height: 101px;
+  display: block;
+  background-position: 50%;
+  background-size: cover;
+  margin: 15px 15px 0 0;
+}
+.img-list-wrap .mask {
+  position: absolute;
+  background-color: #eee;
+  background-color: hsla(0,0%,93%,.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.img-list-wrap li.active a,.img-list-wrap li:hover a {
+  border-color: #26a7c7
+}
+.img-list-wrap li.active .mask,.img-list-wrap li:hover .mask {
+  display: block
+}
+.user-defined-bg {
+  width: 810px;
+  margin-left: -100px;
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 2px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.5);
+  background-clip: padding-box;
+  outline: 0;
+}
+.upload-area .upload-box {
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  padding: 0 10px;
+  height: 405px;
+  margin-bottom: 15px;
+}
+.upload-area .upload-box .upload-loading {
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  background: rgba(0,0,0,.6);
+  z-index: 9;
+  display: none;
+}
+.upload-area .upload-box .loading-percent {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  font-size: 20px;
+  color: #fff;
+  z-index: 10;
+  display: none;
+}
+.upload-area .upload-box h4 {
+  font-size: 16px;
+}
+.upload-area .upload-box .loading-percent {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  font-size: 20px;
+  color: #fff;
+  z-index: 10;
+  display: none;
+}
+.upload-area .upload-box .custom-link {
+  display: block;
+  width: 350px;
+  margin: 45px auto 0;
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+  text-decoration: none!important;
+}
+.img-wrap {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.wa {
+  position: relative;
+  top: 1px;
+  font-size: 17px;
+  display: inline-block;
+  font-family: WallWaIcon;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.upload-area .upload-box .custom-link .upload-msg {
+  display: block;
+  font-size: 14px;
+}
+.wa-cloud-upload {
+  font-size: 200px;
+  position: relative;
+}
+.wa-cloud-upload .file-upload {
+  width: 350px;
+  height: 283px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.upload-area .upload-box .custom-link .upload-tips {
+  color: #82888a;
+  margin-top: 20px;
+  display: block;
+  font-size: 14px;
+}
+#bnr-save-btn {
+  width: 120px;
+  line-height: 1.5;
+}
+#bnr-save-btnDefault {
+  width: 120px;
+  line-height: 1.5;
+}
+.upload-area .upload-box .wa-hover-layout{
+  display: none;
+  .wa-hover-layout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: hsla(0,0%,100%,.8);
+    display: none;
+    color: #26a7c7;
+    padding: 10px 0;
+    font-size: 20px;
+    z-index: 9;
+    text-align: center;
+  }
+  .wa {
+    font-size: 150px;
+  }
+  .change-tips {
+    display: block;
+    text-align: center;
+  }
+}
+.hover-layout{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #fff;
+  padding: 20px;
+  opacity: .8;
+  display: none;
+  .wa{
+    font-size: 30px;
+  }
+}
+.layout-avatar:hover .hover-layout{
+  display: block;
+}

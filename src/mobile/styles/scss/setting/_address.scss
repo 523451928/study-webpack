@@ -1,0 +1,169 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * Address STYLE
+ */
+.li-btn {
+  cursor: pointer;
+  margin-bottom: 10px;
+  line-height: 1.85;
+  height: 28px;
+}
+.li-btn:hover .li-active {
+  display: block;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0
+}
+.clearfix {
+  zoom: 1
+}
+.li-btn {
+  span {
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.li-btn {
+  .default-addr {
+    visibility: visible;
+    color: #82888a
+  }
+  .other-addr {
+    visibility: hidden;
+    color: #82888a
+  }
+}
+.fl {
+  float:left;
+}
+.fr {
+  float:right;
+}
+.modal {
+  display:block;
+}
+.form-control {
+  width:280px;
+}
+.form-group {
+  label {
+    strong {
+      color:#ed5565;
+    }
+  }
+}
+.modal-dialog {
+  z-index: 10001;
+}
+.form-group {
+ #province {
+   width: auto;
+   max-width: 100px;
+   float: left;
+ }
+}
+.form-group {
+  #city {
+    width: auto;
+    max-width: 200px;
+    float: left;
+    margin: 0 5px;
+  }
+}
+.form-group {
+  #district {
+    width: auto;
+    max-width: 200px;
+    float: left;
+  }
+}
+
+
+.user-addr-list {
+  position: relative;
+  margin-bottom: 0;
+  .addr {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    line-height: 1.85;
+    height: 28px;
+    min-width: 600px;
+    .detail {
+      padding: 0 5px;
+      border: 1px solid transparent;
+      overflow: hidden;
+      display: inline-block;
+      font-size: 0;
+      width: 70%;
+    }
+
+    span {
+      letter-spacing: normal;
+      word-spacing: normal;
+      font-size: 14px;
+      margin-right: 5px;
+      display: inline-block;
+      vertical-align: top;
+      max-width: 130px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .default-addr {
+      visibility: hidden;
+      color: #82888a;
+    }
+
+    .active-icon {
+      visibility: hidden;
+    }
+
+    .btn-wrap {
+      padding: 1px 5px 1px 15px;
+      vertical-align: top;
+      display: inline-block;
+      visibility: hidden;
+      a {
+        padding-right: 10px;
+        &:active,
+        &:visited{
+          text-decoration: none;
+        }
+      }
+    }
+
+    &:hover {
+      .btn-wrap {
+        visibility: visible;
+      }
+    }
+    &.default {
+      .default-addr {
+        visibility: visible;
+      }
+
+      .btn-wrap {
+        .default {
+          display: none;
+        }
+      }
+    }
+  }
+}

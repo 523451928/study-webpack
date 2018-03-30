@@ -1,0 +1,29 @@
+// .unfold-enter, .unfold-leave-active {
+//   transform: translateY(-100%);
+// }
+
+// .unfold-enter-active {
+//   animation: unfold-in 1s ease;
+//   animation-fill-mode: forwards;
+// }
+// .unfold-leave-active {
+//   animation: unfold-out 1s ease;
+//   animation-fill-mode: forwards;
+// }
+// @keyframes unfold-in {
+//   0% {
+//     transform: translateY(-100%);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }
+// @keyframes unfold-out {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   100% {
+//     transform: translateY(-100%);
+//     visibility: hidden;
+//   }
+// }

@@ -1,0 +1,131 @@
+@import "../public/variable.scss";
+@import "../public/public-component.scss";
+@import "../public/mixin.scss";
+.scroller-header{
+  line-height: 40px;
+  .bom-type{
+    color: $c-jxc-1;
+  }
+  .btn-group{
+    margin-top:8px ;
+    margin-right: 10px;
+  }
+}
+.scroll-list{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style:none;
+  > li {
+    float: left;
+    height: 100%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    &:active {
+      cursor: pointer;
+    }
+    > .li-icon, .li-name {
+      height: 100%;
+      &:active {
+        cursor: pointer;
+      }
+      .li-image {
+        &:active {
+          cursor: pointer;
+        }
+      }
+      >.li-image {
+        height: inherit;
+      }
+    }
+  }
+  &.scroll-icon-list {
+    > li{
+      width: 53px;
+      height: 53px;
+      line-height: 53px;
+      border-color: #dce0e0;
+      float: left;
+      margin-right: 6px;
+      margin-bottom: 10px;
+      text-align: center;
+      &.img-item {
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+      }
+      .li-icon{
+        width: 100%;
+        height: 100%;
+        .li-color,.li-image{
+          width: 100%;
+          height: 100%;
+          img{
+            width: 100%;
+          }
+        }
+      }
+      &.active{
+        border: 2px solid $brand-primary;
+      }
+      .del-image,.view-link{
+        position: absolute;
+        right: 2px;
+        top:2px;
+        z-index: 9;
+        display: none;
+        //background: #fff;
+        //width: 16px;
+        //height: 16px;
+        //border-radius: 8px;
+        //line-height: 16px;
+        .wa{
+          font-size: 14px;
+          float: right;
+          color: #fff;
+        }
+        .wa-search{
+          color: $brand-primary;
+        }
+      }
+      &:hover{
+        .del-image,.view-link{
+          display: inline-block;
+    
+        }
+      }
+    }
+    img{
+      vertical-align:top;
+    }
+  }
+  &.scroll-text-list{
+    >li{
+      display: inline-block;
+      width: 31%;
+      font-size: 13px;
+      text-align: center;
+      border: 1px solid #dce0e0;
+      line-height: 22px;
+      margin: 0 1% 2% 0;
+      .li-name{
+        border:1px solid #fff;
+        // @include textOverflowHidden;
+      }
+      &.active{
+        .li-name{
+          // border: 1px solid $brand-primary;
+          @include textOverflowHidden;
+        }
+        border-color: $brand-primary;
+      }
+    }
+
+  }
+}

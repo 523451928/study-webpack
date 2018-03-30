@@ -1,0 +1,140 @@
+#chs-img-dialog {
+  .chs-img-box {
+    width: 705px;
+  }
+  .modal-dialog {
+    z-index: 10001;
+    transition:all .3s;
+  }
+  .scale-enter-active,.scale-leave-active {
+    transition: all .3s ease;
+  }
+  .scale-enter, .scale-leave-active {
+    opacity: 0;
+    .modal-dialog {
+      opacity: 0 !important;
+      transform: scale(0.3) !important;
+    }
+  }
+  .chs-album-list {
+    position: relative;
+    height: 52px;
+    overflow: hidden;
+    padding-right: 25px;
+    border-bottom: 1px solid $hr-base-dark;
+    white-space: nowrap;
+    overflow: hidden;
+    &.scroll {
+      overflow-x:scroll ;
+    }
+    .album-list {
+      list-style: none;
+      margin: 0;
+
+      li {
+        float: left;
+        border: 1px solid $hr-base-dark;
+        margin: 5px 5px 10px 5px;
+        padding: 7px 15px;
+        cursor: pointer;
+        &.active {
+          color: $brand-primary;
+          border-color: $brand-primary;
+        }
+      }
+    }
+    .toggle-album {
+      position: absolute;
+      right: 0;
+      bottom: 18px;
+      color: $text-color-light;
+      text-decoration: none;
+
+      .wa {
+        font-size: 12px;
+      }
+      .wa-caret-down {
+        display: inline-block;
+      }
+      .wa-caret-up {
+        display: none;
+      }
+      &.open {
+        .wa-caret-up {
+          display: inline-block;
+        }
+        .wa-caret-down {
+          display: none;
+        }
+      }
+    }
+  }
+  .blank-msg{
+    text-align: center;
+    line-height: 2;
+    font-size: 32px;
+  }
+  .pagination-box {
+    margin: 20px 7px 0 7px;
+    .pagination {
+      margin: 0;
+    }
+  }
+  .proImg-chs-list {
+    height: 220px;
+    list-style-type: none;
+    margin-left: 7px;
+    padding: 0;
+    .mask {
+      position: absolute;
+      background-color: #eee;
+      background-color: rgba(238, 238, 238, 0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 9;
+      .wa-check-tri {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
+        color: $brand-primary;
+      }
+    }
+    & li {
+      float: left;
+      cursor: pointer;
+    }
+    & li:hover, & li.active {
+      a {
+        border: 3px solid $brand-primary;
+        padding: 0;
+      }
+      .mask {
+        display: block;
+      }
+    }
+    & a {
+      position: relative;
+      border: 1px solid #eee;
+      padding: 2px;
+      width: 95px;
+      height: 95px;
+      display: block;
+      background-position: center center;
+      background-size: cover;
+      margin: 15px 15px 0 0;
+      z-index: 8;
+      overflow: hidden;
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+  .ww-album-set-btn {
+    width: 95px;
+    margin-top: 20px;
+  }
+}

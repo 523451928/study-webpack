@@ -1,0 +1,505 @@
+$user-photo-bg: '~images/user/photo-bg.png';
+
+#user-left-aside {
+  width: 220px;
+  float: left;
+  .account-info {
+    width: 100%;
+    border: 1px solid $hr-base-dark;
+    .photo {
+      width: 100%;
+      height: 220px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .detail {
+      overflow: hidden;
+      border-top: 0 none;
+      text-align: center;
+      height: 120px;
+      background-color: #ffffff;
+      padding: 0 10px;
+      h3 {
+        margin-bottom: 22px;
+        @include text-truncate();
+      }
+    }
+  }
+}
+
+#user-right-aside {
+  margin-left: 245px;
+}
+
+.user-wrap {
+  .back-to-album{
+    padding:15px;
+    .back-to-album-link{
+      line-height: 30px;
+      padding: 0 15px;
+      display: block;
+      border-right: 1px solid $hr-base-dark;
+    }
+  }
+  .user-album-nav {
+    background-color: #ffffff;
+    height: 65px;
+    border-bottom: 1px solid $hr-base-dark;
+    .album-nav-list {
+      height: 65px;
+      > li {
+        margin-right:25px;
+        &.active,
+        &:hover {
+          a {
+            color: $brand-primary;
+            border-bottom: 2px solid $brand-primary;
+            background: none;
+          }
+        }
+        a {
+          line-height: 62px;
+          padding: 0;
+          color: $gray-light;
+        }
+      }
+    }
+  }
+  .user-trade-nav {
+    margin-top: 50px;
+    border-bottom: 1px solid $hr-base-dark;
+    .trade-nav-list {
+      @include clearfix();
+      width: 200px;
+      margin-bottom: 0;
+      @include center-block();
+      > li {
+        float: left;
+        margin-bottom: -1px;
+        &.active {
+          a {
+            background-color: $bg-base;
+            border-bottom: 1px solid transparent;
+          }
+        }
+        a {
+          color: $text-color-light;
+          background-color: #ffffff;
+          padding: 15px 0;
+          width: 100px;
+          display: block;
+          text-align: center;
+          border: 1px solid $hr-base-dark;
+          &.my-cart {
+            border-right: 0 none;
+          }
+          &:hover,
+          &:focus,
+          &:visited,
+          &:active {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .user-cont-wrap {
+    padding-top: 20px;
+    width: 980px;
+    // user
+    .user-info-item {
+      width: 100%;
+      margin-bottom: 20px;
+      .item-title{
+        background-color: $bg-base-dark;
+        border:1px solid $hr-base-dark;
+        margin-right: 45px;
+        h4 {
+          margin: 15px 0 15px 15px;
+        }
+      }
+      .item-cont {
+        .no-album {
+          text-align: center;
+          font-size: 20px;
+          margin-top: 30px;
+        }
+        .cont-list {
+          overflow: hidden;
+          > li {
+            float: left;
+            height: 200px;
+            width: 300px;
+            margin-right: 25px;
+            margin-top: 25px;
+            background-color: $bg-base-dark;
+            text-align: center;
+            border: 1px solid $hr-base;
+            &.user-photo-upload-btn:hover{
+              border-color:#26a7c7;
+            }
+          }
+
+        }
+      }
+    }
+    //work-list
+    .work-list{
+      & li{
+        position: relative;
+        float: left;
+        height: 200px;
+        width: 200px;
+        padding:10px;
+        margin-right: 25px;
+        margin-top: 25px;
+        background-color: #fff;
+        text-align: center;
+        & .work-img-box{
+          height: 180px;
+          width: 180px;
+          display: table-cell;
+          vertical-align: middle;
+        }
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+      }
+    }
+    .add-work-btn{
+      border:1px solid #c4c4c4;
+      background-color:#fff;
+      text-align:center;
+      cursor: pointer;
+      background-image:url($user-photo-bg);
+      background-repeat: no-repeat;
+      background-position:-765px -19px;
+      & span{
+        color:#c4c4c4
+      }
+      &:hover{
+        background-position:-536px -19px;
+        border-color:#26a7c7;
+      }
+      &:hover span{
+        color:#26a7c7
+      }
+    }
+
+    // photo
+    &.photo-wrap {
+      padding: 0 60px;
+    }
+
+    // account setting
+    .user-ac-left {
+      float: left;
+      width: 65px;
+      .user-info-list {
+        > li {
+          margin-top: 25px;
+          a {
+            color: $text-color-light;
+            &:focus,
+            &:active,
+            &:hover {
+              text-decoration: none;
+            }
+            &:hover {
+              color: $text-color-base;
+            }
+          }
+          &.active {
+            a {
+              color: $text-color-base;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+    .user-ac-cont {
+      margin-left: 220px;
+      position: relative;
+      .inv-list {
+        li {
+          margin-bottom: 10px;
+          .info {
+            display: inline-block;
+            margin-right: 10px;
+            &.inv-tit {
+              .inv-tit-update {
+                display: none;
+                input {
+                  border: 0 none;
+                  &:focus {
+                    outline: none;
+                  }
+                }
+              }
+              &.stat-update {
+                .inv-tit-update {
+                  display: block;
+                }
+                .words {
+                  display: none;
+                }
+              }
+            }
+          }
+
+        }
+      }
+      .social-ac-list {
+        > li {
+          overflow: hidden;
+          border-bottom: 1px solid $hr-base;
+          height: 53px;
+          line-height: 53px;
+          .item {
+            display: inline-block;
+            vertical-align: middle;
+            &.icon {
+              width: 200px;
+            }
+            .social-i {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// for the edit link beyond the head image
+.head-hover-parent{
+  position:relative;
+  .head-edit{
+    display:none;
+    @include opacity(0.6);
+    background-color:#000000;
+    width:100%;
+    position:absolute;
+    bottom:0;
+    text-align:center;
+    line-height:2;
+    color:#ffffff;
+  }
+  .head-edit:hover{
+    text-decoration:none;
+  }
+  &:hover .head-edit{
+    display:block;
+  }
+}
+
+// for the tab widget of the profile page
+.profile-con{
+  display:none;
+  &.active{
+    display:block;
+  }
+}
+
+//Add Album
+.ww-add-album-box{
+  .modal-content{
+    width: 520px;
+  }
+}
+.ww-add-album-title{
+  margin:-15px -15px 15px -15px;
+  background:#edefec;
+  padding:16px 0 16px 20px;
+  font-size:16px;
+  font-weight:500;
+  color: $text-color-base;
+}
+.ww-add-album-eidt{
+  margin:0;
+  margin-top: 30px;
+  padding-left: 5px;
+  list-style:none;
+  & li {
+    margin-bottom:20px;
+  }
+  & li label{
+    float:left;
+    margin-right:9px;
+    line-height:34px;
+  }
+  & .ww-album-group{
+    width:400px;
+    float:left;
+  }
+  & .ww-album-group input{
+    padding-right:25px;
+    width: 310px;
+  }
+}
+.dis-set-link{
+  color:#eee !important;
+  &.set-album-btn{
+    color:#565A5C !important;
+  }
+}
+
+.album-link{
+  display: block;
+  width: 100%;
+  height:100%;
+  position: relative;
+  &::after {
+    content:"";
+    position:absolute;
+    right:2px;
+    left:2px;
+    top:-2px;
+    height:1px;
+    background:#afb7bc;
+    -webkit-transition:all 150ms ease-in-out;
+    -moz-transition:all 150ms ease-in-out;
+    -o-transition:all 150ms ease-in-out;
+    transition:all 150ms ease-in-out
+  }
+  &::before {
+    content:"";
+    right:4px;
+    left:4px;
+    top:-4px;
+    height:1px;
+    background:#afb7bc;
+    position:absolute;
+    -webkit-transition:all 150ms ease-in-out;
+    -moz-transition:all 150ms ease-in-out;
+    -o-transition:all 150ms ease-in-out;
+    transition:all 150ms ease-in-out
+  }
+  &:hover::before,&:hover::after {
+    background-color:#8c9296
+  }
+  &:hover::after {
+    top:-3px
+  }
+  &:hover::before {
+    top:-6px
+  }
+}
+
+
+
+.text-control{
+  position:absolute;
+  bottom:7px;
+  right:100px;
+  color:#ccc;
+  z-index:9;
+}
+.error-alert{
+  position:absolute;
+  bottom:-17px;
+  left:5px;
+  font-size:12px;
+  lin-height:15px;
+  color:#cc0000;
+  display:none;
+}
+.blank-error{
+  @extend .error-alert
+}
+.ww-album-edit-btn{
+  float: right;
+  margin-right: 0px;
+  width: 80px;
+}
+
+.set-face-box{
+  width:715px;
+}
+.pagination{
+  margin:0 0 0 7px;
+}
+.face-list{
+  height:220px;
+  list-style-type: none;
+  margin-left:7px;
+  padding:0;
+  & li{
+    float: left;
+  }
+  & li:hover a,& li.active a{
+    border-color:#00a9c3;
+  }
+  & a{
+    border:3px solid #fff;
+    width:100px;
+    height:100px;
+    display: block;
+    background-position:center center;
+    background-size:cover;
+    margin:10px 10px 0 0;
+  }
+}
+
+.ww-album-set-btn{
+  float: right;
+  margin-top:10px;
+  margin-right:20px;
+}
+
+//×号
+.x-icon{
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  transform:rotate(-47deg);
+  float:right;
+  margin-right:5px;
+  margin-top:-5px;
+  cursor: pointer;
+  .d-part1{
+    border-bottom: 1px solid $border-color-base;
+    float:left;
+    height: 10px;
+    width: 9px;
+  }
+  .d-part2{
+    border-left: 1px solid #c4c4c4;
+    border-bottom:1px solid #c4c4c4;
+    float:left;
+    height: 10px;
+    width: 10px;
+  }
+  .d-part3{
+    float:left;
+    height: 9px;
+    width: 9px;
+  }
+  .d-part4{
+    border-left: 1px solid #c4c4c4;
+    float:left;
+    height: 10px;
+    width: 8px;
+  }
+}
+.account .btn.active {
+  position: relative;
+  border: 1px solid #08B7E2;
+  background-color: #fff;
+  .wa-check-tri {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    color: #08B7E2;
+  }
+}

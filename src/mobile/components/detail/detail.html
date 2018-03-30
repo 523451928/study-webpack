@@ -1,0 +1,78 @@
+<div slot="crumb" class="crumb">
+  <a href="/public/list" target="_blank">全部产品</a> <span>&gt;</span>
+  <a href="/work?CategoryId={{$.Category.Id}}">{{$.Category.Name}}</a> <span>&gt;</span>
+  <a href="/work/{{$.Work.Id}}?CategoryId={{$.Category.Id}}">{{$.Work.Title}}</a>
+</div>
+
+<pro-stage slot="detailWrap" name="{{$.Work.Title}}" work-id="{{$.Work.Id}}"
+           category-id="{{call $.Marshal $.CategoryId}}" incomes="{{call $.Marshal $.Incomes}}">
+</pro-stage>
+<span slot="like">{{if $.Liked}}<span class="wa wa-heart-fill"></span>{{else}}<span class="wa wa-heart"></span>{{end}}{{$.LikeCount}}</span>
+
+<div slot="autor" class="author-info clearfix">
+    <a class="author-link" href="/persional?userId={{$.Work.UserId}}">
+        {{if $.Artist.Avatar}}
+        <img class="author-head-img" src="~images/thumbnail/avatar/{{$.Work.UserId}}/100/{{$.Artist.Avatar}}">
+        {{else}}
+        <img class="author-head-img" src="~images/profile-user-default-100x100.jpg">
+        {{end}}
+    </a>
+
+    <div class="pull-left author-name">
+        <div>
+            <a class="default-link item name author-link" href="/artist/{{$.Work.UserId}}">
+                {{$.Artist.Nickname}}
+            </a>
+        </div>
+        <div>
+            <a class="btn btn-default btn-sm" id="follow-btn">
+                <span class="no-flw-text">+ 关注</span>
+                  <span class="flw-text">
+                      <span class="flw-text-normal">已关注</span>
+                      <span class="flw-text-hover">取消关注</span>
+                  </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<strong slot="otherCount" class="pro-count">{{len $.Pieces}}</strong>
+
+<div slot="artistSay">
+    <h2 class="des-title">产品描述</h2>
+
+    <div class="des-con" id="pro-des">
+        {{$.Work.Description}}
+    </div>
+    <h2 class="des-title">产品标签</h2>
+
+    <div class="tags-con" id="pro-tags">
+        <ul class="detail-tags-list">
+            {{range $index, $tag := $.Work.Tags}}
+            <li>{{$tag.Name}}</li>
+            {{end}}
+        </ul>
+    </div>
+</div>
+<div slot="more-work" class="product-list-area more-pro clearfix" id="product-list-area">
+    {{range $i, $p := $.Pieces}}
+    <div class="pro-list">
+        <div class="pro-pic text-center">
+            <a class="pic-link" href="/work/{{$p.WorkId}}?CategoryId={{$p.Category.Id}}">
+            </a>
+            <display entry-id="{{$p.Entry.Id}}"
+                     category-id="{{$p.Category.Id}}"
+                     product-id="{{$p.Entry.ProductId}}"
+                     pictures="{{call $.Marshal $p.Pictures}}"
+                     displays="{{call $.Marshal $p.Displays}}"></display>
+        </div>
+        <div class="pro-detail clearfix">
+            <div class="pro-title text-center">
+                <a href="/work/{{$.Work.Id}}?CategoryId={{$p.Category.Id}}">
+                    {{$p.Category.Name}} <span>￥{{$p.Money}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{end}}
+</div>

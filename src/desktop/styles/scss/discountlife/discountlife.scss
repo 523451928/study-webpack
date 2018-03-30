@@ -1,0 +1,98 @@
+.layer-md{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.discountLife {
+  padding-top: 64px;
+  min-height: 100%;
+  .discount-tips-wrap {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 200px;
+    .discount-tips {
+      position: relative;
+      height: 200px;
+      margin-left: -969px;
+      left: 50%;
+      background: url('~images/collections/discountLife/discountLife-05.jpg');
+    }
+    h1 {
+      position: absolute;
+      left: 50%;
+      top: 17%;
+      transform: translate(-50%,-50%);
+      font-size: 32px;
+      color: #FFFFFF;
+      text-align: center;
+    }
+    p {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 14px;
+    }
+    .group-modal-btn {
+      position: absolute;
+      width: 160px;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+      border-radius: 25px;
+      margin: 0 auto;
+      font-size: 16px;
+      background-color: #EE5B4E;
+      color: #FFFFFF;
+      left: 50%;
+      top: 72%;
+      transform: translate(-50%,-50%);
+      cursor: pointer;
+      &:hover {
+        color: #FFFFFF;
+        background-color: #ff7060;
+      }
+    }
+  }
+  .discount-lists {
+    ul {
+      padding-top: 28px;
+      padding-bottom: 23px;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      li {
+        font-size: 14px;
+        color: #565A5C;
+        margin-bottom: 4px;
+        cursor: default;
+      }
+    }
+    .discount-list {
+      margin-bottom: 20px;
+      transition: all 0.2s linear ;
+      -webkit-transition: all 0.2s linear;
+      -moz-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      &:hover {
+        transform: translate3d(0,-2px,0);
+        -webkit-transform: translate3d(0,-2px,0);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        -o-box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+    }
+    .discount-more {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 52px;
+      margin-bottom: 55px;
+      color: #aaaaaa;
+      cursor: default;
+    }
+  }
+}

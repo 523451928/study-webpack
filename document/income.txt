@@ -1,0 +1,30 @@
+1. 收入提现汇总
+  方法: GET
+  地址: /income/profit/balance
+  返回: { Data:{
+    FinishIncome:Integer       // 已入账收入
+    UnFinishIncome:Integer     // 未入账收入
+    FinishWithdraw:Integer     // 已提现
+    UnFinishWithdraw:Integer   // 提现途中-被冻结
+    Available:Integer          // 可提现
+    TotalIncome:Integer        // 总收入
+    TotalWithdraw:Integer      // 总提现
+  } }
+
+2. 收入列表
+  方法: GET
+  地址: /income/profit/list
+  返回: { Data:{
+    SnapshotId:Integer  // 快照Id
+    CategoryId:Integer  // 品类Id
+    Count:Integer       // 数量
+    Status:Integer      // 订单状态
+    Reward:Integer      // 收入金额
+    Title:String        // 商品标题
+    CreateTime:Integer  // 交易时间
+  } }
+
+2. 蛙币余额
+  方法: GET
+  地址: /income/wacurrency/balance
+  返回: { Balance:Integer }

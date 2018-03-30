@@ -1,0 +1,44 @@
+.user-center-wrap {
+  position: relative;
+  width: 980px;
+  margin: 0 auto 60px;
+  padding-top: 1px;
+  padding-bottom: 60px;
+  min-height: 550px;
+}
+.user-des {
+  padding: 40px 0;
+  .user-des-title {
+    border-bottom: 1px solid #dce0e0;
+  }
+}
+.user-des-title {
+  margin: 20px 0;
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+.user-des-text {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+.user-des-date {
+  color: #82888a;
+  margin-bottom: 40px;
+}
+.user-des-con {
+  padding: 0;
+  white-space: normal;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #565a5c;
+  border: none;
+  background-color: #fff;
+  font-family: Hiragino Sans GB,Microsoft YaHei,tahoma,arial,simsun,\\5B8B\4F53;
+}
+.per-coupon-code {
+  font-size: 24px;
+}
+.per-avatar-name {
+  font-weight: bold;
+}

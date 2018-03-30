@@ -1,0 +1,44 @@
+
+/**遇到问题及二维码**/
+.contact-wechat {
+  position: fixed;
+  top: 280px;
+  right: 10px;
+  z-index: 999;
+  .contact-box {
+    position: relative;
+    cursor: pointer;
+    padding-left: 15px;
+    .wechat-erwm {
+      position: absolute;
+      display: none;
+      left: -89px;
+      top: 0
+    }
+    &:hover .wechat-erwm {
+      display: block
+    }
+  }
+}
+
+/**正文生命部分**/
+.pb20 {
+  padding-bottom:20px;
+}
+.text-center {
+  text-align:center;
+}
+.row {
+  p {
+    font-size: 14px;
+    line-height: 32px;
+    margin: 0px;
+    span {
+      color: #404040;
+      font-weight: bold;
+    }
+  }
+  h5 {
+    font-size:18px;
+  }
+}

@@ -1,0 +1,50 @@
+社交账号
+
+
+  1. 小程序
+    方法: POST
+    地址: /social/weapp
+    参数: 见wx.login和wx.getUserInfo
+    返回: { Data:Boolean } // 成功或失败
+
+ 2. 社交动作:
+    方法: GET
+    地址: /social/<login|bind|event>/<qq|weibo|weixin|weixinmp>
+    参数:
+      Link:String // 当前页面地址
+      Next:String // 操作成功后跳转地址，可选
+
+ 3. 社交列表
+    方法: GET
+    地址: /social/list
+    返回: { Data:[{
+      Id:Integer      // 社交Id
+      Platform:String // 社交平台
+      OpenId:String   // 社交平台OpenId
+      Nickname:String // 社交平台昵称
+    }] }
+
+
+  4. 社交解绑
+    方法: POST
+    地址: /social/unbind/<SocialId>
+    返回: { Data:Boolean } // 成功或失败
+  5. 社交主页
+    方法: POST
+    地址: /social/hp/<SocialId>
+    参数:
+      Show:Boolean // 是否显示，必须
+      Hp:File      // 微信二维码图片文件名
+    返回: { Data:Boolean } // 成功或失败
+
+  6. 上传微信二维码图片:
+    方法: POST
+    地址: /upload/wxhp
+    参数(multipart/form-data):
+      File:file
+    返回: { Data:String } // 微信二维码图片文件名
+
+  7. 获取微信二维码缩略图:
+    方法: GET
+    地址: /thumbnail/wxhp/${UserId}/${240|480|720}/${File}
+

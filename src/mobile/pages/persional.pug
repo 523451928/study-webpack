@@ -1,0 +1,108 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends public/_layout.pug
+
+block hd
+  title 艺术家主页
+block bd
+  .bd(v-cloak)
+    top
+    userhead
+    .ww-wrap.user-cont-wrap.cont-wrap.bg-white
+      list
+        <div class="product-list-con" slot='prolist'>
+        <div class="product-sort-area product-sorts-list clearfix">
+        <div class="product-list-con">
+        <div class="product-sort-area product-sorts-list clearfix">
+        <div class="tags clearfix">
+        <div class="kind-tags tags-list clearfix"><span class="tags-cate-title">分类：</span>
+        <ul class="tags-list-ul clearfix">
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=1">全部</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=2">摄影</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=3">绘画</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=3">设计&插画</a>
+        </li>
+        </ul>
+        </div>
+        <div class="label-tags tags-list clearfix"><span class="tags-cate-title">品类：</span>
+        <ul class="tags-list-ul clearfix">
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=6">有框画</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=7">布艺画</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=8">卷轴画</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=9">旅行杯</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=10">抱枕</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=11">男士T恤</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=12">女士T恤</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=13">儿童T恤</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=14">帆布包</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=15">手机壳</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=16">iPad壳</a>
+        </li>
+        <li>
+        <a href="/work?CategoryId=1&amp;TagId=17">笔记本</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        <div class="product-list-area clearfix">
+        <div class="pro-list grey-border">
+        <a href="/work/1?CategoryId=1" class="displays-link"></a>
+        <display class="displays" entry-id="23" category-id="1" product-id="0" :pictures="[{&quot;Index&quot;:0,&quot;Output&quot;:{&quot;Size&quot;:[400,550],&quot;Full&quot;:1},&quot;ImageId&quot;:3,&quot;ImageFile&quot;:&quot;b4db1b7170f6b9bbf20d40e600e807d5-2448x3264.jpg&quot;,&quot;TranslateX&quot;:0,&quot;TranslateY&quot;:0,&quot;Rotate&quot;:0,&quot;ScaleX&quot;:67,&quot;ScaleY&quot;:67}]" :displays="[[{&quot;Hole&quot;:[0,0,0,0],&quot;Type&quot;:0,&quot;Fore&quot;:&quot;02dfe3abba1d1af7a98c9c756cd73c59-1096x1496.png&quot;,&quot;Back&quot;:&quot;#FFF-800x1100&quot;,&quot;Left&quot;:148,&quot;Top&quot;:198}]]"></display>
+        <div class="pro-detail clearfix"><span class="pro-price pull-right">¥ 207.48</span>
+        <div class="pull-left pro-title">
+        <a href="/work/1?CategoryId=1" class="default-hover-link">teeeess </a>
+        </div>
+        <div class="clearfix"></div>
+        <span class="pull-right">
+        <a href="javascript:void(0)" class="default-link list-like-btn like-btn">
+        <span class="wa wa-heart-fill"></span>
+        <span class="like-count">0</span>
+        </a>
+        </span>
+        <div class="author-name pull-left">
+        <a href="/artist/8" class="default-hover-link">大奎</a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="page-bar text-center">
+        <ul>
+        <li>
+        <a href="/work?CategoryId=1">1</a>
+        </li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+      foot

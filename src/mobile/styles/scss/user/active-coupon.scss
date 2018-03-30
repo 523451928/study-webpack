@@ -1,0 +1,172 @@
+.profile-head {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-bottom: 1px solid #dce0e0;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  text-align: center;
+  font-size: 17px;
+  .back {
+    color: #82888a;
+    line-height: 45px;
+    position: absolute;
+    left: 15px;
+    font-size: 17px;
+  }
+}
+.btn-primary:hover{
+  border-color: #55c5d7;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.panel-default {
+  > .panel-heading {
+    color: #333333;
+  }
+}
+
+.panel-heading {
+  padding: 15px;
+}
+.panel-body {
+  padding: 15px;
+}
+
+.user-wrap{
+  .user-cont-wrap {
+    padding-top: 20px;
+    width: 980px;
+  }
+}
+.nav-wrap {
+  margin-bottom: 30px;
+  border-top: 1px dashed #dce0e0;
+  margin-top: 15px;
+  padding-top: 15px;
+  .pull-right {
+    padding-top: 6px;
+  }
+}
+.tickets-nav {
+  border-bottom: 1px solid #dce0e0;
+  overflow: hidden;
+  li {
+    float: left;
+    width: 33.333%;
+    margin-right: 0;
+    text-align: center;
+    &.active {
+      a {
+        color: #26a7c7;
+        border-bottom-color: #26a7c7
+      }
+    }
+    a {
+      color: #565a5c;
+      display: block;
+      padding: 6px 12px;
+      border-bottom: 2px solid transparent;
+      -webkit-transition: all .4s ease-out;
+      transition: all .4s ease-out
+    }
+  }
+}
+.no-tickets {
+  padding: 0;
+  border: 0 none;
+  font-size: 20px;
+  margin: 20px 0;
+  background-color: transparent;
+  text-align:center;
+}
+.ticket-list {
+  li {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .ticket {
+    background: url('http://wallwa.com/images/coupon/coupon-ticket-bg.png') no-repeat;
+    //width: 327px;
+    //height: 132px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 40%;
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    .money {
+      position: absolute;
+      top: 15px;
+      right: 10px;
+      font-size: 20px;
+      color: #ed5565;
+      width: 45%;
+      text-align:center;
+      i{
+        font-style:normal;
+      }
+      span {
+        font-size:50px;
+      }
+    }
+    .info {
+      //position: absolute;
+      //text-align: left;
+      //font-size: 12px;
+      //width: 45%;
+      //padding-left: 15px;
+
+      position: absolute;
+      top: 15px;
+      text-align: left;
+      font-size: 12px;
+      width: 60%;
+      padding-left: 25px;
+      span {
+        display:block;
+      }
+      .name {
+        color: #ed5565;
+        margin-bottom: 15px;
+      }
+      .title {
+        //font-size: 18px;
+        //color: #ed5565;
+        //margin-bottom: 12px;
+        //white-space: nowrap;
+
+        font-size: 16px;
+        color: #ed5565;
+        margin-bottom: 12px;
+        white-space: nowrap;
+      }
+      .time {
+        color: #565a5c;
+      }
+    }
+  }
+}
+.coupon-ticket-con {
+  display:none;
+  &.active {
+    display:block;
+    text-decoration: none;
+  }
+}
+.gift-form {
+  height: 50px;
+  .gift-form-input {
+    width:  75%;
+    padding-right: 5px;
+  }
+  #submit-coupon {
+    width: 20%;
+  }
+}

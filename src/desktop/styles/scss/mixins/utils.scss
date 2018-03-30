@@ -1,0 +1,9 @@
+// 清除浮动
+@mixin clear-float {
+  &::after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both;
+  }
+}

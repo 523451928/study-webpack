@@ -1,0 +1,148 @@
+相册
+  1. 相册列表:
+    方法: GET
+    地址: /image/album/list
+    返回: { Data:[{
+      Id:Integer       // 相册Id
+      Name:String      // 相册名称, 默认相册名称为空字符串
+      CoverId:Integer  // 封面图片Id
+      CoverFile:String // 封面图片文件
+      Priority:Integer // 相册优先级
+      Count:Integer    // 相册图片数量
+    }] }
+  2. 新建相册:
+    方法: POST
+    地址: /image/album/add
+    参数:
+      Name:String      // 相册名称
+      Priority:Integer // 相册优先级
+    返回: { Data:Integer } // 相册Id
+    错误:
+      NameAlreadyExists 相册名称已存在
+      AlbumCountOverLimit 相册数量超过限制
+  3. 设置相册:
+    方法: POST
+    地址: /image/album/set/${AlbumId}
+    参数:
+      Name:String      // 相册名称, 默认相册名称不允许设置
+      Priority:Integer // 相册优先级
+      CoverId:Integer  // 封面图片Id
+    返回: { Data:Integer } // 相册Id
+    错误:
+      AlbumNotExist 相册不存在
+      NameAlreadyExists 相册名称已存在
+      CoverNotExist 封面不存在
+      CoverNotInAlbum 封面不在相册中
+  4. 删除相册:
+    方法: DELETE
+    地址: /image/album/remove/${AlbumId}
+    返回: { Data:Integer } // 相册Id
+    错误:
+      AlbumNotExist 相册不存在
+      RemoveDefaultNotAllow 不允许删除默认相册
+      AlbumHasImage 不允许删除有图片的相册
+
+图片
+  0. 数据:
+    Info: {              // 图片信息
+      Resolution:Boolean // true分辨率可能太小
+      Colorspace:Boolean // true色彩可能失真
+      Rotate:Integer     // 初始旋转角度
+      ScaleX:Integer     // 初始水平翻转
+      ScaleY:Integer     // 初始垂直翻转
+    }
+  1. 上传图片:
+    方法: POST
+    地址: /image/upload
+    参数(multipart/form-data):
+      Image:file
+      Hidden:Boolean  // 是否隐藏
+      AlbumId:Integer // 上传相册Id
+    返回: { Data: {
+      Id:Integer        // 图片Id
+      File:String       // 图片文件
+      Info:Info         // 图片信息
+      Duplicate:Boolean // true重复图片
+    } }
+    错误:
+      FileTooSmall 文件太小
+      FileTooLarge 文件太大
+      FileUnsupported 文件类型不支持
+      WidthTooSmall 图片宽太小
+      WidthTooLarge 图片宽太大
+      HeightTooSmall 图片高太小
+      HeightTooLarge 图片高太大
+      UploadNothing 无图片上传
+      AlbumNotExist 相册不存在
+  2. 获取图片缩略图:
+    方法: GET
+    地址: /thumbnail/image/${ImageId}/${120|240|480|720|960}/${File}
+  3. 获取图片信息
+    方法: GET
+    地址: /image/info/${ImageId}
+    返回: { 
+        Data:{
+          Info: info, //图片信息
+          Id: integer, //图片id
+          File: String //图片文件
+        }
+      }
+  4. 获取图片列表
+    方法: GET
+    地址: /image/list
+    参数:
+      Page:Integer
+      Count:Integer   // 12, 24
+      Mode:Integer    // 0简洁, 1详细
+      AlbumId:Integer // 相册Id
+    返回: { Pager, Data:[{
+      Id:Integer  // 图片Id
+      File:String // 图片文件
+      Info:Info   // 图片信息
+      // 仅详细模式
+      AlbumId:Integer    // 相册Id
+      Title:String       // 图片标题
+      Description:String // 图片描述
+      Tag:String         // 图片标签, 换行符分隔
+      Name:String        // 图片上传时的文件名
+      CreateTime:Time    // 图片上传时间
+    }] }
+  5. 设置图片:
+    方法: POST
+    地址: /image/set/${ImageId}
+    参数:
+      AlbumId:Integer    // 相册Id
+      Title:String       // 图片标题
+      Description:String // 图片描述
+      Tag:String         // 图片标签, 换行符分隔
+    返回: { Data:Integer } // 图片Id
+    说明: 参数均可选至少提供一项
+  6. 删除图片:
+    方法: DELETE
+    地址: /image/remove/${ImageId}
+    返回: { Data:Integer } // 图片Id
+  7. 批量设置图片:
+    方法: POST
+    地址: /image/batch/set
+    参数:
+      Id:Integer         // 图片Id, 多个
+      AlbumId:Integer    // 相册Id
+      Title:String       // 图片标题
+      Description:String // 图片描述
+      Tag:String         // 图片标签, 换行符分隔
+    返回: { Data:Integer } // 设置的图片数量
+  8. 批量移动图片:
+    方法: POST
+    地址: /image/batch/move
+    参数:
+      Id:Integer          // 图片Id, 多个
+      FromAlbumId:Integer // 源相册Id
+      ToAlbumId:Integer   // 目的相册Id
+    返回: { Data:Integer } // 移动的图片数量
+  9. 批量删除图片:
+    方法: DELETE
+    地址: /image/batch/remove
+    参数:
+      Id:Integer      // 图片Id, 可多个
+      AlbumId:Integer // 相册Id
+    返回: { Data:Integer } // 删除的图片数量

@@ -1,0 +1,26 @@
+1. 喜欢列表
+  方法: GET
+  地址: /like/list
+  返回: { Pager, Data:[{
+      Disable:Boolean
+      ItemId:Integer
+      ArtistId:Integer
+      ArtistNickname:String
+      ArtistAvatar:String
+      WorkId:Integer
+      WorkTitle:String
+      CategoryId:Integer
+      CategoryName:String
+      EntryId,Packets,Pictures,Displays // 通用列表展示数据
+      Discount:Integer
+      Money:Integer
+      Liked:Boolean
+      LikeCount:Integer
+  }] }
+  说明: 如果Disable=true，其余字段可能为零值
+2. 喜欢商品
+  方法: POST
+  地址: /like/item
+  参数: ItemId:Integer   // 喜欢或取消喜欢的商品Id
+  返回: { Data:Boolean } // true喜欢成功，false取消喜欢成功
+  错误: InvalidItem      // 喜欢的商品不正确

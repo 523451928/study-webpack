@@ -1,0 +1,107 @@
+.scale-1px{
+  position: relative;
+  border:none;
+}
+
+li{
+  list-style: none;
+}
+.scale-1px:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left:0;
+  background: #dce0e0;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.recieve-wrapper{
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .ticket-content{
+    padding: .8rem .2rem;
+    .ticket-item{
+      width: 100%;
+      position: relative;
+      height: 1.2rem;
+      background: url('~images/coupon-bg.png') no-repeat;
+      background-size: contain;
+      margin-bottom: .2rem;
+      padding: .12rem;
+      .ticket-info{
+        color: #fff;
+        width: 59%;
+        float: left;
+        border: 2px solid #fff;
+        text-align: center;
+        .ticket-remark{
+          margin-top: .05rem;
+        }
+        h3{
+          font-size: .28rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin: 0 0 0.12rem 0;
+        }
+        .deadline{
+          border-top: 2px solid #fff;
+        }
+      }
+      .ticket-money{
+        width: 34%;
+        position: absolute;
+        color: #f05950;
+        font-size: .6rem;
+        right: 7px;
+        top:10px;
+        i{
+          font-size: .3rem;
+          font-style: normal;
+        }
+      }
+    }
+  }
+  h2{margin: 0;padding: 0;}
+  .user-head{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    //border-bottom: 1px solid #dce0e0;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    text-align: center;
+    font-size: 17px;
+    .back{
+      margin-left: 10px;
+      position: relative;
+      z-index: 100;
+    }
+  }
+  .receive-btn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 0.48rem;
+    line-height: 0.48rem;
+    font-size: .18rem;
+    text-align: center;
+    background: #26A7C7;
+    color: #fff;
+  }
+  .title{
+    font-size: .2rem;
+    text-align: center;
+    line-height: 41px;
+    position: absolute;
+    width: 100%;
+  }
+}

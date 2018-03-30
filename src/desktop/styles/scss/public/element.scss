@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import "./variable.scss";
+@import "./layout.scss";
+
+/** 功能组件 **/
+
+// 面板区域
+@mixin panel($bgColor: $c-nc-1,$padding: 10px, $margin: 0 0 20px 0,$titleColor: $c-fc-1, $titleSize:24px ) {
+  display: block;
+  margin: $margin;
+  background-color: $bgColor;
+  padding: $padding;
+  .title {
+    margin-bottom: 10px;
+    text-align: center;
+    color: $titleColor;
+    font-size: $titleSize;
+  }
+}
+// 按钮区域
+@mixin btn($bgColor: $c-jxc-1, $color: $c-nc-1, $fontSize: 14px, $padding: 10px 0, $hoverBgColor: $c-jxc-5, $hoverFontColor: $c-nc-1) {
+  display: block;
+  padding: $padding;
+  line-height: 1;
+  text-align: center;
+  background-color: $bgColor;
+  font-size: $fontSize;
+  border-radius: 2px;
+  border: 1px solid $bgColor;
+  transition: all .3s ease;
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    background-color: $hoverBgColor;
+    border-color: $hoverBgColor;
+    color: $hoverFontColor;
+    transition: all .3s ease;
+  }
+}

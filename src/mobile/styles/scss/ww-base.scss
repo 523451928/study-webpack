@@ -1,0 +1,29 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ */
+@keyframes animate_infinity {
+  from {
+    /* background-position: 0 0; */
+  }
+  to {
+    background-position: 0 -1950px;
+  }
+}
+
+//custom variables
+@import 'ww-variables';
+
+//bootstrap 4.0
+@import 'bootstrap/bootstrap';
+
+@import 'public';
+@import 'prompt';
+//wallwa webfont icon
+
+@import 'ww-font';
+@import 'cssloading';
+
+
+

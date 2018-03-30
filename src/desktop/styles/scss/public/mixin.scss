@@ -1,0 +1,41 @@
+@import "./variable.scss";
+
+$grid-width: 40px;
+$gutter-width: 10px;
+
+// 获得真实的css像素
+@function getCssWidth($n) {
+  @return $n/2;
+}
+// 利用vertaical-align进行垂直居中
+@mixin verticalCenter {
+	font-size: 0;
+	&::after {
+		width: 0;
+		height: 100%;
+		visibility: hidden;
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+// 文本超出部分隐藏
+@mixin textOverflowHidden {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+// 清除浮动
+@mixin clearFloat {
+	&::after {
+		content:'';
+		display: block;
+		clear: both;
+	}
+}
+
+// 设置背景图
+@mixin setBgUrlCenter($img) {
+	background: url($img) no-repeat;
+	background-size: cover;
+	background-position: center;
+}

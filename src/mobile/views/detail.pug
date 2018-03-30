@@ -1,0 +1,63 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends ../pages/public/_layout.pug
+
+block hd
+  title 商品详情
+block bd
+  .bd(v-cloak)
+    <section flex="dir:top">
+      //- <work-detail :category-id="<%call $.Marshal $work.CategoryId%>" :work-id="<%call $.Marshal $work.WorkId%>" :work-title="<%$work.Title%>" :work-income="<%call $.Marshal $.Incomes%>" :liked="<%$work.Liked%>" :count="<%$work.LikeCount%>"></work-detail>
+      <work-detail :cat-id="<%call $.Marshal $.CategoryId%>" :work-title="<%call $.Marshal $.Work.Title%>" :work-id="<%call $.Marshal $.Work.Id%>" :work-income="<%call $.Marshal $.Incomes%>" :liked="<%call $.Marshal $.Liked%>" :count="<%call $.Marshal $.LikeCount%>" :category-name="<%call $.Marshal $.Category.Name%>"></work-detail>
+      <section class="author-info">
+        <div class="content"  flex="dir:left cross:center main:justify">
+          <div class="user" flex="dir:left cross:center">
+            <img src="/thumbnail/avatar/<%$.Artist.Id%>/100/<%$.Artist.Avatar%>" alt="头像"/>
+            <span><%$.Artist.Nickname%>的品牌店</span>
+          </div>
+          <div class="entry" flex="dir:left cross:center">
+            <a href="javascript:void(0)">进入店铺</a>
+            <i class="wa wa-right"></i>
+          </div>
+        </div>
+      </section>
+      <%if $.Pieces%>
+      <section class="slider rests">
+        <h4>一副作品 多种变化</h4>
+        <div class="swiper-container" id="js_rests">
+          <div class="swiper-wrapper">
+            <%range $i, $p := $.Pieces%>
+              <div class="swiper-slide">
+                <display :entry-id="<%call $.Marshal $p.Entry.Id%>" :product-id="<%call $.Marshal $p.Entry.ProductId%>" :category-id="<%call $.Marshal $p.Category.Id%>" :pictures="<%call $.Marshal $p.Pictures%>" :displays="<%call $.Marshal $p.Displays%>" :work-id="<%call $.Marshal $.Work.Id%>"></display>
+              </div>
+            <%end%>
+          </div>
+        </div>
+      </section>
+      <%end%>
+      <%if $.MorePieces%>
+        <section class="slider more">
+          <h4>本店更多产品</h4>
+          <div class="swiper-container" id="js_more">
+            <div class="swiper-wrapper">
+              <%range $i, $p := $.MorePieces%>
+                <div class="swiper-slide">
+                  <display :entry-id="<%call $.Marshal $p.Entry.Id%>" :product-id="<%call $.Marshal $p.Entry.ProductId%>" :category-id="<%call $.Marshal $p.Category.Id%>" :pictures="<%call $.Marshal $p.Pictures%>" :displays="<%call $.Marshal $p.Displays%>" :work-id="<%call $.Marshal $p.WorkId%>"></display>
+                </div>
+              <%end%>
+            </div>
+          </div>
+        </section>
+      <%end%>
+      <section class="detail-bg">
+        <img v-lazy="detailHref"/>
+      </section>
+      <section class="logistics">
+        <h4>物流与包装</h4>
+        <p>墙蛙为您考虑到每一步，采用行业专用包装方案——用缓冲层抗挤压，抗摔落；专用气泡塑料包裹，抗潮湿，防止液体流入。确保在快递与转运过程中，多次周转无破损。 请您放心，如果您的商品不幸在物流中遭遇百斤挤压/重力撞击/野蛮踩踏/高空坠落，外伤与内伤并发，墙蛙会尽千分之千的努力，为您补发商品，直到您满意为止！</p>
+        <p>1.墙蛙网合作物流为中通包邮；（注意：包邮区域不含澳台）</p>
+        <p>2.墙蛙网产品均为手工工艺品，制作需耗费时间，墙蛙承诺在您付款后两个工作日内发货（周日及法定节假日不发货），还请耐心等待。</p>
+        <p>3.鉴于墙蛙网提供的个性化定制服务的特殊性，定制的产品发货后概不支持退货。如遇产品质量问题，可咨询在线客服。</p>
+      </section>
+    </section>
+

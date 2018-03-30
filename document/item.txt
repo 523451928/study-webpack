@@ -1,0 +1,60 @@
+商品
+  1. 作品生成商品:
+    方法: GET
+    地址: /item/build
+    参数:
+      Action:Integer     // 1添加购物车，2分享, 3喜欢, 4足迹
+      Count:Integer      // 仅Action=1时，添加购物车数量
+      CategoryId:Integer // 品类Id
+      WorkId:Integer     // 作品Id
+      Packets:[Integer]  // 作品Income中的Packets
+      EntryId:Integer    // 单品Id，仅照片墙时需多个
+    返回: { Data:{
+      Id:Integer                 // 商品Id
+      WorkId:Integer             // 作品Id
+      Discount:Integer           // 折扣
+      Money:Integer              // 价格
+      CategoryId:Integer         // 品类Id
+      PhotoWall,Entries,Pictures //* 通用商品展示数据
+      // 仅添加购物车成功时
+      CartId:Integer             // 购物车Id
+      Count:Integer              // 购物车数量
+    } }
+  2. 定制生成商品:
+    方法: POST
+    地址: /item/save
+    参数:
+      Action:Integer // 1添加购物车，2分享
+      Count:Integer  // 仅Action=1时，添加购物车数量
+    参数(application/json): {
+      Id:Integer          // 商品Id，编辑已有定制商品时Id>0，否则Id=0或不传
+      CategoryId:Integer  // 品类Id
+      Packets:[Integer]   // 数组长度必须等于2
+                          // 无卡画/布艺画/海报为尺寸
+                          // 单孔画/多孔画Packets[0]为卡纸物料Id，Packets[1]等于0
+                          // 照片墙/卷轴画Packets[0]为模板物料Id，Packets[1]等于0
+                          // 非装饰画Packets[1]为产品Id，Packets[0]等于0
+      Entries:[Integer]   // 单品Id，仅照片墙时多个
+      Pictures:[[{}]]     // 一个单品Id对应一个图片数组
+    }
+    返回: 同作品生成商品返回数据
+  3. 定制列表
+    方法: GET
+    地址: /item/list
+    参数: CategoryId:Integer  // 可选
+    返回: { Pager: {}, Data:[{
+      Disable:Boolean,           // 是否下架
+      Id:Integer                 // 商品Id
+      Discount:Integer           // 折扣
+      Money:Integer              // 价格
+      CategoryId:Integer         // 品类Id
+      PhotoWall,Entries,Pictures //* 通用商品展示数据
+    }] }
+  4. 获取定制商品:
+    方法: GET
+    地址: /item/get/<Id:Integer>
+    返回: 同作品生成商品返回数据
+  5. 删除定制商品:
+    方法: DELETE
+    地址: /item/remove/<Id:Integer>
+    返回: { Data:Integer } // 定制商品Id

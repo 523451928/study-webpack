@@ -1,0 +1,30 @@
+1. 评论列表
+  方法: GET
+  地址: /comment/list
+  参数:
+    WorkId:Integer   // 作品Id，必选
+    ParentId:Integer // 顶评论Id，可选
+    Page:Integer
+    Count:Integer
+  返回: { Pager:{}, Data:[{
+    Id:Integer           // 评论Id
+    ParentId:Integer     // 父评论Id，仅子评论时
+    Count:Count          // 子孙评论数，仅顶评论时
+    User:UserInfo        // 评论用户
+    ParentUser:UserInfo  // 父评论用户，仅子评论时
+    Content:String       // 评论内容
+    CreateTime:Timestamp // 评论时间
+  }] }
+  说明: 分页
+2. 添加评论
+  方法: POST
+  地址: /comment/add
+  参数:
+    ItemId:Integer       // 商品Id，必选
+    Content:String       // 评论内容，必选
+    ParentId:Integer     // 父评论Id，可选
+  返回: { Data:Integer } // 评论Id
+3. 删除评论
+  方法: DELETE
+  地址: /comment/<CommentId>
+  返回: { Data:Boolean }

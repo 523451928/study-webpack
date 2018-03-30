@@ -1,0 +1,17 @@
+1. 关注列表
+  方法: GET
+  地址: /follow/list
+  参数:
+    Passive:Boolean  // true被关注列表，false关注列表
+    ArtistId:Integer // 可选
+  返回: { Pager, Data:[{
+    Id:Integer
+    Nickname:String
+    Avatar:String
+  }] }
+2. 关注用户
+  方法: POST
+  地址: /follow/user
+  参数: UserId:Integer   // 关注或取消关注的用户Id
+  返回: { Data:Boolean } // true关注成功，false取消关注成功
+  错误: InvalidUser      // 关注的用户不正确

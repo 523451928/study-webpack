@@ -1,0 +1,359 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * product  默认展示列表 row
+ */
+.create-area{
+  .product-row{
+    width: 960px;
+    margin: 0 auto;
+  }
+  .pic-row {
+    width: 300px;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+    .rimlessPic-wrap {
+      -webkit-transform: perspective(1000px) rotateY(28deg);
+      -moz-transform: perspective(1000px) rotateY(28deg);
+      -ms-transform: perspective(1000px) rotateY(28deg);
+      -o-transform: perspective(1000px) rotateY(28deg);
+      transform: perspective(1000px) rotateY(28deg);
+    }
+    .goods-detail-wrap{
+      background: #fff;
+      padding:0 10px;
+      .goods-detail{
+        border-top: $pre-bg 1px solid;
+        padding: 10px 0;
+        .goods-category{
+          color: $text-color-base;
+        }
+        .goods-bonus{
+          color: $brand-success;
+          .goods-bonus-value{
+            color: $brand-success;
+            text-decoration: none;
+          }
+        }
+        .goods-count{
+          color: $input-color-placeholder;
+        }
+        .goods-money{
+          color: $input-color-placeholder;
+        }
+      }
+    }
+    &.all-disable {
+      .load-wrap {
+        opacity: 1;
+        display: block;
+      }
+      .knight-rider-loader {
+        display: none;
+      }
+      .disable-all {
+        display: none;
+      }
+      .enable-all {
+        display: inline-block;
+      }
+    }
+
+    &.pre-loading {
+      .load-wrap {
+        opacity: 1;
+        display: block;
+      }
+      .knight-rider-loader {
+        display: block;
+      }
+      .preview-pic-wrap {
+        z-index: -1;
+      }
+    }
+
+    &.illegal {
+      .update-ill-btn{
+        &.uploading {
+          .circle-progress {
+            opacity: 1;
+          }
+        }
+        cursor: pointer;
+      }
+      .illegal-overlay {
+        opacity: 1;
+        z-index: 1000;
+      }
+      .load-wrap {
+        opacity: 0;
+      }
+    }
+
+
+    .load-wrap {
+      text-align: center;
+      padding-top: 150px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background-color: rgba(255,255,255,0.7);
+      opacity: 0;
+      -webkit-transition: opacity 0.1s ease-in;
+      transition: opacity 0.1s ease-in;
+    }
+    .disable-wrap{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      background-color: rgba(255,255,255,0.7);
+    }
+
+    .pic-cell {
+      height: 300px;
+      width: 300px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      position: relative;
+
+    }
+  }
+
+  .slide-overlay {
+    //height: 300px;
+    border: 1px solid $hr-base;
+    background: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .illegal-overlay {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 9;
+    text-align: center;
+    //&:before {
+    //  content: '';
+    //  display: inline-block;
+    //  vertical-align: middle;
+    //  height: 100%;
+    //  width: 0;
+    //}
+    > span {
+      font-size: 20px;
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      left: 0;
+      top: 50%;
+      margin-top: -38px;
+    }
+  }
+
+  .preview-pic-wrap {
+    height: 100%;
+    pointer:default;
+    margin: 26px 0 0 0;
+    .side-control {
+      display: none;
+    }
+  }
+
+  .preview-info {
+    text-align: center;
+    padding: 14px 0 12px 0;
+  }
+
+  .preview-name {
+    font-size: 20px;
+  }
+
+  .product-buttons {
+    margin-top: 15px;
+    .btn {
+      position: relative;
+      overflow: hidden;
+      &:before {
+        font-family: WallWaIcon;
+        line-height: 32px;
+        position: absolute;
+        left: 0;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      span {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all 0.3s;
+        -webkit-backface-visibility: hidden;
+        -moz-transition: all 0.3s;
+        -moz-backface-visibility: hidden;
+        transition: all 0.3s;
+        backface-visibility: hidden;
+        .wa{
+          font-size: 15px;
+          margin-right: 4px;
+        }
+      }
+      .hover-text{
+        display: none;
+      }
+      .normal-text{
+        display: inline;
+      }
+      &:hover{
+        .hover-text{
+          display: inline;
+        }
+        .normal-text{
+          display: none;
+        }
+      }
+    }
+  }
+
+  .enable-all {
+    width: 145px;
+    height: 34px;
+    position: relative;
+    //display: none;
+    &:hover{
+      background:$brand-danger ;
+      border-color: $brand-danger;
+      color: #fff;
+    }
+  }
+  .disable-all {
+    width: 145px;
+    height: 34px;
+    position: relative;
+    &:hover{
+      background:$brand-success;
+      border-color: $brand-success;
+      color: #fff;
+    }
+    display: inline-block;
+  }
+  .edit-product {
+    width: 145px;
+  }
+
+  //杯子fire  样式
+  .cupPic-wrap{
+    .hg-img{
+      width: 100%;
+      height:100%;
+      display: none;
+      position: absolute;
+      z-index: 12;
+    }
+    .cupPic-cont{
+      position: absolute;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .hole-wrap.no-bg{
+      background: none;
+      position: absolute;
+
+    }
+    .bg-img{
+      width: 100%;
+      height:100%;
+      top:0;
+      left:0;
+      position: absolute;
+      z-index: 6;
+    }
+    &.fire {
+      .hg-img{
+        display: block;
+      }
+    }
+  }
+
+  .htPic-wrap{
+    .hg-img,.hg-img-hover{
+      width: 100%;
+      height:100%;
+      display: none;
+      position: absolute;
+      z-index: 12;
+    }
+    .case-tips{
+      position: absolute;
+      bottom: 0;
+      font-size: 14px;
+      z-index: 99;
+      width: 100%;
+      display: none;
+      color: $text-color-light;
+    }
+    .outline-img{
+      width: 100%;
+      height:100%;
+      display: none;
+      position: absolute;
+      top:0;
+      left: 0;
+      z-index: 9;
+    }
+    .htType-cont{
+      position: absolute;
+      z-index: 10;
+      overflow: hidden;
+    }
+    .hole-wrap.no-bg{
+      background: none;
+      position: absolute;
+
+    }
+    .bg-img{
+      width: 100%;
+      height:100%;
+      top:0;
+      left:0;
+      position: absolute;
+      z-index: 6;
+    }
+    &.fire {
+      .hg-img{
+        display: block;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

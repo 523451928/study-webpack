@@ -1,0 +1,53 @@
+@import "../pagi";
+.user-center-wrap {
+  width: 980px;
+  min-height: 550px;
+  margin: 0 auto 0 auto;
+  padding-bottom: 60px;
+  position: relative;
+}
+.follow-nav-ul {
+  &.nav-tabs{
+    list-style: none;
+    font-size: 14px;
+    border: none;
+    li {
+      border: none;
+      padding: 0 10px;
+      border-right: 1px solid #dce0e0;
+      float: left;
+      margin-bottom: -1px;
+      &:hover,&.active{
+        a{
+          color: #26a7c7;
+        }
+      }
+      a {
+        color: #565a5c;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.author-list{
+  text-align: center;
+}
+.author-list-avatar {
+  width: 100%;
+  border-radius: 50%;
+  max-width: 110px;
+  border: 2px solid #edefef;
+}
+.author-list:hover {
+  .default-link{
+    color: #26a7c7;
+  }
+}
+.follow-author-name {
+  height: 20px;
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 15px 0;
+}

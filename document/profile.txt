@@ -1,0 +1,119 @@
+头像
+  1. 上传原始头像图片:
+    方法: POST
+    地址: /upload`/avatar-original
+    参数(multipart/form-data):
+      File:file
+    返回: { Data:String } // 原始头像文件名
+  2. 获取原始头像缩略图:
+    方法: GET
+    地址: /thumbnail/avatar-original/${UserId}/480/${File}
+  3. 裁切原始头像:
+    方法: POST
+    地址: /user/avatar/crop
+    参数:
+      Original:String
+      Rotate:Integer(0|90|180|270)
+      Geometry:String(WidthxHeight-X-Y)
+    返回: { Data:String } // 用户头像文件名
+  4. 获取用户头像缩略图:
+    方法: GET
+    地址: /thumbnail/avatar/${UserId}/${50|100}/${File}
+
+横幅
+  1. 上传横幅图片:
+    方法: POST
+    地址: /upload/banner
+    参数(multipart/form-data):
+      File:file
+    返回: { Data:String } //
+  2. 获取横幅缩略图:
+    方法: GET
+    地址: /thumbnail/banner/${BannerId}/${100|480|1920}/${File}
+  3. 获取横幅列表:
+    方法: GET
+    地址: /banner/list
+    返回: { Data: {
+      Id:Integer
+      UserId:Integer // =0为网站提供的横幅，否则为自定义的横幅
+      Icon:String    // 横幅图标，仅网站提供的横幅，缩略图尺寸100
+      Image:String   // 横幅文件名
+      Title:String   // 网站提供的横幅名称
+      Left:Integer   // 自定义横幅的Left位置
+      Top:Integer    // 自定义横幅的Top位置
+    } }
+  4. 保存横幅:
+    方法: POST
+    地址: /banner/save
+    参数(application/json): {
+      Id:Integer     // 横幅Id，新添加时为0或不传
+      Image:String   // 横幅文件名
+      Left:Integer   // 自定义横幅的Left位置
+      Top:Integer    // 自定义横幅的Top位置
+    }
+    返回: { Data:Integer } // 横幅Id
+  5. 设置默认横幅
+    方法: POST
+    地址: /banner/default/<BannerId:Integer>
+  6. 删除横幅:
+    方法: DELETE
+    地址: /banner/<BannerId:Integer>
+    返回: { Data:Boolean } // 是否删除成功
+  7. 获取当前横幅
+    方法: GET
+    地址: /banner/get
+    参数: ArtistId:Integer // 可选艺术家Id，不传则默认当前用户
+
+个人信息
+  1. 获取:
+    方法: GET
+    地址: /profile/get
+    返回: { Data: {
+      UserId:Integer
+      RealName:String     // 真实姓名
+      Gender:Integer      // 0未设置, 1男, 2女
+      Birthday:Integer    // 0未设置, 20060102
+      Hometown:Integer    // 0未设置, 至少市级别PlaceId
+      Residence:Integer   // 0未设置, 至少市级别PlaceId
+      Introduction:String
+    } }
+  2. 保存
+    方法: POST
+    地址: /profile/save
+    参数:
+      RealName:String
+      Gender:Integer
+      Birthday:Integer
+      Hometown:Integer
+      Residence:Integer
+      Introduction:String
+  3. 设置
+    方法: POST
+    地址: /profile/set
+    参数:
+      Introduction:String
+
+艺术家简介:
+  1. 获取:
+    方法: GET
+    地址: /profile/si
+    参数: UserId:Integer // 艺术家Id
+    返回: { Data: {
+      Id:Integer
+      Nickname:String
+      Avatar:String
+      JoinDate:Integer
+      Introduction:String
+      CouponUser:{
+        UserId:Integer      // 用户Id
+        Code:String         // 用户优惠码
+        Amount:Integer      // 优惠数额
+        AmountScale:Boolean // 优惠数额是否为折扣
+        Return:Integer      // 返蛙币数额
+        ReturnScale:Boolean // 返蛙币数额是否为折扣
+        MinMoney:Integer    // 优惠适用最小金额
+      }
+      IsFollow:Boolean
+      Hp:Object     // 微信为二维码图片文件名，微博为个性化域名或UID
+      Banner        // 横幅
+    } }

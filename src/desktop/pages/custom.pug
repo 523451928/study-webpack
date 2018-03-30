@@ -1,0 +1,17 @@
+//- Copyright 2016 CHEN Xianren. All rights reserved.
+
+extends public/_layout.pug
+
+block hd
+  title 定制
+block bd
+  .custom-wrap
+    top
+    head-nav
+    .mt-3
+      transition(
+        mode='out-in'
+        enter-active-class='animated fadeIn'
+      )
+        router-view
+    foot

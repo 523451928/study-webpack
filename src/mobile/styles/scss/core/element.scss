@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import "./variable.scss";
+@import "./layout.scss";
+@import "./mixin.scss";
+
+// 面板模块 1rem = 100px 在iphone7下
+@mixin panel($magrin: 0 0 20px 0, $padding:.1rem .3rem, $bgColor: $c-nc-1) {
+  width: 100%;
+  margin: $magrin;
+  >div {
+    padding: $padding;
+    background-color: $bgColor;
+  }
+}
+
+// 计时器组件
+@mixin selectNumber() {
+  .number-content {
+    height: inherit;
+    border: 1px solid $c-bc-1;
+    .i-handle {
+      height: inherit;
+      width: 33.33%;
+      font-weight: bold;
+      i {
+        color: $c-fc-1;
+        &.disable {
+          color: $c-fc-3;
+        }
+      }
+      &.reduct {
+        border-right: 1px solid $c-bc-1;
+      }
+      &.add {
+        border-left: 1px solid $c-bc-1;
+      }
+    }
+    .input-wrap {
+      >input {
+        width: 100%;
+        text-align: center;
+        border: none;
+      }
+    }
+  }
+
+}
+
+// 按钮, 可以在其他类上重新定义样式
+@mixin btn($bg: $c-jxc-1, $w: inherit, $h: inherit, $fc: $c-nc-1) {
+  width: $w;
+  height: $h;
+  > div {
+    background-color: $bg;
+    border: 1px solid $bg;
+    height: inherit;
+    color: $fc;
+  }
+}

@@ -1,0 +1,98 @@
+//
+//Wallwa.com custom Variables
+// --------------------------------------------------
+
+//** Load fonts from this directory. wallwa web font
+$icon-font-path: '~fonts/icon/';
+//** File name for all font files.
+$icon-font-name: "glyphicons-halflings-regular";
+//** Element ID within SVG icon file.
+$icon-font-svg-id: "glyphicons_halflingsregular";
+
+$wa-font-name: 'wallwa_webfont';
+$wa-font-path: '~fonts/wa/';
+//** File name for all font files.
+$wa-font-name: 'wallwa_webfont';
+//** Element ID within SVG icon file.
+$wa-font-svg-id: 'wallwa_webfont';
+
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//
+//## Gray and brand colors for use across Bootstrap.
+
+$gray-base: #000;
+$gray-darker: lighten($gray-base, 13.5%); // #222
+$gray-dark: lighten($gray-base, 20%); // #333
+$gray: lighten($gray-base, 33.5%); // #555
+$gray-light: lighten($gray-base, 46.7%); // #777
+$gray-lighter: lighten($gray-base, 93.5%); // #eee
+
+$brand-primary: #26a7c7;
+$brand-success: #76a549;
+$brand-info: #5bc0de;
+$brand-warning: #f0ad4e;
+$brand-danger: #ed5565;
+$brand-danger-strong: #da4453;
+$brand-default: #000000;
+
+$qq-active: #f4b73e;
+$weibo-active: #d52b2a;
+$wechat-active: #64ab23;
+$douban-active: #259235;
+
+//== words
+$text-color: #565a5c;
+$text-color-base: #565a5c;
+$text-color-light: #82888a;
+
+//== 底面色块
+$bg-base: #f5f5f5;
+$bg-base-dark: #edefed;
+
+//== border color
+$border-color-base: #c4c4c4;
+$border-color-dark: #adadad;
+
+//== hr
+$hr-base: #edefef;
+$hr-base-dark: #dce0e0;
+$gray-light: #777;
+
+$screen-sm: 768px;
+$screen-sm-min: $screen-sm;
+$screen-md: 992px;
+$screen-md-min: $screen-md;
+$screen-desktop: $screen-md-min;
+
+// Large screen / wide desktop
+//** Deprecated `@screen-lg` as of v3.0.1
+$screen-lg: 1200px;
+$screen-lg-min: $screen-lg;
+//** Deprecated `@screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop: $screen-lg-min;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-sm-max: ($screen-md-min - 1);
+$screen-md-max: ($screen-lg-min - 1);
+$ft-bg: '~images/ft-bg.png';
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//** Placeholder text color
+$input-color-placeholder: #aaaaaa;
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

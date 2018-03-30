@@ -1,0 +1,128 @@
+//评论
+.pro-detail-comments{
+  h2.comments-title{
+    margin:15px 0 20px 0;
+  }
+  .comments-content{
+    max-width: 100%;
+    min-height: 120px;
+    //border-bottom: none;
+    border-radius: 2px 2px 0 0;
+  }
+  .conmments-login-box{
+    max-width: 100%;
+    min-height: 120px;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  }
+  .comments-set-area{
+    background: $bg-base-dark;
+    border: 1px solid #c4c4c4;
+    border-top:none;
+    border-radius: 0 0 2px 2px;
+  }
+  .conmments-list{
+    padding: 40px 0 30px 0;
+    position: relative;
+    border-bottom: 1px solid $hr-base-dark;
+    .comt-head-img{
+      width: 70px;
+      height: 70px;
+      border-radius:35px;
+      margin-right: 20px;
+      float: left;
+    }
+    .conmments-detail{
+      float: left;
+      width: 820px;
+      position: relative;
+      .comt-row{
+        margin: 10px;
+      }
+      .comt-mng-links{
+        position: absolute;
+        right: -40px;
+        bottom: 0;
+        a{
+          margin-left: 10px;
+        }
+      }
+    }
+    .reply-area{
+      display: none;
+      margin-left: 90px;
+      padding:20px;
+      background: $bg-base-dark;
+      &.active{
+        display: block;
+      }
+    }
+    .reply-ul{
+      list-style: none;
+      margin: 0;
+      padding-bottom: 20px;
+      padding-left: 0;
+      .reply-list{
+        padding:20px 0 ;
+        border-bottom: 1px solid $hr-base-dark;
+        &.last{
+          border-bottom: none;
+        }
+        .reply-head-img{
+          width: 50px;
+          height: 50px;
+          border-radius:25px;
+          margin-right: 10px;
+          float: left;
+        }
+        .reply-detail{
+          float: left;
+          width: 770px;
+          position: relative;
+          .reply-row{
+            margin: 10px;
+          }
+          .reply-mng-links{
+            position: absolute;
+            right: -10px;
+            bottom: 20px;
+          }
+        }
+      }
+    }
+    .reply-form{
+      display: none;
+      padding:15px 20px;
+      background: #fff;
+      position: relative;
+      &.active{
+        display: block;
+      }
+      .comments-content{
+        min-height:auto;
+      }
+      .comments-set-area{
+        background: #fff;
+        border: none;
+        padding: 10px;
+      }
+      .reply-error{
+        color: $brand-danger;
+        display: none;
+        bottom:30px;
+        position: absolute;
+        &.active{
+          display: block;
+        }
+      }
+    }
+  }
+}

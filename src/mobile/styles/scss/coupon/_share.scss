@@ -1,0 +1,118 @@
+.warp {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.ticket {
+  background: url('~images/coupon/coupon-ticket-bg.png') no-repeat;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 330px;
+  height: 132px;
+  padding: 20px 15px;
+  position: relative;
+  display: inline-block;
+  background-size: contain;
+  .info {
+    position: absolute;
+    text-align: left;
+    font-size: 12px;
+    width: 45%;
+    padding-left: 15px;
+    span {
+      display: block;
+    }
+    .title {
+      font-size: 16px;
+      color: #ed5565;
+      margin-bottom: 12px;
+      white-space: nowrap;
+    }
+    .name {
+      color: #ed5565;
+      margin-bottom: 8px;
+    }
+    .time {
+      color: #565a5c;
+    }
+  }
+  .money {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    font-size: 20px;
+    color: #ed5565;
+    width: 55%;
+    text-align: right;
+    span {
+      font-size: 50px;
+    }
+  }
+}
+.prop {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 10px 0 30px;
+}
+.invite-avatar {
+  display: block;
+  margin: auto;
+  max-width: 20%;
+  border-radius: 50%;
+}
+.invite-author {
+  display: block;
+  color: #82888a;
+  margin-top: 10px;
+}
+.btn-lq {
+  padding: 9px 48px;
+  font-size: 16px;
+  border-radius: 2px;
+  color: #fff;
+  background: #e33d3d;
+}
+.mt1 {
+  margin-top: 1em;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #e33d3d;
+  text-decoration: none;
+}
+.btn-lg {
+  padding: 9px 48px;
+}
+.desc-tips {
+  padding: 0 30px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #565a5c;
+  margin-top: 40px;
+  text-align: left;
+}
+.w100 {
+  max-width: 100%;
+}
+.wallwa-content {
+  padding: 20px 30px 10px;
+  line-height: 30px;
+  font-size: 16px;
+  text-align: justify;
+}
+.other-tips {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 30px;
+  font-size: 18px;
+}
+.f16 {
+  font-size: 16px;
+}
+.erweima {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 20px auto 30px;
+}

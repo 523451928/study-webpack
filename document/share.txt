@@ -1,0 +1,39 @@
+1. 分享
+    方法: POST
+    地址: /share
+    参数:
+        Platform:String      // douban, qzone, weibo, weixin
+        Target:String        // artist, person, item
+        Target为item时:
+            ItemId:Integer   // 商品Id
+        Target为artist时:
+            ArtistId:Integer // 艺术家Id
+    返回: 分享链接
+2. 获取分享
+    方法: GET
+    地址: /share/get/<id:Integer>
+    返回: { Data:{
+        Id:Integer            // 分享Id
+        IsOwner:Boolean       // 当前用户是否为分享者
+        User:{
+            Id:Integer        // 分享者用户Id
+            Nickname:String   // 分享者昵称
+            Avatar:String     // 分享者头像
+        }
+        Platform:String
+        Target:String
+        Target为item时:
+            Item:Object      // 商品信息
+        Target为artist时:
+            ArtistId:Integer // 艺术家Id
+    } }
+3. 生成链接二维码
+    方法: POST
+    地址: /share/qr
+    参数: Link:String // 链接地址
+4. 生成微信配置
+    方法: POST
+    地址: /share/sign
+    参数:
+        Debug:Boolean // 是否打开debug
+        Link:String   // 链接地址

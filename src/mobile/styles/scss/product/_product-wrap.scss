@@ -1,0 +1,397 @@
+/*!
+ * wallwa.com v1.0
+ * Copyright wallwa.com
+ * Copyright 2011-2017
+ * product wrap
+ */
+.product-cont{
+  height: 100%;
+  .start-area{
+    position: relative;
+    height: 100%;
+    background: #fff;
+    padding-top: 65px;
+    .start-section{
+      background: url('~images/product/pro-nav-bg.jpg') repeat-x #fff;
+      text-align: center;
+      .start-title{
+        padding: 40px 0;
+        text-align: center;
+        font-size: 36px;
+      }
+      .play-area{
+        display: inline-block;
+        position: relative;
+        .upload-input{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          left: 0;
+          top: 0;
+          cursor: pointer;
+          z-index: 99;
+        }
+        &.uploading .circle-progress{
+          opacity: 1;
+        }
+        .upload-btn{
+          position: relative;
+          width: 490px;
+          margin: 10px auto 20px auto;
+          border: 1px dashed #989898;
+          background: #fff;
+          overflow: visible;
+          cursor: pointer;
+          text-align: center;
+          color: #26A7C7;
+
+          &:hover{
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 25px 35px rgba(0, 0, 0, 0.05);
+          }
+          .wa{
+            display: inline-block;
+            font-size: 150px;
+            margin: 10px 0 0 0;
+          }
+          .link-text{
+            font-size: 20px;
+            margin-bottom: 15px;
+          }
+          .upload-tips{
+            color: #aaa;
+            margin: 0;
+          }
+        }
+        .preview{
+          display: inline-block;
+          .update-layout{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #26a7c7;
+            background: rgba(255,255,255,.9);
+            top: 0;
+            left: 0;
+            .link-text{
+              font-size: 20px;
+              margin-bottom: 15px;
+            }
+            .wa{
+              font-size: 150px;
+              margin: 20px 0 -10px 0;
+            }
+          }
+          img{
+            box-shadow: 0 10px 20px rgba(0,0,0,.2), 0 25px 35px rgba(0,0,0,.05);
+            border: 1px dashed #dfdfdf;
+            max-height: 300px;
+            max-width: 450px;
+            height: auto;
+            width: auto;
+            margin: 0 auto;
+          }
+        }
+        &:hover .update-layout{
+          display: block;
+        }
+      }
+      .select-btn{
+        position: relative;
+        margin: 40px auto;
+        line-height: 32px;
+      }
+    }
+  }
+}
+.set-bom-title{
+  margin: -15px -15px 10px -15px;
+  padding: 15px;
+  font-size: 20px;
+  background: #f5f5f5;
+}
+.set-bom-list {
+  list-style: none;
+  overflow: hidden;
+  padding: 0 20px;
+  li{
+    &.icon{
+      width: 70px;
+      height: 70px;
+      line-height: 66px;
+    }
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding: 1px;
+    border: 1px solid #dce0e0;
+    position: relative;
+    overflow: hidden;
+    &.active,&:hover{
+      padding: 0;
+      border: 2px solid #26A7C7;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    .li-color{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.product-detail-area{
+  background:#fff;
+  border-top: 1px solid $hr-base-dark;
+  display: none;
+  &.active{
+    display: block;
+  }
+  h2{
+    font-size: 36px;
+    text-shadow: #fff 0 1px 0;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 60px 0 20px;
+    margin: 0;
+    text-align: center;
+  }
+  .form-horizontal{
+    .checkbox-inline{
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    .radio-inline{
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    .form-group{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .product-detail-container{
+    width: 980px;
+    margin: 0 auto;
+    .pl0{
+      padding-left: 0;
+    }
+    .pl25{
+      padding-left: 25px;
+    }
+    .product-detail-tags{
+      .custom-tags{
+        .tags-box{
+          margin: 5px 0;
+          .tag-list{
+            border: 1px solid $border-color-base;
+            background: #FFFFFF;
+            border-radius: 2px;
+            margin-left: 0px;
+            display: inline-block;
+            margin-right: 5px;
+            padding: 0 5px;
+            .tag-del{
+              background: #FFFFFF;
+              i{
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+      .special-checkbox{
+        visibility: hidden;
+      }
+      .special-checkbox[type=checkbox]+s{
+        background:url('~images/ww-icon.png')no-repeat -14px -156px;
+      }
+      .special-checkbox[type=checkbox]:checked+s{
+        background:url('~images/ww-icon.png')no-repeat -55px -156px;
+      }
+      .special-checkbox[type=radio]+s{
+        background:url('~images/ww-icon.png')no-repeat -92px -156px;
+      }
+      .special-checkbox[type=radio]:checked+s{
+        background:url('~images/ww-icon.png')no-repeat -132px -156px;
+      }
+      .special-checkboxS{
+        display: inline-block;
+        vertical-align: sub;
+        height: 16px;
+        width: 16px;
+      }
+      .tags-color-area{
+        .mr0{
+          margin-right: 0px;
+        }
+        .block-tag-block{
+          float: left;
+          height: 26px;
+          width: 26px;
+          cursor: pointer;
+        }
+
+        .color-checkbox[type=checkbox]{
+          //display: none;
+          z-index: -99;
+        }
+        .color-checkbox[type=checkbox]:checked+div{
+          outline: 1px solid $brand-primary;
+          border: 5px solid #FFFFFF;
+        }
+      }
+    }
+    .form-cont{
+      width: 100%;
+    }
+    .product-des{
+      height: 236px;
+    }
+    .icon-nes{
+      color:$brand-danger;
+    }
+
+    .tag-title{
+      margin-top: 20px;
+      position: relative;
+      color: $text-color-light;
+      .qus-icon{
+        position: static;
+        vertical-align: top;
+        top: 2px;
+        left: -20px;
+        .product-edit-arrow-out{
+          left: -18px;
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+          border-right: 8px solid $text-color-light;
+          position: absolute;
+          top: 3px;
+        }
+        .product-edit-arrow-inner{
+          left: -16px;
+          width: 0;
+          border-top: 7px solid transparent;
+          border-bottom: 7px solid transparent;
+          border-right: 7px solid #fff;
+          position: absolute;
+          top: 4px;
+        }
+      }
+    }
+    .mt0{
+      margin-top: 0px;
+    }
+    .mb3{
+      margin-bottom: 3px;
+    }
+    .mb1{
+      margin-bottom: 1px;
+    }
+    .mt30{
+      margin-top: 30px;
+    }
+    .tags-list{
+      color: $text-color-base;
+    }
+    .tags-hover-area{
+      label{
+        padding: 3px 9px 3px 9px;
+        margin-right: 0px;
+        margin-left: -9px;
+        &:hover{
+          background-color: $bg-base;
+        }
+      }
+    }
+    .color-tags,.pop-tags{
+      label.disableCursor {
+        cursor: not-allowed;
+        .block-tag-block{
+          cursor: not-allowed;
+        }
+        &.checked {
+          cursor: pointer;
+          .block-tag-block{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .product-submit-btn{
+      margin: 25px 0 60px 0;
+      width: 280px;
+      height: 45px;
+      &.btn-primary{
+        border-color: transparent;
+      }
+    }
+    .cus-tag-tips{
+      color: $brand-warning;
+      font-size:12px ;
+    }
+  }
+}
+
+.qus-icon{
+  display:inline-block;
+  position:absolute;
+  top:2px;
+  height:20px;
+  width:20px;
+  padding-right:10px;
+  background:url('~images/ww-icon.png')no-repeat -133px -276px;
+  .qus-tips,.qus-tips-right{
+    display: none;
+    position:absolute;
+    border: 1px solid #aaaaaa;
+    width: 250px;
+    white-space: normal;
+    background: #ffffff;
+    opacity: 0.9;
+    border-radius: 3px;
+    padding: 10px;
+    z-index: 10;
+  }
+  &:hover {
+    .qus-tips,.qus-tips-right{
+      display: block;
+    }
+  }
+  .qus-tips{
+    top:0;
+    left: 23px;
+  }
+  .qus-tips-right{
+    right: 28px;
+    top: 2px;
+  }
+}
+.err-wrap{
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 18px;
+  text-align: center;
+  .error-catagory{
+    color: #26a7c7;
+  }
+}
+
+
+
+
+
+

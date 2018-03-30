@@ -1,0 +1,751 @@
+//== words
+$text-color-base:      #565a5c;
+$text-color-light:     #82888a;
+$brand-primary:         #26a7c7;
+//== 底面色块
+$bg-base:               #f5f5f5;
+
+//== hr
+$hr-base:               #edefef;
+.walllife-bg {
+  height: 100%;
+  background-size: cover;
+}
+.layer1, .layer2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.layer2 {
+  left: 0;
+  z-index: 99;
+}
+.brand{
+  margin-bottom: 20px;
+}
+.layer2 .content {
+  height: 100%;
+}
+.weui_tab{
+  position: relative;
+  height: 100%;
+}
+.page-1 {
+  background-image: url('~images/activity/pet-guide/bnr-1.jpg');
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+}
+.walllife {
+  .row-text-photo {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    min-width: 300px;
+    width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  span {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.5;
+  }
+}
+.row-text .btn-detail {
+  background: none;
+  border: 1px solid #26a7c7;
+  color: #26a7c7;
+}
+.page-1 a.btn {
+  padding: 13px 60px;
+  margin-bottom: 10px;
+}
+.walllife .open:hover {
+  background: #26a7c7;
+  color: #fff;
+  border: 1px solid #26a7c7;
+}
+@media (max-width: 1379px){
+  .walllife h1 {
+    font-size: 44px;
+    color: #fff;
+    margin: 0 0 20px;
+    line-height: 1.1;
+    font-weight: lighter;
+  }
+}
+
+//定制发现
+.custom-found{
+  width: 100%;
+  margin-top: -160px;
+  height: 160px;
+  background-color: #fff;
+  z-index: 99;
+  position: relative;
+  border-bottom: 1px solid #efefef;
+  h2{
+    font-size: 24px;
+    color: #565a5c;
+  }
+  p{
+    font-size: 12px;
+    color: #82888a;
+  }
+  .home-btn{
+    padding: 10px 46px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .border-right{
+    height: 160px;
+    border-right: 1px solid #efefef;
+  }
+}
+@media (min-width: 1002px){
+  .layer-md {
+    width: 972px;
+    margin: 0 auto;
+  }
+}
+
+//开始定制
+.customize{
+  @media(min-width: 1002px){
+    h2{
+      color: $text-color-base;
+      font-size: 36px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      padding-top: 55px;
+    }
+    p{
+      color: $text-color-light;
+      font-size: 14px;
+      padding-bottom: 25px;
+    }
+    .customize-content{
+      margin: 0 -15px;
+      height: 290px;
+      position: relative;
+      transition: all 0.3s ease-out ;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      a{
+        display: block;
+      }
+      .customize-link{
+        color: $text-color-base;
+        font-size: 14px;
+        height: 35px;
+        line-height: 35px;
+        width: 110px;
+        margin: 0 auto;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+      }
+      .line-1{
+        position: absolute;
+        bottom: 30px;
+        height: 260px;
+        width: 1px;
+        background: $hr-base;
+      }
+      .line-2{
+        position: absolute;
+        top: 30px;
+        height: 260px;
+        width: 1px;
+        background: $hr-base;
+      }
+      .line-bottom{
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 334px;
+        background: $hr-base;
+      }
+      .line-right{
+        right: 0;
+      }
+      .line-left{
+        left: 0;
+      }
+      &:hover{
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -o-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        .customize-link{
+          text-decoration: none;
+          color: #fff;
+          background: $brand-primary;
+        }
+        .line-1,.line-2{
+          display: none;
+        }
+        .line-bottom{
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 768px){
+  .btn-more{
+    display: block;
+    line-height: 52px;
+    height: 52px;
+    border-top: 1px solid #f5f5f5;
+    margin: 0 10px;
+    font-size: 12px;
+  }
+  .gap{
+    height: 15px;
+    background: #f5f5f5;
+  }
+}
+@media(max-width: 992px) and (min-width: 769px) {
+  .btn-more{
+    display: block;
+    line-height: 52px;
+    height: 52px;
+    border-top: 1px solid #f5f5f5;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+  .gap{
+    height: 15px;
+    background: #f5f5f5;
+  }
+}
+//明星单品
+.star-product{
+  @media(min-width: 1002px){
+    h2{
+      color: $text-color-base;
+      font-size: 36px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      padding-top: 55px;
+    }
+    h5{
+      color: $text-color-light;
+      font-size: 14px;
+      padding-bottom: 25px;
+    }
+    .star-product-child{
+      margin-left: -15px;
+      margin-right: -15px;
+
+      .star-product-left{
+        margin-right: 20px;
+      }
+      .star-product-center{
+        margin: 0 10px;
+      }
+      .star-product-right{
+        margin-left: 20px;
+      }
+      .star-product-shadow{
+        transition: all 0.5s ease-out ;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
+        .star-product-img{
+          height: 300px;
+          width: 314px;
+          overflow: hidden;
+          transition: all .5s;
+          -moz-transition: all .5s;	/* Firefox 4 */
+          -webkit-transition: all .5s;	/* Safari 和 Chrome */
+          -o-transition: all .5s;
+          img{
+            transition: all .5s;
+            -moz-transition: all .5s;	/* Firefox 4 */
+            -webkit-transition: all .5s;	/* Safari 和 Chrome */
+            -o-transition: all .5s;
+          }
+        }
+        .star-product-content{
+          padding-top: 27px;
+          padding-bottom: 20px;
+          p{
+            color: $text-color-base;
+            font-size: 14px;
+            margin-bottom: 5px;
+            &.price{
+              font-family: Verdana;
+            }
+            .newPrice{
+              color: #d14251;
+              padding-right: 5px;
+            }
+            .oldPrice{
+              font-size: 12px;
+              color: #c4c4c4;
+              text-decoration: line-through;
+            }
+          }
+        }
+        &:hover{
+          box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+          -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+          -o-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+          img{
+            transform: scale(1.1,1.1);
+            -ms-transform: scale(1.1,1.1);	/* IE 9 */
+            -webkit-transform: scale(1.1,1.1);	/* Safari 和 Chrome */
+            -o-transform: scale(1.1,1.1);	/* Opera */
+            -moz-transform: scale(1.1,1.1);	/* Firefox */
+          }
+          .star-product-content{
+            p{
+              color: #26a7c7;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media(max-width: 768px){
+    h2{
+      font-size: 20px;
+      color: $text-color-base;
+    }
+    h5{
+      font-size: 12px;
+      color: $text-color-light;
+      padding-bottom: 15px;
+    }
+    .star-product-child{
+      margin: 0 -15px;
+      .star-product-left{
+        margin: 0 3px 0 10px;
+      }
+      .star-product-right{
+        margin: 0 10px 0 3px;
+      }
+      p{
+        font-size: 12px;
+      }
+      .draw-name {
+        padding-top: 15px;
+        color: $text-color-base;
+      }
+      .price{
+        color: #da4453;
+      }
+    }
+  }
+}
+//艺术家店铺
+.artist-shop{
+  @media(min-width: 993px){
+    .Carousel{
+      position: relative;
+      .Carousel-content{
+        overflow: hidden;
+        width: 1002px;
+        height: 397px;
+        ul{
+          padding: 0px;
+          height: 397px;
+          width: 2004px;
+          list-style: none;
+          li{
+            float: left;
+          }
+        }
+      }
+      .Carousel-btn {
+        position: absolute;
+        display: block;
+        width: 36px;
+        height: 64px;
+        top: 50%;
+        transform: translateY(-50%);
+        -ms-transform: translateY(-50%); /* IE 9 */
+        -webkit-transform: translateY(-50%); /* Safari and Chrome */
+        -o-transform: translateY(-50%); /* Opera */
+        -moz-transform: translateY(-50%);
+        &.Carousel-left {
+          left: -66px;
+          background: url("~images/wallLife/left-arrow.png");
+        }
+        &.Carousel-right {
+          right: -66px;
+          background: url("~images/wallLife/right-arrow.png");
+        }
+      }
+    }
+    h2{
+      color: $text-color-base;
+      font-size: 36px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      padding-top: 55px;
+      padding-bottom: 30px;
+    }
+    h5{
+      padding-bottom: 15px;
+    }
+    .artist-shop-child{
+      width: 334px;
+      float: left;
+      a{
+        outline: none;
+        text-decoration: none;
+      }
+    }
+    .artist-shop-shadow{
+      transition: all 0.5s ease-out ;
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+      .artist-shop-name{
+        height: 20px;
+        width: 314px;
+        overflow: hidden;
+        color: $text-color-light;
+        font-size: 14px;
+      }
+      &:hover{
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -o-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        .artist-shop-img{
+          .div-scale{
+            transform: scale(1.1,1.1);
+            -ms-transform: scale(1.1,1.1);	/* IE 9 */
+            -webkit-transform: scale(1.1,1.1);	/* Safari 和 Chrome */
+            -o-transform: scale(1.1,1.1);	/* Opera */
+            -moz-transform: scale(1.1,1.1);	/* Firefox */
+          }
+        }
+        .artist-shop-name{
+          color: #26a7c7;
+        }
+        a{
+          outline: none;
+          text-decoration: none;
+        }
+      }
+    }
+    .artist-shop-img{
+      height: 230px;
+      width: 100%;
+      overflow: hidden;
+      .div-scale{
+        transition: all .5s;
+        -moz-transition: all .5s;	/* Firefox 4 */
+        -webkit-transition: all .5s;	/* Safari 和 Chrome */
+        -o-transition: all .5s;
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+    .artist-shop-content{
+      transform: translateY(-35px);
+      -ms-transform: translateY(-35px);		/* IE 9 */
+      -webkit-transform: translateY(-35px);	/* Safari and Chrome */
+      -o-transform: translateY(-35px);		/* Opera */
+      -moz-transform: translateY(-35px);
+      height: 147px;
+      .artist-shop-head{
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        margin-bottom: 15px;
+      }
+      .artist-shop-profession{
+        color: $text-color-light;
+        font-size: 12px;
+      }
+      .wa{
+        color: #c4c4c4;
+        font-size: 16px;
+        padding-right: 5px;
+      }
+      .artist-shop-num{
+        color: $text-color-light;
+        font-family: Verdana;
+        font-size: 12px;
+        padding-right: 15px;
+      }
+    }
+  }
+  @media(max-width: 992px) and (min-width: 768px){
+    h2{
+      font-size: 20px;
+      color: $text-color-base;
+    }
+    h5{
+      font-size: 16px;
+      color: $text-color-light;
+      padding-bottom: 15px;
+    }
+    .artist-shop-layer{
+      margin: 0 -15px 0 -5px;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      position: relative;
+      height: 320px;
+      .artist-shop-position{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1546px;
+        transition:left 0.2s ease-out;
+        -webkit-transition: left 0.2s ease-out;
+        -moz-transition:left 0.2s ease-out;
+        .artist-shop-child{
+          width: 250px;
+          margin-right: 6px;
+          float: left;
+          .artist-shop-content{
+            transform: translateY(-30px);
+            -webkit-transform: translateY(-30px);
+            -moz-transform: translateY(-30px);
+            -o-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            .artist-shop-head{
+              width: 60px;
+              height: 60px;
+              margin: 0 auto 15px;
+              overflow: hidden;
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+            }
+            .artist-shop-desc{
+              color:  $text-color-base;
+              font-size: 14px;
+            }
+            .artist-shop-num{
+              font-size: 14px;
+              color: $text-color-light;
+            }
+            .wa{
+              color: #c4c4c4;
+              font-size: 15px;
+            }
+            .pr15{
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media(max-width: 768px){
+    h2{
+      font-size: 20px;
+      color: $text-color-base;
+    }
+    h5{
+      font-size: 12px;
+      color: $text-color-light;
+      padding-bottom: 15px;
+    }
+    .artist-shop-layer{
+      margin: 0 -15px 0 -5px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      height: 320px;
+      .artist-shop-position{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1546px;
+        transition:left 0.2s ease-out;
+        -webkit-transition: left 0.2s ease-out;
+        -moz-transition:left 0.2s ease-out;
+        .artist-shop-child{
+          width: 250px;
+          margin-right: 6px;
+          float: left;
+          .artist-shop-content{
+            transform: translateY(-30px);
+            -webkit-transform: translateY(-30px);
+            -moz-transform: translateY(-30px);
+            -o-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            .artist-shop-head{
+              width: 60px;
+              height: 60px;
+              margin: 0 auto 15px;
+              overflow: hidden;
+              border-radius: 50%;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+            }
+            .artist-shop-desc{
+              color:  $text-color-base;
+              font-size: 12px;
+            }
+            .artist-shop-num{
+              font-size: 12px;
+              color: $text-color-light;
+            }
+            .wa{
+              color: #c4c4c4;
+              font-size: 15px;
+            }
+            .pr15{
+              padding-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//news媒体查询
+.news{
+  margin-bottom: 10px;
+  @media(min-width: 1002px){
+    h2{
+      color: $text-color-base;
+      font-size: 36px;
+      font-weight: lighter;
+      letter-spacing: 1px;
+      padding-top: 55px;
+      padding-bottom: 30px;
+    }
+    .news-child{
+      margin: 0 -15px;
+    }
+    .news-content{
+      width: 485px;
+      height: 275px;
+      transition: all 0.3s ease-out ;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      &.news-content-right{
+        margin-left: 15px;
+      }
+      .new-content-line{
+        width: 485px;
+        height: 98px;
+        border-left: 1px solid #f5f5f5;
+        border-right: 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+        padding-top: 25px;
+      }
+      p{
+        margin: 0 30px 0 30px;
+        color: $text-color-base;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      &:hover{
+        box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+        -o-box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.15);
+
+        p{
+          color: #26a7c7;
+        }
+        .new-content-line{
+          border: none;
+        }
+      }
+    }
+  }
+  @media(max-width: 768px){
+    h2{
+      font-size: 20px;
+      color: $text-color-base;
+      padding-bottom: 15px;
+    }
+    .news-layer{
+      margin: 0 -5px;
+    }
+    p{
+      color: $text-color-base;
+      font-size: 12px;
+      text-align: justify;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+}
+
+.more-btn{
+  color: $text-color-light;
+  font-size: 14px;
+  margin-top: 30px;
+  display: block;
+  line-height: 56px;
+  height: 56px;
+  background: $bg-base;
+  text-decoration: none;
+  position: relative;
+  .more-btn-child{
+    transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    display: block;
+  }
+  &.more-btn-mg{
+    margin: 30px -15px 0;
+  }
+  .more-icon{
+    padding-left: 20px;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all .5s ease-out;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    font-size: 12px;
+  }
+  &:hover{
+    text-decoration: none;
+    background: #ecefef;
+    color:#26a7c7;
+    .more-btn-child{
+      transform:translateX(-10px);
+      -webkit-transform: translateX(-10px);
+      -moz-transform: translateX(-10px);
+      -o-transform: translateX(-10px);
+      -ms-transform: translateX(-10px);
+    }
+    .more-icon{
+      opacity: 1;
+      transform:translateX(10px);
+      -webkit-transform: translateX(10px);
+      -moz-transform: translateX(10px);
+      -o-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+    }
+  }
+}
